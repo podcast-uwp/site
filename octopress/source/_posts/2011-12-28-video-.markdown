@@ -1,0 +1,9 @@
+---
+layout: post
+title: Еще одна поездка, но ночью
+date: 2011-12-28 18:46
+comments: true
+categories: video
+---
+
+<iframe width="640" height="360" src="https://www.youtube.com/embed/FvSlk23QBSU?hd=1" frameborder="0" allowfullscreen></iframe>

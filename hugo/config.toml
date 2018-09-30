@@ -1,0 +1,37 @@
+languageCode = "ru-ru"
+copyright = "Creative Commons - Attribution, Noncommercial, No Derivative Works 3.0 License"
+
+baseurl = "https://podcast.umputun.com"
+
+title = "Еженедельный подкаст от Umputun"
+
+paginate = 15
+paginatePath = "page"
+
+publishdir = "public"
+ignoreFiles = [ "\\.xml$"]
+
+[author]
+  name = "umputun"
+
+[permalinks]
+  posts = "/p/:year/:month/:day/:filename"
+
+[params]
+  url = "https://podcast.umputun.com"
+
+  author = "podcast@umputun.com"
+
+  subtitle = "Еженедельный подкаст от Umputun"
+
+  description = "Невыдуманные рассказы из моей жизни в Чикаго (и не только), различные рассуждения и наблюдения, немного компьютерных разговоров, совсем чуть-чуть политики и порой немного юмора."
+  indexDescription = "Невыдуманные рассказы из моей жизни в Чикаго (и не только), различные рассуждения и наблюдения, немного компьютерных разговоров, совсем чуть-чуть политики и порой немного юмора."
+  longDescription = "Невыдуманные рассказы из моей жизни в Чикаго (и не только), различные рассуждения и наблюдения, немного компьютерных разговоров, совсем чуть-чуть политики и порой немного юмора."
+  keywords = "Umputun, Умпутун, podcast, подкаст, еженедельный подкаст, подкаст на русском, Интернет Радио"
+
+  twitter = "umputun"
+  twitterWidgetId = "351604787772534785"
+  remark42 = "uwp"
+
+[blackfriday]
+  extensions = ["hardLineBreak"]

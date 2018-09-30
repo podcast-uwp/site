@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Page not found | NADO.org</title>
+		<link rel="profile" href="http://gmpg.org/xfn/11" />
+		<link rel="stylesheet" type="text/css" media="all" href="http://www.nado.org/wp-content/themes/nado/style.css" />
+		<link rel="stylesheet" type="text/css" media="all" href="http://www.nado.org/wp-content/themes/nado/css/styles.css" />
+		<link rel="stylesheet" type="text/css" media="all" href="http://www.nado.org/wp-content/themes/nado/css/default.css" />
+		<link rel="pingback" href="http://www.nado.org/xmlrpc.php" />
+		<script type="text/javascript" src="http://www.nado.org/wp-content/themes/nado/js/webtoolkit.sortabletable.js"></script>
+		<link rel="alternate" type="application/rss+xml" title="NADO.org &raquo; Feed" href="http://www.nado.org/feed/" />
+<link rel="alternate" type="application/rss+xml" title="NADO.org &raquo; Comments Feed" href="http://www.nado.org/comments/feed/" />
+				
+	<script type="text/javascript">//<![CDATA[
+	// Google Analytics for WordPress by Yoast v4.2.3 | http://yoast.com/wordpress/google-analytics/
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount','UA-15892336-3']);
+	_gaq.push(['_trackPageview','/404.html?page=' + document.location.pathname + document.location.search + '&from=' + document.referrer]);
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+	//]]></script>
+<link rel='stylesheet' id='HkMuob_styling-css'  href='http://www.nado.org/wp-content/plugins/hikari-email-url-obfuscator/HkMuob.css' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-pagenavi-css'  href='http://www.nado.org/wp-content/plugins/wp-pagenavi/pagenavi-css.css' type='text/css' media='all' />
+<link rel='stylesheet' id='connections-user-css'  href='http://www.nado.org/wp-content/plugins/connections/css/cn-user.css' type='text/css' media='all' />
+<link rel='stylesheet' id='connections-chosen-css'  href='http://www.nado.org/wp-content/plugins/connections/css/chosen.css' type='text/css' media='all' />
+<link rel='stylesheet' id='connections-qtip-css'  href='http://www.nado.org/wp-content/plugins/connections/css/jquery.qtip.min.css' type='text/css' media='all' />
+<script type='text/javascript' src='http://www.nado.org/wp-includes/js/jquery/jquery.js'></script>
+
+<!-- Dynamic Widgets v1.5.2 by QURL - http://www.qurl.nl //-->
+				<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+
+		
+	</head>
+
+	<body class="error404">
+		<div id="wrapper">
+			<div id="header">
+				<div class="wrap960">       
+					<h1 title="NADO.org"><a href="http://www.nado.org/" title="NADO.org">NADO.org</a></h1>
+					<div class="mini-search">
+						<ul>
+							<li><a href="http://twitter.com/#!/NADOWeb" target="_blank"><img src="http://www.nado.org/wp-content/themes/nado/images/twitter.png" /></a></li>
+							<li><a href="http://www.facebook.com/NADO.org" target="_blank"><img src="http://www.nado.org/wp-content/themes/nado/images/facbbook.png" /></a></li>
+							<li><a href="http://www.nado.org/feed/" target="_blank"><img src="http://www.nado.org/wp-content/themes/nado/images/rss.png" /></a></li>
+						</ul>
+						<form id="searchform" method="get" action="http://www.nado.org/">
+
+  <input type="text"  value="Enter search phrase"  onblur="if(this.value=='') this.value='Enter search phrase';" onfocus="if(this.value=='Enter search phrase') this.value='';" class="input" name="s" id="s"  />
+
+  <input type="submit" value="Search" />
+
+</form>
+
+					</div>
+					<div class="clear"></div>
+					<div class="menu-header"><ul id="menu-main-menu" class="menu"><li id="menu-item-2811" class="first menu-item menu-item-type-custom menu-item-object-custom menu-item-2811"><a href="/">Home</a></li>
+<li id="menu-item-2679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2679"><a href="http://www.nado.org/about/" >About Us</a>
+<ul class="sub-menu">
+	<li id="menu-item-2681" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2681"><a href="http://www.nado.org/about/" >About NADO</a></li>
+	<li id="menu-item-2682" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2682"><a href="http://www.nado.org/about/member-services/" >Membership Services</a></li>
+	<li id="menu-item-2683" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2683"><a href="http://www.nado.org/about/member-services/membership-directory/" >Membership Directory</a></li>
+	<li id="menu-item-2684" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2684"><a href="http://www.nado.org/about/officers-board/" >Officers &#038; Board</a></li>
+	<li id="menu-item-2685" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2685"><a href="http://www.nado.org/about/staff/" >Staff</a></li>
+	<li id="menu-item-2688" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2688"><a href="http://www.nado.org/about/levels-of-membership/" >Levels of Membership</a></li>
+	<li id="menu-item-2686" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2686"><a href="http://www.nado.org/about/join-nado/" >Join NADO</a></li>
+</ul>
+</li>
+<li id="menu-item-2665" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2665"><a href="http://www.nado.org/category/advocacy/" >Advocacy</a>
+<ul class="sub-menu">
+	<li id="menu-item-2697" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2697"><a href="http://www.nado.org/action-alerts/" >Action Alerts</a></li>
+	<li id="menu-item-2667" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2667"><a href="http://www.nado.org/category/advocacy/latest-news/" >Latest News</a></li>
+</ul>
+</li>
+<li id="menu-item-4116" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4116"><a href="http://www.nado.org/events" >Events &#038; Training</a>
+<ul class="sub-menu">
+	<li id="menu-item-3853" class="menu-item menu-item-type-post_type menu-item-object-events menu-item-3853"><a href="http://www.nado.org/events/2012-annual-training-conference/" >Annual Training Conference</a></li>
+	<li id="menu-item-4561" class="menu-item menu-item-type-post_type menu-item-object-events menu-item-4561"><a href="http://www.nado.org/events/2013-nado-washington-policy-conference/" >Washington Policy Conference</a></li>
+	<li id="menu-item-4730" class="menu-item menu-item-type-post_type menu-item-object-events menu-item-4730"><a href="http://www.nado.org/events/rpo2013/" >Rural Transportation Conference</a></li>
+	<li id="menu-item-4119" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4119"><a href="http://www.nado.org/events" >View Upcoming Events</a></li>
+	<li id="menu-item-4664" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4664"><a href="http://www.nado.org/past-conferences/" >View Past Events</a></li>
+</ul>
+</li>
+<li id="menu-item-2670" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2670"><a href="http://www.nado.org/category/resources/" >Resources</a>
+<ul class="sub-menu">
+	<li id="menu-item-2689" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2689"><a href="http://www.nado.org/category/resources/featured-resources/" >Featured Resources</a></li>
+	<li id="menu-item-2676" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2676"><a href="http://www.nado.org/category/resources/resilient-regions/" >Regional and Community Planning</a></li>
+	<li id="menu-item-2677" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2677"><a href="http://www.nado.org/category/resources/state-associations/" >State Associations</a></li>
+	<li id="menu-item-2678" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2678"><a href="http://www.nado.org/category/resources/transportation/" >Transportation</a></li>
+	<li id="menu-item-2674" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2674"><a href="http://www.nado.org/category/resources/organizational-capacity/" >Organizational Capacity and Professional Development</a></li>
+	<li id="menu-item-2672" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2672"><a href="http://www.nado.org/category/resources/edfs/" >Small Business Finance</a></li>
+	<li id="menu-item-4860" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4860"><a href="http://www.nado.org/category/resources/disaster-recovery/" >Disaster Mitigation and Recovery</a></li>
+	<li id="menu-item-2671" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2671"><a href="http://www.nado.org/category/resources/ceds/" >Regional Economic Development</a></li>
+	<li id="menu-item-3762" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3762"><a href="http://www.nado.org/awards/" >Awards</a></li>
+	<li id="menu-item-2675" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2675"><a href="http://www.nado.org/category/resources/publications/" >Publications</a></li>
+</ul>
+</li>
+<li id="menu-item-2680" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2680"><a href="/jobs">Job Bank</a></li>
+<li id="menu-item-3430" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3430"><a href="#">Marketplace</a></li>
+<li id="menu-item-3431" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3431"><a href="http://www.nado.org/contact-us/" >Contact Us</a></li>
+<li id="menu-item-4435" class="last menu-item menu-item-type-custom menu-item-object-custom menu-item-4435"><a target="_blank" href="https://nadosp.memberpoint.com/_layouts/crm4m/loginsso.aspx?ReturnUrl=%2fShared+Documents%2fcrmdashboard.aspx%3fx%3d&amp;x" onclick="javascript:_gaq.push(['_trackEvent','outbound-menu','http://nadosp.memberpoint.com']);">Members</a></li>
+</ul></div>				</div>
+				<div id="shadow">
+					<div class="nav-bg"></div>
+				</div>
+			</div>
+	<div id="container">
+		<div class="wrap960">
+			<div class="fullwidth">
+				<div id="mainContent">
+					<div id="content" role="main">
+
+						<div id="post-0" class="post error404 not-found">
+							<h1>Oops! That page cannnot be found...</h1>
+							<div class="breadcrumb">
+								<p><!-- Breadcrumb NavXT 4.1.0 -->
+<a title="Go to Home." href="http://www.nado.org">Home</a> &gt; 404 error - Page Not Found</p>
+							</div>
+
+							<div class="entry-content">
+								<p class="biggertext">Sorry, but the page you were looking for has either been moved or no longer exists.</p>
+								<p>To help find what you're looking for, we suggest:</p>
+								<ul>
+									<li>Checking the URL of the page for errors and hitting the refresh button in your browser;</li>
+									<li>Using the navigational links at the top to locate additional resources and information;</li>
+									<li>Visiting our <a href="/">homepage</a>; or,</li>
+									<li>Using the search box below.</li>
+								</ul>
+								<p class="biggertext">Maybe a search will help?</p>
+
+
+									<form id="searchform" method="get" action="http://www.nado.org/">
+
+  <input type="text"  value="Enter search phrase"  onblur="if(this.value=='') this.value='Enter search phrase';" onfocus="if(this.value=='Enter search phrase') this.value='';" class="input" name="s" id="s"  />
+
+  <input type="submit" value="Search" />
+
+</form>
+
+
+
+							</div><!-- .entry-content -->
+						</div><!-- #post-0 -->
+					</div><!-- #content -->
+				</div><!-- #mainContent -->
+			</div><!-- #fullwidth -->
+		</div><!-- #wrap960 -->
+	</div><!-- #container -->
+	<script type="text/javascript">
+		// focus on search field after it has loaded
+		document.getElementById('s') && document.getElementById('s').focus();
+	</script>
+
+
+		<div id="footer">
+			<div class="wrap960">
+							<div class="textwidget"><p class="address vcard">
+	<span class="organization-name">National Association of Development Organizations (NADO) and the NADO Research Foundation</span><br />
+	<span class="adr">
+		<span id="hkmuob-id-9881" class="hkmuob_noscript">
+		<span class="street-address">400 North Capitol Street, NW, Suite 390</span>, 
+		<span class="locality">Washington</span>, <span class="region">DC</span> <span class="postal-code">20001</span>
+		 (https://maps<span class="HkMuob_display"> NULL</span>.google<span class="HkMuob_display"> NULL</span>.com/maps?q=400+North+Capitol+Street,+NW,+Suite+390,+Washington,+DC+20001&hl=en&ll=38<span class="HkMuob_display"> NULL</span>.895592,-77<span class="HkMuob_display"> NULL</span>.009386&spn=0<span class="HkMuob_display"> NULL</span>.00668,0<span class="HkMuob_display"> NULL</span>.016512&sll=38<span class="HkMuob_display"> NULL</span>.895559,-77<span class="HkMuob_display"> NULL</span>.009321&sspn=0<span class="HkMuob_display"> NULL</span>.00668,0<span class="HkMuob_display"> NULL</span>.016512&hnear=400+North+Capitol+St+NW,+Washington,+District+of+Columbia+20001&t=m&z=17&iwloc=A)</span>
+		<br />
+	</span>
+	<span class="tel">Phone: <span class="value">202.624.7806</span></span> | 
+	<span class="tel"><span class="type">Fax: <span class="value">202.624.8813</span></span></span> | 
+	<span class="email"><span class="type">Email: </span><span class="value"><span id="hkmuob-id-942" class="hkmuob_noscript">info@nado.org (info<span class="HkMuob_display"> null</span>@<span class="HkMuob_display">null </span>nado<span class="HkMuob_display"> NULL</span>.org)</span></span></span>
+</p></div>
+						
+				<div class="menu-footer"><ul id="menu-footer" class="footer-links"><li id="menu-item-3429" class="first menu-item menu-item-type-post_type menu-item-object-page menu-item-3429"><a href="http://www.nado.org/contact-us/" >Contact Us</a></li>
+<li id="menu-item-3428" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3428"><a href="http://www.nado.org/privacy-policy/" >Privacy Policy</a></li>
+<li id="menu-item-3426" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3426"><a href="http://www.nado.org/accessibility/" >Accessibility</a></li>
+<li id="menu-item-3427" class="last menu-item menu-item-type-post_type menu-item-object-page menu-item-3427"><a href="http://www.nado.org/site-map/" >Site Map</a></li>
+</ul></div>
+				<div class="clear"></div>
+
+				<p class="copyright">&copy; 2010-2012 National Association of Development Organizations (NADO) and the NADO Research Foundation. All Rights Reserved.</p>
+				<p class="sitecredits"><a class="sitecredits" href="http://www.livepulseweb.com/" target="_blank">Website design & development by Live Pulse</a></p>
+			</div>
+
+		
+
+<!-- Emails and URLs obfuscated by 
+ Hikari Email & URL Obfuscator - http://Hikari.ws/email-url-obfuscator/ -->
+<script type='text/javascript' src='http://www.nado.org/wp-content/plugins/hikari-email-url-obfuscator/HkMuob.js'></script>
+<script type='text/javascript'>
+ /* <![CDATA[ */ 
+HkMuobJS.write("hkmuob-id-9881",24,'808c8c888b5247478579888b467f87877f847d467b8785478579888b5789554c48484366878a8c80435b7988818c8784436b8c8a7d7d8c4443666f44436b8d818c7d434b514844436f798b8081867f8c878644435c5b434a484848493e8084557d863e8484554b504650514d4d514a44454f4f464848514b504e3e8b888655484648484e4e5044484648494e4d494a3e8b8484554b504650514d4d4d5144454f4f464848514b4a493e8b8b888655484648484e4e5044484648494e4d494a3e80867d798a554c48484366878a8c80435b7988818c8784436b8c43666f44436f798b8081867f8c878644435c818b8c8a817b8c43877e435b87848d857a8179434a484848493e8c55853e9255494f3e818f84877b5559','7b84798b8b553a7d908c7d867c7d7c45797c7c8a7d8b8b3a388c798a7f7d8c553a777a847986833a3838','    <span class="street-address">400 North Capitol Street, NW, Suite 390</span>,     <span class="locality">Washington</span>, <span class="region">DC</span> <span class="postal-code">20001</span>    ',false);
+HkMuobJS.write("hkmuob-id-942",118,'e3d7dfe2eae5b0dfe4dce5b6e4d7dae5a4e5e8dd','96','info@nado.org',false);
+ /* ]]> */ 
+</script>
+
+<script type='text/javascript' src='http://www.nado.org/wp-content/plugins/connections/js/jquery.preloader.js'></script>
+<script type='text/javascript' src='http://www.nado.org/wp-content/plugins/connections/js/cn-user.js'></script>
+
+		</div>
+	</body>
+</html>
+<!-- Performance optimized by W3 Total Cache. Learn more: http://www.w3-edge.com/wordpress-plugins/
+
+Minified using disk: basic
+Page Caching using disk: enhanced
+Object Caching 1602/1617 objects using disk: basic
+
+Served from: www.nado.org @ 2012-08-24 18:46:45 -->

@@ -1,2 +1,2 @@
-# podcast-uwp
-site podcast.umputun.com
+# Сайт подкаста UWP ("Еженедельный подкаст от Umputun")
+

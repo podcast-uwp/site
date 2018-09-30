@@ -1,0 +1,44 @@
+---
+layout: nil
+---
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
+  <channel>
+    <title>UWP - Еженедельный Подкаст от Umputun</title>
+    <link>{{ site.url }}</link>
+    <language>ru</language>
+    <copyright><![CDATA[Umputun]]></copyright>
+    <itunes:author><![CDATA[Umputun]]></itunes:author>
+    <itunes:subtitle><![CDATA[{{ site.subtitle }}]]></itunes:subtitle>
+    <description><![CDATA[{{ site.description }}]]></description>
+    <itunes:explicit>no</itunes:explicit>
+
+    <itunes:owner>
+      <itunes:name>Umputun</itunes:name>
+      <itunes:email>umputun@gmail.com</itunes:email>
+    </itunes:owner>
+
+    <itunes:image href="http://podcast.umputun.com/images/umputun-art-big.jpg" />
+
+    <itunes:category text="Society &amp; Culture">
+      <itunes:category text="Personal Journals"/>
+    </itunes:category>
+
+    <itunes:keywords>умпутун, umputun, подкаст умпутуна, еженедельный подкаст, подкаст из США, подкаст на русском, Интернет Радио, русский подкаст, russian podcast, uwp</itunes:keywords>
+
+    {% for post in site.categories.podcast limit: 20 %}
+    <item>
+      <title><![CDATA[{{ post.title | cdata_escape }}]]></title>
+      <description><![CDATA[{{ post.content | expand_urls: site.url | cdata_escape }}]]></description>
+      <link>{{ site.url }}{{ post.url }}</link>
+      <guid>{{ site.url }}{{ post.url }}</guid>
+      <pubDate>{{ post.date | date_to_rss }}</pubDate>
+      <itunes:author><![CDATA[Umputun]]></itunes:author>
+      <itunes:summary><![CDATA[{{ post.content | strip_html | cdata_escape }}]]></itunes:summary>
+      <itunes:image href="{{ post.image }}" />
+      <enclosure url="https://podcast.umputun.com/media/{{ post.filename }}.mp3" type="audio/mp3" length="{{ post.length }}" />
+    </item>
+    {% endfor %}
+
+  </channel>
+</rss>

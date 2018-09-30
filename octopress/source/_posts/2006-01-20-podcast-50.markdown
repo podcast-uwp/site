@@ -1,0 +1,10 @@
+---
+layout: post
+title: Выпуск 50
+date: 2006-01-25 20:55
+comments: true
+categories: podcast
+---
+
+[Аудио](https://podcast.umputun.com/media/ump_podcast50.mp3)
+<audio src="https://podcast.umputun.com/media/ump_podcast50.mp3" preload="none">

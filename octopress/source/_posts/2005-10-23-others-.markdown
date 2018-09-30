@@ -1,0 +1,9 @@
+---
+layout: post
+title: Вопросы продвинутого чайника
+date: 2005-10-23 13:18
+comments: true
+categories: others
+---
+
+Эти <a href=" http://russianpodcasting.ru/wiki/rpc/Вопросы_продвинутого_чайника">вопросы</a> я  задавал неслабому специалисту в област аудио (и не только) <a href="http://russianpodcasting.ru/wiki/rpc/BoBuk">BoBuk</a><br /><br />Вопросы (и ответы) видимо могут быть интересны для подкастеров и желающим присоеденится к ним.

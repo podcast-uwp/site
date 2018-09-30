@@ -1,0 +1,19 @@
+---
+layout: post
+title: Выпуск 69
+date: 2006-04-28 14:24
+comments: true
+categories: podcast
+---
+
+- Ранний подкаст, радостно-усталый
+- Реакции на продвижение и нужна ли аудитория вообще
+- О скромности
+- Проверка истинности жизнеописаний
+- Коментарии по поводу вождения
+- Мои друзья - Квентин и Брюс
+- Странная вежливость
+- Расширяем географию
+
+[Аудио](https://podcast.umputun.com/media/ump_podcast69.mp3)
+<audio src="https://podcast.umputun.com/media/ump_podcast69.mp3" preload="none">

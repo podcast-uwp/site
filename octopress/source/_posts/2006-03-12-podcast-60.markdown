@@ -1,0 +1,17 @@
+---
+layout: post
+title: Выпуск 60
+date: 2006-03-12 16:07
+comments: true
+categories: podcast
+---
+
+- Вопросы о львах и подкастах
+- Решения проблемы громкости
+- О Колумбии вновь (аудио-коммент)
+- Маковые вопросы
+- Эксперт по шоппингу в студии
+- Флаги на урнах
+- Странная фильма
+[Аудио](https://podcast.umputun.com/media/ump_podcast60.mp3)
+<audio src="https://podcast.umputun.com/media/ump_podcast60.mp3" preload="none">
