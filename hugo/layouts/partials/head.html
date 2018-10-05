@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{{ `<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->` | safeHTML }}
+{{ `<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->` | safeHTML }}
+{{ `<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->` | safeHTML }}
+<head>
+    <meta charset="utf-8">
+
+    {{ if eq .URL "/" }}
+    <title>{{ .Title }}</title>
+  {{ else }}
+    <title>{{ .Title }} - {{ .Site.Title }}</title>
+  {{ end }}
+
+  <meta name="description" content="{{ .Site.Params.description }}">
+  <meta name="keywords" content="{{ .Site.Params.keywords }}">
+
+  <meta name="author" content="{{ .Site.Params.author }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link href="/favicon.ico" rel="shortcut icon">
+  <link href="{{ .Site.Params.url }}" rel="canonical">
+
+
+</head>
+
+<body>
+
+<header role="banner">
+    <header role="banner">
+        <hgroup>
+        <a href="/" id="super-logo"></a>
+        <h1><a href="/">Weekly podcast from Unputun </a></h1>
+        </hgroup>
+    </header>
+</header>
