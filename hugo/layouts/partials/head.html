@@ -21,16 +21,39 @@
   <link href="/favicon.ico" rel="shortcut icon">
   <link href="{{ .Site.Params.url }}" rel="canonical">
 
+  {{ $style := resources.Get "screen.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+  <link rel="stylesheet" href="{{ $style.Permalink }}">
 
 </head>
 
 <body>
 
 <header role="banner">
+    <!-- <hgroup>
+  <h1><a href="/">{{ .Title }}</a></h1>
+   <h1><a href="/">{{ .Description }}</a></h1>
+</hgroup> -->
     <header role="banner">
         <hgroup>
-        <a href="/" id="super-logo"></a>
-        <h1><a href="/"> {{ .Title }} </a></h1>
+        <!-- <a href="/" id="super-logo"></a>
+        <h1><a href="/"> {{ .Title }} </a></h1> -->
         </hgroup>
     </header>
+    <nav role="navigation">
+        <ul class="subscription">
+            <li>
+                <a href="http://feeds.rucast.net/Umputun" rel="subscribe-rss" title="subs">"RSS"</a>
+            </li>
+        </ul>
+        <form action="https://google.com/search" method="get">
+            <fieldset role="search">
+                <input type="hidden" name="as_sitesearch" value="podcast.umputun.com">
+                <input class="search" type="text" name="q" results="0" placeholder="Поиск">
+            </fieldset><fieldset class="mobile-nav"><select><option value="">Navigate…</option><option value="https://podcast.umputun.com/">» Еженедельный подкаст от Umputun</option><option value="http://feeds.rucast.net/Umputun">» RSS</option></select></fieldset>
+        </form>
+        <ul class="main-navigation">
+            <li><a href="/"><h1>{{ .Title }}</h1></a></li>
+            <!-- <li><a href="/archives">Архивы</a></li> -->
+        </ul>
+    </nav>
 </header>
