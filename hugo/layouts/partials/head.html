@@ -21,24 +21,21 @@
   <link href="/favicon.ico" rel="shortcut icon">
   <link href="{{ .Site.Params.url }}" rel="canonical">
 
-  {{ $style := resources.Get "screen.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
-  <link rel="stylesheet" href="{{ $style.Permalink }}">
+  <link href="/stylesheets/screen.css" media="screen, projection" type="text/css" rel="stylesheet">
+  <link href="/stylesheets/likely.css" type="text/css" rel="stylesheet">
+
 
 </head>
 
 <body>
 
 <header role="banner">
-    <!-- <hgroup>
-  <h1><a href="/">{{ .Title }}</a></h1>
-   <h1><a href="/">{{ .Description }}</a></h1>
-</hgroup> -->
-    <header role="banner">
-        <hgroup>
-        <!-- <a href="/" id="super-logo"></a>
-        <h1><a href="/"> {{ .Title }} </a></h1> -->
-        </hgroup>
-    </header>
+    <hgroup>
+        <h1><a href="/">{{ .Title }}</a></h1>
+        <h1><a href="/">{{ .Description }}</a></h1>
+    </hgroup>
+    
+</header>    
     <nav role="navigation">
         <ul class="subscription">
             <li>
@@ -52,8 +49,18 @@
             </fieldset><fieldset class="mobile-nav"><select><option value="">Navigate…</option><option value="https://podcast.umputun.com/">» Еженедельный подкаст от Umputun</option><option value="http://feeds.rucast.net/Umputun">» RSS</option></select></fieldset>
         </form>
         <ul class="main-navigation">
-            <li><a href="/"><h1>{{ .Title }}</h1></a></li>
-            <!-- <li><a href="/archives">Архивы</a></li> -->
+            <li>
+                <a href="/">Podcasts</a>
+            </li>
+            <li>
+                <a href="/archives-zip">archives</a>
+            </li>
+            <li>
+                <a href="/feeds">subscribtions</a>
+            </li>
+            <li>
+                <a href="/faq">faq</a>
+            </li>
+
         </ul>
     </nav>
-</header>
