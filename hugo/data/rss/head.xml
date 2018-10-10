@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
+  <channel>
+    <title>{title}</title>
+    <link>{url}</link>
+    <language>ru</language>
+    <copyright>Umputun, Bobuk, Gray, Ksenks</copyright>
+    <itunes:author>Umputun, Bobuk, Gray, Ksenks</itunes:author>
+    <itunes:subtitle>{subtitle}</itunes:subtitle>
+    <description>{description}</description>
+    <itunes:explicit>no</itunes:explicit>
+
+    <itunes:owner>
+      <itunes:email>umputun@gmail.com</itunes:email>
+      <itunes:name>Umputun</itunes:name>
+    </itunes:owner>
+
+    <itunes:image href="{image}" />
+
+    <itunes:keywords>russian,umputun,chicago</itunes:keywords>
+
+    <itunes:subtitle>Еженедельный подкаст от Umputun (US, Чикаго)</itunes:subtitle>
+
+    <itunes:summary>Еженедельный подкаст от Umputun (US, Чикаго)</itunes:summary>
+
+    <itunes:category text="Society &amp; Culture">
+      <itunes:category text="Personal Journals" />
+    </itunes:category>
+    <itunes:category text="Technology">
+      <itunes:category text="Gadgets" />
+    </itunes:category>
+    <itunes:category text="Kids &amp; Family" />
+    <itunes:category text="Society &amp; Culture">
+      <itunes:category text="Philosophy" />
+    </itunes:category>
