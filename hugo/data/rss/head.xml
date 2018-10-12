@@ -4,32 +4,22 @@
     <title>{title}</title>
     <link>{url}</link>
     <language>ru</language>
-    <copyright>Umputun, Bobuk, Gray, Ksenks</copyright>
-    <itunes:author>Umputun, Bobuk, Gray, Ksenks</itunes:author>
-    <itunes:subtitle>{subtitle}</itunes:subtitle>
-    <description>{description}</description>
+    <copyright><![CDATA[Umputun]]></copyright>
+    <itunes:author><![CDATA[Umputun]]></itunes:author>
+    <itunes:subtitle><![CDATA[{subtitle}]]></itunes:subtitle>
+    <description><![CDATA[{description}]]></description>
     <itunes:explicit>no</itunes:explicit>
 
     <itunes:owner>
-      <itunes:email>umputun@gmail.com</itunes:email>
       <itunes:name>Umputun</itunes:name>
+      <itunes:email>umputun@gmail.com</itunes:email>
     </itunes:owner>
 
-    <itunes:image href="{image}" />
-
-    <itunes:keywords>russian,umputun,chicago</itunes:keywords>
-
-    <itunes:subtitle>Еженедельный подкаст от Umputun (US, Чикаго)</itunes:subtitle>
-
-    <itunes:summary>Еженедельный подкаст от Umputun (US, Чикаго)</itunes:summary>
+    <itunes:image href="http://podcast.umputun.com/images/umputun-art-big.jpg" />
 
     <itunes:category text="Society &amp; Culture">
-      <itunes:category text="Personal Journals" />
+      <itunes:category text="Personal Journals"/>
     </itunes:category>
-    <itunes:category text="Technology">
-      <itunes:category text="Gadgets" />
-    </itunes:category>
-    <itunes:category text="Kids &amp; Family" />
-    <itunes:category text="Society &amp; Culture">
-      <itunes:category text="Philosophy" />
-    </itunes:category>
+
+    <itunes:keywords>умпутун, umputun, подкаст умпутуна, еженедельный подкаст, подкаст из США, подкаст на русском, Интернет Радио, русский подкаст, russian podcast, uwp</itunes:keywords>
+
