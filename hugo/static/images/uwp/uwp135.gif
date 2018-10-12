@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru">
+
+<head>
+<link rel="alternate" type="application/rss+xml" title="RSS" href="/news.xml" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="/css/fatal.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Description" content="Fatal.Ru - Бесплатный хостинг" />
+<meta name="Keywords" content="бесплатный хостинг free hosting freehost cgi perl php c c++ python email ftp сервер server" />
+<meta name="cmsmagazine" content="ceede1e5665eec73a9c14e1ee72f0fac" />
+<title>
+
+Четыре ноль четыре
+ 
+ — Fatal.ru</title>
+<script type="text/javascript" src="/js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="/js/jquery.form.js"></script>
+
+<script type="text/javascript">var element_param = {color: 5};</script>
+<script type="text/javascript" charset="utf-8" src="http://element.ru/script.js"></script>
+
+<!--[if lte IE 7]><style>ul.threecols li, ul#topmenu li, ul.fourcols li { display:inline; }</style><![endif]-->
+</head>
+
+<body>
+    
+	
+	<div class="content">
+		<div class="container">
+						<ul id="topmenu"><noindex>
+				<li><a href="/reg/" rel="nofollow">Регистрация</a></li>
+				<li><a href="http://forum.fatal.ru/" rel="nofollow">Форум поддержки</a></li>
+
+				<li><a href="http://wiki.fatal.ru/" rel="nofollow">База знаний</a></li>
+				<li><a href="/reg/remind/" id="restorelink" rel="nofollow">Забыли пароль?</a></li>
+				</noindex>
+			</ul>
+
+			<h1><a href="/" rel="nofollow"><span>Fatal.ru</span> — бесплатный хостинг</a></h1>
+
+		</div>
+
+	    <div class="container">
+	    
+	
+
+
+    <div id="err404">
+				<h2>Четыре ноль четыре</h2>
+
+				<a href="javascript:window.history.go(-2)">Тут ничего нет</a>
+			
+<p>Это могло произойти по одной из следующих причин:</p>
+<p>—  Проверьте адрес страницы. Имейте ввиду, что адреса чувствительны к регистру<br />
+— Вы пришли по неверной ссылке<br />
+— Проект заблокирован за нарушение правил хостинга или удален по неактивности</p>
+			
+			</div>
+
+			</div>
+
+
+         
+
+	    </div>
+	
+    </div>
+	
+	
+    <div id="footer">
+        <div class="container">
+            <div class="copy"><a href="http://fatal.ru">© Сервер бесплатного хостинга «Fatal.ru», 2001-2012</a></div>
+            <div class="lnks"><center>
+            Профессиональное <a href='http://www.optimism.ru'>продвижение сайтов</a> в сжатые сроки от optimism.ru
+            </center>
+            </div>
+            <!-- 
+            <div class="lnks">Гугл, Рамблер, Яндекс <a href="http://optimism.ru/">оптимизация сайтов и продвижение</a> в интернет</div>
+            -->
+            <div id="counter">
+
+<noindex>
+        <!--LiveInternet counter--><script language="JavaScript"><!--
+document.write('<a href="http://www.liveinternet.ru/click" '+
+'target=_blank><img src="http://counter.yadro.ru/hit?t26.6;r'+
+escape(document.referrer)+((typeof(screen)=='undefined')?'':
+';s'+screen.width+'*'+screen.height+'*'+(screen.colorDepth?
+screen.colorDepth:screen.pixelDepth))+';'+Math.random()+
+'" alt="liveinternet.ru: показано число посетителей за сегодн\я" '+
+'border=0 width=1 height=1></a>')//--></script><!--/LiveInternet-->
+
+</noindex>
+                
+            </div>
+        </div>
+    </div>  
+</body>
+</html>
