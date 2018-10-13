@@ -2,7 +2,7 @@
 
 """
 Скрипт для генерации rss-файлов
-pip install pytoml mistune
+pip install pytoml mistune bs4
 """
 
 import glob
@@ -10,6 +10,7 @@ import subprocess
 
 import mistune
 import pytoml as toml
+from bs4 import BeautifulSoup
 from datetime import datetime
 
 POSTS_DIR = './content/posts'
@@ -17,12 +18,12 @@ SAVE_TO = '/srv/hugo/public'
 # SAVE_TO = '/tmp'
 DATA_RSS = './data/rss'
 FEEDS = [
-    {'name': 'podcast', 'title': 'Радио-Т',
-     'image': 'https://radio-t.com/images/cover.jpg', 'count': 20, 'size': True},
-    {'name': 'podcast-archives', 'title': 'Радио-Т Архивы',
-     'image': 'https://radio-t.com/images/cover_rt_big_archive.png', 'count': 1000, 'size': False},
-    {'name': 'podcast-archives-short', 'title': 'Радио-Т Архивы',
-     'image': 'https://radio-t.com/images/cover_rt_big_archive.png', 'count': 25, 'size': False},
+    {'name': 'podcast', 'title': 'Еженедельный подкаст от Umputun',
+     'image': 'http://podcast.umputun.com/images/umputun-art-big.jpg', 'count': 20, 'size': True},
+    {'name': 'podcast-archives', 'title': 'Еженедельный подкаст от Umputun (Архивы)',
+     'image': 'http://podcast.umputun.com/images/umputun-art-archives.jpg', 'count': 1000, 'size': False},
+    {'name': 'podcast-archives-short', 'title': 'Еженедельный подкаст от Umputun (Архивы)',
+     'image': 'http://podcast.umputun.com/images/umputun-art-archives.jpg', 'count': 25, 'size': False},
 ]
 
 
@@ -48,7 +49,7 @@ def parse_file(name, source):
 
 def get_mp3_size(mp3file):
     size = subprocess.check_output(
-        "curl -sI http://archive.rucast.net/radio-t/media/" + mp3file + " | grep Content-Length | awk '{print $2}'",
+        "curl -sI http://archive.rucast.net/uwp/media/" + mp3file + " | grep Content-Length | awk '{print $2}'",
         shell=True).decode("utf-8")
     size = size.replace("\r\n", "").replace("\n", "")
     print(mp3file, size)
@@ -111,11 +112,16 @@ def run():
                 if feed['count'] < 30 and feed['size'] is True:
                     fsize = get_mp3_size(attr('filename') + ".mp3")
 
-                item = body.format(title=post['config']['title'], content=markdown(post['data']),
+                url = '{}/{}'.format(mconfig['baseurl'], post['url']).replace("//p", "/p")
+                content = markdown(post['data'])
+                item = body.format(title=post['config']['title'],
+                                   content=content,
+                                   text=''.join(BeautifulSoup(content, features="html.parser").findAll(text=True)),
                                    filename=attr('filename'),
                                    filesize=fsize,
-                                   fixed_url='{}/{}'.format(mconfig['baseurl'], post['url']).replace("//p", "/p"),
-                                   date=date, image=attr('image'), url='{}/{}'.format(mconfig['baseurl'], post['url']))
+                                   url=url,
+                                   date=date,
+                                   image=attr('image'))
                 feed_posts.append(item)
 
         # склеиваем всё и сохраняем в файл
