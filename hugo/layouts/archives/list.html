@@ -3,13 +3,11 @@
 <div>
   <article role="article">
     <header>
-      <h1 class="entry-title">Категория: {{ .Title }}</h1>
+      <h1 class="entry-title">Архивы</h1>
     </header>
 
     <div id="blog-archives">
-      {{ $paginator := .Paginator 25000 }}
-
-      {{ range $paginator.Pages.GroupByDate "2006" }}
+      {{ range .Site.Pages.GroupByDate "2006" }}
         {{ $k := .Key }}
 
         {{ $.Scratch.Add $k 0 }}
@@ -23,7 +21,9 @@
           <h2>{{ .Key }}</h2>
 
           {{ range .Pages }}
-            {{ .Render "archive_li" }}
+            {{ if eq .Type "posts" }}
+                {{ .Render "archive_li" }}
+            {{ end }}
           {{ end }}
         {{ end }}
       {{ end }}

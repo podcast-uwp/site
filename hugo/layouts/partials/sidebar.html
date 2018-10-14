@@ -28,12 +28,12 @@
     <h2>Обратная связь</h2>
     <ul>
       <h15>
-      <li><a href="mailto:umputun@gmail.com">Послать email</a></li>
-      <li><a href="skype:umputun">Связаться по Skype</a></li>
-      <li><a href="xmpp:umputun@gmail.com">GTalk / Jabber</a></li>
-      <li><a href="http://twitter.com/umputun">Почитать твиты</a></li>
+      <li><a href="mailto:{{ .Site.Params.email }}">Послать email</a></li>
+      <li><a href="skype:{{ .Site.Params.skype }}">Связаться по Skype</a></li>
+      <li><a href="xmpp:{{ .Site.Params.xmpp }}">GTalk / Jabber</a></li>
+      <li><a href="http://twitter.com/{{ .Site.Params.twitter }}">Почитать твиты</a></li>
       <li><a href="https://plus.google.com/104578309919492528255/posts">Umputun на Google+</a></li>
-      <li><a href="https://t.me/umputun">Telegram</a></li>
+      <li><a href="https://t.me/{{ .Site.Params.telegram }}">Telegram</a></li>
       <li><a href="/formspring">Вопросы из FormSpring</a></li>
       </h15>
     </ul>
@@ -43,7 +43,7 @@
 	<center>
 	  <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 	    <input type="hidden" name="cmd" value="_s-xclick" />
-		<input type="hidden" name="hosted_button_id" value="QGY837B2CWFN4" />
+        <input type="hidden" name="hosted_button_id" value="{{ .Site.Params.paypal }}" />
 		<input type="image" src="/images/help-podcast.jpg" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" />
 		<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1" />
 	  </form>
@@ -52,11 +52,24 @@
 
   <section>
     <h2 class="dsq-widget-title">Комментарии</h2>
-    <script type="text/javascript" src="https://uwp.disqus.com/recent_comments_widget.js?num_items=18&hide_avatars=1&avatar_size=16&excerpt_length=140"></script>
+    <div class="remark42__last-comments" data-max="25"></div>
+    <script>
+      var remark_config = {
+        site_id: '{{ .Site.Params.remark42 }}',
+      };
+
+      (function() {
+        var d = document, s = d.createElement('script');
+        var baseurl = 'https://remark42.radio-t.com';
+        s.src = baseurl + '/web/last-comments.js';
+        s.type = 'text/javascript';
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
   </section>
 
   <section>
-    <a class="twitter-timeline" href="https://twitter.com/umputun" data-widget-id="351599583001985027" data-height="500"  data-tweet-limit="5">@umputun</a>
+    <a class="twitter-timeline" href="https://twitter.com/{{ .Site.Params.twitter }}" data-widget-id="{{ .Site.Params.twitterWidgetId }}" data-height="500"  data-tweet-limit="5">@{{ .Site.Params.twitter }}</a>
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
   </section>
 
