@@ -12,7 +12,7 @@ cd ..
 git pull
 git add .
 git commit -m "auto episode after $num_before" && git push
-ssh podcast.umputun.com "cd /srv/site.hugo && git pull && docker-compose run --rm hugo"
+ssh podcast.umputun.com "cd /srv/podcast-uwp && git pull && docker-compose -f docker-compose-publisher.yml run --rm hugo"
 
 num_after=`utils/get-next-uwp.py 2>/dev/null`
 #if [[ $num_before != $num_after ]]

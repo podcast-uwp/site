@@ -1,4 +1,5 @@
 #!/bin/sh
+# script runs inside hugo container
 echo " === generate pages ==="
 cd /srv/hugo
 hugo
