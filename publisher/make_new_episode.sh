@@ -1,4 +1,5 @@
 #!/bin/sh
+# this script runs from publisher directory
 
 currdir=`dirname $0`
 cd ${currdir}

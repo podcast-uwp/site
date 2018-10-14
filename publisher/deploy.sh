@@ -1,4 +1,6 @@
 #!/bin/sh
+# this script runs from publisher directory
+
 currdir=`dirname $0`
 echo "current dir=$currdir"
 cd ${currdir}
@@ -15,11 +17,8 @@ ssh podcast.umputun.com "cd /srv/ && /srv/publisher/make-alt-rss.sh"
 
 num_after=`utils/get-next-uwp.py 2>/dev/null`
 
-echo "generates archive.rss"
-/utils/build-rss-archive.py > ${UWP_HOME}/octopress/source/archives.rss
-
-echo "generates site"
-num_before=`${UWP_HOME}/publisher/utils/get-next-uwp.py 2>/dev/null`
+echo "generates rss"
+cd .. && hugo/generate_rss.py
 
 #if [[ $num_before != $num_after ]]
 #then
