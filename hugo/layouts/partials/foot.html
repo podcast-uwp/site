@@ -16,15 +16,6 @@
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));</script>
 
-
-  <script type="text/javascript">
-    (function() {
-      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
-      script.src = 'https://apis.google.com/js/plusone.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
-    })();
-  </script>
-
   <script type="text/javascript">
     (function(){
       var twitterWidgets = document.createElement('script');
@@ -38,11 +29,11 @@
   {{ if or (eq .URL "/") (eq (substr .URL 0 3) "/p/") }}
   <script>
     var remark_config = {
-      site_id: '{{ .Site.Params.remark42 }}',
+      site_id: '{{ .Site.Params.remark42SiteId }}',
     };
     (function() {
       var d = document, s = d.createElement('script');
-      var baseurl = 'https://remark42.radio-t.com';
+      var baseurl = '{{ .Site.Params.remark42Url }}';
 
       {{ if eq .URL "/" }}
       s.src = baseurl + '/web/counter.js';

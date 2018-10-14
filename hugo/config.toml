@@ -33,7 +33,9 @@ disableKinds = ["section"]
 
   twitter = "umputun"
   twitterWidgetId = "351604787772534785"
-  remark42 = "uwp"
+
+  remark42SiteId = "uwp"
+  remark42Url = "https://remark42.umputun.com"
 
   email = "umputun@gmail.com"
   skype = "umputun"
