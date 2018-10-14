@@ -16,10 +16,6 @@ ssh podcast.umputun.com "cd /srv/site.hugo && git pull && docker-compose run --r
 ssh podcast.umputun.com "cd /srv/ && /srv/publisher/make-alt-rss.sh"
 
 num_after=`utils/get-next-uwp.py 2>/dev/null`
-
-echo "generates rss"
-cd .. && hugo/generate_rss.py
-
 #if [[ $num_before != $num_after ]]
 #then
 #  link=`utils/get-last-uwp-link.py`
