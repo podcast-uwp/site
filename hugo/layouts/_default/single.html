@@ -16,7 +16,6 @@
         <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}" pubdate data-updated="true">
             {{ .Date.Format "2006-01-02" }}
         </time>
-        | <a href="#disqus_thread">Comments</a>
       </p>
     </header>
 
@@ -43,8 +42,7 @@
         </span>
 
         <div class="sharing">
-            <a href="http://twitter.com/share" class="twitter-share-button" data-url="{{ .Permalink }}" data-via="{{ .Site.Params.twitter }}" data-counturl="{{ .Permalink }}" >Tweet</a> <!-- TODO invalid sharing -->
-          <div class="g-plusone" data-size="medium"></div>
+            <a href="http://twitter.com/share" class="twitter-share-button" data-url="{{ .Permalink }}" data-via="{{ .Site.Params.twitter }}" data-counturl="{{ .Permalink }}" >Tweet</a>
         </div>
 
         {{ if .Next }}
@@ -62,10 +60,14 @@
   </article>
 
   <section>
-<!--TODO add coments-->
+    <div id="remark42">
+      <noscript>
+        Please enable JavaScript to view the comments powered by Remark42.
+      </noscript>
+    </div>
   </section>
 </div>
 
 {{ partial "sidebar.html" . }}
 
-{{ partial "footer.html" . }}
+{{ partial "foot.html" . }}
