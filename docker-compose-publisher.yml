@@ -10,4 +10,4 @@ services:
            max-file: "5"
       volumes:
             - ./hugo:/srv/hugo
-            - ./public:/srv/hugo/public
+            - ./hugo/public:/srv/hugo/public
