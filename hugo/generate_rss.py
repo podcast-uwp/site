@@ -20,6 +20,8 @@ DATA_RSS = './data/rss'
 FEEDS = [
     {'name': 'podcast', 'title': 'Еженедельный подкаст от Umputun',
      'image': 'http://podcast.umputun.com/images/umputun-art-big.jpg', 'count': 20, 'size': True},
+    {'name': 'podcast-failback', 'title': 'Еженедельный подкаст от Umputun',
+     'image': 'http://podcast.umputun.com/images/umputun-art-big.jpg', 'count': 20, 'size': True},
     {'name': 'podcast-archives', 'title': 'Еженедельный подкаст от Umputun (Архивы)',
      'image': 'http://podcast.umputun.com/images/umputun-art-archives.jpg', 'count': 1000, 'size': False},
     {'name': 'podcast-archives-short', 'title': 'Еженедельный подкаст от Umputun (Архивы)',

@@ -1,0 +1,73 @@
+{{ partial "head.html" . }}
+
+<div>
+  <article class="hentry" role="article">
+    <header>
+      <h2 class="entry-title">{{ .Title }}</h2>
+
+      <meta name="twitter:card" content="summary">
+      <meta name="twitter:site" content="@{{ .Site.Params.twitter }}">
+      <meta name="twitter:url" content="{{ .Site.Params.url }}{{ .URL }}">
+      <meta name="twitter:title" content="{{ .Title }}">
+      <meta name="twitter:description" content="{{ .Site.Params.twitterCardDescription }}">
+      {{ with .Params.image }}<meta name="twitter:image" content="{{ . }}">{{ end }}
+
+      <p class="meta">
+        <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}" pubdate data-updated="true">
+            {{ .Date.Format "2006-01-02" }}
+        </time>
+      </p>
+    </header>
+
+    <div class="entry-content">
+      {{ .Content }}
+    </div>
+
+    <footer>
+      <p class="meta">
+        <span class="byline author vcard">
+          <span class="fn">
+            {{ .Site.Author.name }}
+          </span>
+        </span>
+
+        <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}" pubdate data-updated="true">
+            {{ .Date.Format "2006-01-02" }}
+        </time>
+
+        <span class="categories">
+          {{ range $category := .Params.categories }}
+            <a class="category" href="/categories/{{ $category }}">{{ $category }}</a>
+          {{ end }}
+        </span>
+
+        <div class="sharing">
+            <a href="http://twitter.com/share" class="twitter-share-button" data-url="{{ .Permalink }}" data-via="{{ .Site.Params.twitter }}" data-counturl="{{ .Permalink }}" >Tweet</a>
+        </div>
+
+        {{ if .Next }}
+          <a class="basic-alignment left" href="{{ .Next.Permalink }}" title="Previous Post: {{ .Next.Title }}">&laquo; {{ .Next.Title }}</a>
+        {{ end }}
+
+        {{ if .Prev }}
+          <a class="basic-alignment right" href="{{ .Prev.Permalink }}" title="Next Post: {{ .Prev.Title }}">{{ .Prev.Title }} &raquo;</a>
+        {{ end }}
+      </p>
+
+      <center><em>Перед тем, как задать вопрос, проверьте — может быть, ответ на него <a href="/faq">уже есть</a></em></center>
+
+    </footer>
+  </article>
+
+  <section>
+    <div id="remark42">
+      <noscript>
+        Please enable JavaScript to view the comments powered by Remark42.
+      </noscript>
+    </div>
+  </section>
+</div>
+
+{{ partial "sidebar.html" . }}
+
+{{ partial "foot.html" . }}

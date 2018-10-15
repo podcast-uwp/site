@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	<title>Parex &shy; 404 kļūda! Norādītā adrese nav atrasta</title>
+	<link href="/favicon.ico" type="image/x-icon" rel="icon" /><link href="/favicon.ico" type="image/x-icon" rel="shortcut icon" /><link href="http://www.parex.lv/.rss" type="application/rss+xml" rel="alternate" title="Jaunākās ziņas" /><link rel="stylesheet" type="text/css" href="/ccss/bf475496.1295541173.css"/>
+<script type="text/javascript" src="/cjs/999c0720.1295541211.js"></script>
+
+	
+<script type="text/javascript">
+
+ var _gaq = _gaq || [];
+ _gaq.push(['_setAccount', 'UA-20843755-1']);
+ _gaq.push(['_trackPageview']);
+
+ (function() {
+   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+ })();
+
+</script>
+
+	<script type="text/javascript">
+		var webroot = '/';
+		var lang = '';
+	</script>
+
+	<!--[if IE 7]>
+	<style type="text/css">
+		/* IE7 ir "īpašs" */
+		table#board td {
+			padding-right: 5px;
+		}
+	</style>
+	<![endif]-->
+</head>
+
+<body class="l-">
+	<div id="header" class="clearfix">
+		
+<a href="/" id="logo"><img src="/img/logo.png" alt="Parex" /></a>
+<div id="header-links">
+	<ul id="languages">
+		
+				<li class="first">
+			<a href="/lv">Latviski</a>		</li>
+				<li>
+			<a href="/ru">По-русски</a>		</li>
+				<li>
+			<a href="/en">English</a>		</li>
+			</ul>
+
+		<ul id="highlight-nav">
+				<li>
+			<a href="/lv">Sākums</a>		</li>
+				<li>
+			<a href="/lv/par-banku/kontakti-1">Kontakti</a>		</li>
+			</ul>
+	
+	<form id="SearchViewForm" method="post" action="/lv/search" accept-charset="utf-8"><div style="display:none;"><input type="hidden" name="_method" value="POST" /></div><div class="input text"><label for="SearchPhrase">Meklēt...</label><input name="data[Search][phrase]" type="text" id="SearchPhrase" /></div><div class="submit"><input type="submit" value="Meklēt" /></div></form></div>
+		<ul id="navigation">
+			<li class="first">
+			<a href="/lv/par-banku/par-mums">Par mums</a>		</li>
+			<li>
+			<a href="/lv/investoriem/akcionari">Investoriem</a>		</li>
+			<li>
+			<a href="/lv/jaunumi">Jaunumi</a>		</li>
+			<li>
+			<a href="/lv/kreditnemejiem">Kredītņēmējiem</a>		</li>
+			<li>
+			<a href="/lv/estate">Nekustamie īpašumi</a>		</li>
+	</ul>	</div>
+
+		<div id="head">
+		<div id="breadcrumbs">
+	</div>
+
+<h1>
+	404 kļūda! Norādītā adrese nav atrasta</h1>	</div>
+	
+	
+
+
+
+	<div id="content" class="clearfix">
+		
+					
+
+		
+<div class="block">
+	<div class="content">
+		<h3>Lai atrastu meklēto informāciju, mēģiniet sekojošo:</h3>
+		<ul>
+			<li>
+				Ja esat ievadījis interneta adresi manuāli, pārbaudiet, vai ievadītā adrese (URL) ir uzrakstīta pareizi;			</li>
+			<li>
+				Atveriet mājaslapas sākumlapu vai lapas karti un meklējiet interesējošo sadaļu.			</li>
+		</ul>
+		Ja domājat, ka šī kļūda ir radusies mūsu vainas dēļ, lūdzam par to ziņot mājas lapas administratoram.	</div>
+</div>	</div>
+
+	
+	<div id="footer" class="clearfix">
+			<ul>
+					<li class="first">
+				<a href="/lv/par-banku/par-mums" class="">Par mums</a>			</li>
+					<li>
+				<a href="/lv/investoriem/akcionari" class="">Investoriem</a>			</li>
+					<li>
+				<a href="/lv/jaunumi" class="">Jaunumi</a>			</li>
+					<li>
+				<a href="/lv/kreditnemejiem" class="">Kredītņēmējiem</a>			</li>
+					<li>
+				<a href="/lv/estate" class="">Nekustamie īpašumi</a>			</li>
+			</ul>
+
+<div id="footer-info">
+	AS "Parex banka", Republikas laukums 2A, LV-1522, Rīga, Latvija	<br/>
+	Telefons +371 6 777 9100, Fakss: +371 6 777 9101, e-mail: <a href="mailto:86c291719564dbf">86c291719564dbf</a></div>
+
+<div id="dev">
+	Izstrādāts	<a href="http://mendo.lv">m<span>e</span>ndo</a></div>	</div>
+
+	<script type="text/javascript">
+		var encoded_emails = {"86c291719564dbf":"cGFyZXhAcGFyZXgubHY="};
+	</script>
+</body>
+</html>

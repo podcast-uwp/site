@@ -11,6 +11,8 @@ paginatePath = "page"
 publishdir = "public"
 ignoreFiles = [ "\\.xml$"]
 
+disableKinds = ["section"]
+
 [author]
   name = "umputun"
 
@@ -31,7 +33,16 @@ ignoreFiles = [ "\\.xml$"]
 
   twitter = "umputun"
   twitterWidgetId = "351604787772534785"
-  remark42 = "uwp"
+
+  remark42SiteId = "uwp"
+  remark42Url = "https://remark42.umputun.com"
+
+  email = "umputun@gmail.com"
+  skype = "umputun"
+  xmpp = "umputun@gmail.com"
+  telegram = "umputun"
+
+  paypal = "QGY837B2CWFN4"
 
 [blackfriday]
   extensions = ["hardLineBreak"]

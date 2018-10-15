@@ -1,0 +1,102 @@
+version: '2'
+
+services:
+
+  nginx:
+    image: umputun/nginx-le:latest
+    container_name: nginx
+    hostname: nginx
+    restart: always
+
+    logging: &default_logging
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "5"
+
+    volumes:
+      - ./etc/ssl:/etc/nginx/ssl
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./services.conf:/etc/nginx/service.conf
+      - ./log:/var/log/nginx
+      - ./hugo/public:/var/www
+      - ./var/stats:/var/stats
+      - ./var/media/:/var/media
+    ports:
+      - "80:80"
+      - "443:443"
+
+    environment:
+      - TZ=America/Chicago
+      - LETSENCRYPT=true
+      - LE_EMAIL=umputun@gmail.com
+      - LE_FQDN=podcast.umputun.com,remark42.umputun.com
+
+
+  remark42:
+    image: umputun/remark42:master
+    container_name: "remark42"
+    hostname: "remark42"
+    restart: always
+    logging: *default_logging
+
+    environment:
+      - MHOST
+      - USER=umputun
+      - SECRET=$REMARK_SECRET
+      - REMARK_URL=https://remark42.umputun.com
+      - SITE=uwp
+      - ADMIN_SHARED_ID=github_ef0f706a79cc24b17bbbb374cd234a691d034128
+      - ADMIN_SHARED_EMAIL=remark42@umputun.com
+      - STORE_BOLT_PATH=/srv/var/db
+      - BACKUP_PATH=/srv/var/backup
+      - IMG_PROXY=true
+      - AVATAR_RESIZE=48
+      - LOW_SCORE=-10
+      - CRITICAL_SCORE=-15
+      - CACHE_MAX_SIZE=50000000
+      - CACHE_MAX_VALUE=200000
+      - CACHE_MAX_ITEMS=1000
+      - AUTH_GITHUB_CID
+      - AUTH_GITHUB_CSEC
+      - AUTH_GOOGLE_CID
+      - AUTH_GOOGLE_CSEC
+      - AUTH_YANDEX_CID
+      - AUTH_YANDEX_CSEC
+      - AUTH_FACEBOOK_CID
+      - AUTH_FACEBOOK_CSEC
+    volumes:
+      - ./var/remark42:/srv/var
+
+  mongo:
+    image: umputun/mongo-auth
+    hostname: mongo
+    restart: always
+    container_name: mongo
+    logging: *default_logging
+
+    environment:
+      - MONGO_PASSWD
+    volumes:
+      - ./var/mongo:/data/db
+    ports:
+      - "27017:27017"
+
+  logger:
+    image: umputun/logger
+    container_name: "logger"
+    hostname: "logger"
+    restart: always
+    logging: *default_logging
+    environment:
+      - MHOST
+      - LOG_FILES=true
+      - LOG_SYSLOG=false
+      - EXCLUDE=monit,logger
+      - MAX_SIZE=50
+      - FLUSH_RECS=1000
+      - FLUSH_TIME=1s
+      - DEBUG=true
+    volumes:
+      - ./logs:/srv/logs
+      - /var/run/docker.sock:/var/run/docker.sock

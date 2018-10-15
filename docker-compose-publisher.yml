@@ -1,0 +1,13 @@
+version: '2'
+services:
+    hugo:
+      image: hugo.uwp
+      build: .
+      logging:
+       driver: json-file
+       options:
+           max-size: "10m"
+           max-file: "5"
+      volumes:
+            - ./hugo:/srv/hugo
+            - ./hugo/public:/srv/hugo/public
