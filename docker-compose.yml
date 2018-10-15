@@ -16,7 +16,8 @@ services:
 
     volumes:
       - ./etc/ssl:/etc/nginx/ssl
-      - ./nginx.conf:/etc/nginx/service.conf
+      - ./nginx.conf/etc/nginx/nginx.conf
+      - ./services.conf:/etc/nginx/service.conf
       - ./log:/var/log/nginx
       - ./hugo/public:/var/www
       - ./var/stats:/var/stats
