@@ -3,13 +3,14 @@
 """
 
 import glob
+from collections import defaultdict
 from datetime import datetime
 
 SAVE_DIR = './content/posts'
 SOURCE_DIR = '../octopress/source/_posts'
 
 
-def parse_file(name, source):
+def parse_file(name, source, file_counter):
     data = list()
     config_lines = list()
     config_attr = 0
@@ -33,7 +34,7 @@ def parse_file(name, source):
         if not len(config_line):
             continue
 
-        config = config_line.split(': ')
+        config = config_line.split(': ', 1)
         if len(config) != 2:
             print('Error (parse config):', config, config_line)
             continue
@@ -61,6 +62,13 @@ def parse_file(name, source):
     # удаление даты и имени файла
     name = '-'.join(chunks[3:])
 
+    file_counter[name] += 1
+    if file_counter[name] != 0:
+        new_source.append("aliases:")
+        new_source.append("    - /p{}/{}/{}/{name}/".format(*chunks[:3], name=name))
+        new_source.append("    - /p{}/{}/{}/{name}".format(*chunks[:3], name=name))
+        name += str(file_counter[name])
+
     new_source.append('+++\n')
 
     # содержание поста
@@ -75,10 +83,11 @@ def parse_file(name, source):
 
 
 def run():
+    file_counter = defaultdict(lambda: -1)
     for post_file in glob.glob(SOURCE_DIR + '/*.markdown'):
         name = post_file.replace(SOURCE_DIR, '').replace('.markdown', '').replace('\\', '')
         with open(post_file, encoding='utf-8') as h:
-            parse_file(name, h.read().splitlines())
+            parse_file(name, h.read().splitlines(), file_counter)
 
 
 if __name__ == '__main__':
