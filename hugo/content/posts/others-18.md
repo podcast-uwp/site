@@ -2,9 +2,10 @@
 title = "Разойтись, что–бы встретиться."
 date = "2008-09-01T18:11:00"
 categories = ["others"]
-aliases:
-    - /p/2008/09/01/others-/
-    - /p/2008/09/01/others-
+aliases = [
+    "/p/2008/09/01/others-/",
+    "/p/2008/09/01/others-"
+]
 +++
 
 

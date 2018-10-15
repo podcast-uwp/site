@@ -2,9 +2,10 @@
 title = "Интервью. **Radio ShOOm** - Good Night Show"
 date = "2005-10-15T00:56:00"
 categories = ["others"]
-aliases:
-    - /p/2005/10/15/others-/
-    - /p/2005/10/15/others-
+aliases = [
+    "/p/2005/10/15/others-/",
+    "/p/2005/10/15/others-"
+]
 +++
 
 

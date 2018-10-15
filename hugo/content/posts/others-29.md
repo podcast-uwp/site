@@ -2,9 +2,10 @@
 title = "Сходил в гости к engsuccess.ru"
 date = "2012-07-30T13:02:00"
 categories = ["others"]
-aliases:
-    - /p/2012/07/30/others-/
-    - /p/2012/07/30/others-
+aliases = [
+    "/p/2012/07/30/others-/",
+    "/p/2012/07/30/others-"
+]
 +++
 
 

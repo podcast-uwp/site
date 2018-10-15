@@ -2,9 +2,10 @@
 title = "Интервью для Viewtr.com"
 date = "2010-10-08T10:14:00"
 categories = ["others"]
-aliases:
-    - /p/2010/10/08/others-/
-    - /p/2010/10/08/others-
+aliases = [
+    "/p/2010/10/08/others-/",
+    "/p/2010/10/08/others-"
+]
 +++
 
 

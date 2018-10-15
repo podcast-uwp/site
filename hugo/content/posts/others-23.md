@@ -2,9 +2,10 @@
 title = "Я в гостях у эксперт-шоу «Рунетология»"
 date = "2009-06-22T11:19:00"
 categories = ["others"]
-aliases:
-    - /p/2009/06/22/others-/
-    - /p/2009/06/22/others-
+aliases = [
+    "/p/2009/06/22/others-/",
+    "/p/2009/06/22/others-"
+]
 +++
 
 

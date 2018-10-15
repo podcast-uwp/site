@@ -2,9 +2,10 @@
 title = "Еще пара слов про блокированные комменты"
 date = "2009-01-22T09:05:00"
 categories = ["others"]
-aliases:
-    - /p/2009/01/22/others-/
-    - /p/2009/01/22/others-
+aliases = [
+    "/p/2009/01/22/others-/",
+    "/p/2009/01/22/others-"
+]
 +++
 
 

@@ -2,9 +2,10 @@
 title = "По малому радиусу"
 date = "2009-06-22T05:53:00"
 categories = ["video"]
-aliases:
-    - /p/2009/06/22/video-/
-    - /p/2009/06/22/video-
+aliases = [
+    "/p/2009/06/22/video-/",
+    "/p/2009/06/22/video-"
+]
 +++
 
 

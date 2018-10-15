@@ -64,9 +64,10 @@ def parse_file(name, source, file_counter):
 
     file_counter[name] += 1
     if file_counter[name] != 0:
-        new_source.append("aliases:")
-        new_source.append("    - /p{}/{}/{}/{name}/".format(*chunks[:3], name=name))
-        new_source.append("    - /p{}/{}/{}/{name}".format(*chunks[:3], name=name))
+        new_source.append("aliases = [")
+        new_source.append("    \"/p{}/{}/{}/{name}/\",".format(*chunks[:3], name=name))
+        new_source.append("    \"/p{}/{}/{}/{name}\"".format(*chunks[:3], name=name))
+        new_source.append("]")
         name += str(file_counter[name])
 
     new_source.append('+++\n')

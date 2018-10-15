@@ -2,9 +2,10 @@
 title = "Почему все так медленно ?"
 date = "2009-04-07T15:45:00"
 categories = ["others"]
-aliases:
-    - /p/2009/04/07/others-/
-    - /p/2009/04/07/others-
+aliases = [
+    "/p/2009/04/07/others-/",
+    "/p/2009/04/07/others-"
+]
 +++
 
 

@@ -2,9 +2,10 @@
 title = "Переход на новую систему"
 date = "2008-08-09T17:53:00"
 categories = ["others"]
-aliases:
-    - /p/2008/08/09/others-/
-    - /p/2008/08/09/others-
+aliases = [
+    "/p/2008/08/09/others-/",
+    "/p/2008/08/09/others-"
+]
 +++
 
 

@@ -2,9 +2,10 @@
 title = "Сайт перехал"
 date = "2011-03-09T13:36:00"
 categories = ["others"]
-aliases:
-    - /p/2011/03/09/others-/
-    - /p/2011/03/09/others-
+aliases = [
+    "/p/2011/03/09/others-/",
+    "/p/2011/03/09/others-"
+]
 +++
 
 

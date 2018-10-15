@@ -2,9 +2,10 @@
 title = "Интервью. Russian Apple Podcast"
 date = "2005-10-02T20:00:00"
 categories = ["others"]
-aliases:
-    - /p/2005/10/02/others-/
-    - /p/2005/10/02/others-
+aliases = [
+    "/p/2005/10/02/others-/",
+    "/p/2005/10/02/others-"
+]
 +++
 
 

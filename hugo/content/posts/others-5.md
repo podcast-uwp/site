@@ -2,9 +2,10 @@
 title = "Почему на работает russianpodcasting.ru ?"
 date = "2005-11-10T06:34:00"
 categories = ["others"]
-aliases:
-    - /p/2005/11/10/others-/
-    - /p/2005/11/10/others-
+aliases = [
+    "/p/2005/11/10/others-/",
+    "/p/2005/11/10/others-"
+]
 +++
 
 

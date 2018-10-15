@@ -2,9 +2,10 @@
 title = "Впечатления очевидца"
 date = "2008-08-27T10:08:00"
 categories = ["others"]
-aliases:
-    - /p/2008/08/27/others-/
-    - /p/2008/08/27/others-
+aliases = [
+    "/p/2008/08/27/others-/",
+    "/p/2008/08/27/others-"
+]
 +++
 
 

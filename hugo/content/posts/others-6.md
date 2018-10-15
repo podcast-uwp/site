@@ -2,9 +2,10 @@
 title = "Архивы подкастов"
 date = "2005-11-17T13:38:00"
 categories = ["others"]
-aliases:
-    - /p/2005/11/17/others-/
-    - /p/2005/11/17/others-
+aliases = [
+    "/p/2005/11/17/others-/",
+    "/p/2005/11/17/others-"
+]
 +++
 
 

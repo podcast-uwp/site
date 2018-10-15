@@ -2,9 +2,10 @@
 title = "Добавление в секции \"обратная связь\" ;)"
 date = "2007-04-14T09:51:00"
 categories = ["others"]
-aliases:
-    - /p/2007/04/14/others-/
-    - /p/2007/04/14/others-
+aliases = [
+    "/p/2007/04/14/others-/",
+    "/p/2007/04/14/others-"
+]
 +++
 
 

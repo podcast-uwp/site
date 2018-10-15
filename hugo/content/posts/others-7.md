@@ -2,9 +2,10 @@
 title = "Пилотный выпуск Daily Geek Show в эфире"
 date = "2005-12-11T12:19:00"
 categories = ["others"]
-aliases:
-    - /p/2005/12/11/others-/
-    - /p/2005/12/11/others-
+aliases = [
+    "/p/2005/12/11/others-/",
+    "/p/2005/12/11/others-"
+]
 +++
 
 

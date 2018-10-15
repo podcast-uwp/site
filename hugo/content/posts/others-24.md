@@ -2,9 +2,10 @@
 title = "Задерживается прибытием"
 date = "2009-09-10T17:26:00"
 categories = ["others"]
-aliases:
-    - /p/2009/09/10/others-/
-    - /p/2009/09/10/others-
+aliases = [
+    "/p/2009/09/10/others-/",
+    "/p/2009/09/10/others-"
+]
 +++
 
 

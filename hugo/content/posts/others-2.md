@@ -2,9 +2,10 @@
 title = "Расширения к выпуску №24"
 date = "2005-10-13T20:17:00"
 categories = ["others"]
-aliases:
-    - /p/2005/10/13/others-/
-    - /p/2005/10/13/others-
+aliases = [
+    "/p/2005/10/13/others-/",
+    "/p/2005/10/13/others-"
+]
 +++
 
 
