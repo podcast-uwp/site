@@ -16,7 +16,7 @@ services:
 
     volumes:
       - ./etc/ssl:/etc/nginx/ssl
-      - ./nginx.conf/etc/nginx/nginx.conf
+      - ./nginx.conf:/etc/nginx/nginx.conf
       - ./services.conf:/etc/nginx/service.conf
       - ./log:/var/log/nginx
       - ./hugo/public:/var/www
@@ -30,7 +30,7 @@ services:
       - TZ=America/Chicago
       - LETSENCRYPT=true
       - LE_EMAIL=umputun@gmail.com
-      - LE_FQDN=podcast.umputun.com,rucast.net
+      - LE_FQDN=podcast.umputun.com,remark42.umputun.com
 
 
   remark42:
