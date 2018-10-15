@@ -1,7 +1,6 @@
 +++
 title = "UWP - Выпуск 410"
 date = "2018-10-08T18:30"
-comments: true
 categories = ["podcast"]
 image = "https://podcast.umputun.com/images/uwp/uwp410.jpg"
 filename = "ump_podcast410"
