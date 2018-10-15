@@ -2741,6 +2741,10 @@ article em {
     font-size: 0.7em
 }
 
+article header p.meta {
+    font-size: 0.7em
+}
+
 /* OVERRIDE REMARK42 STYLES */
 #remark42 .comment_view_preview .comment__username {
     color: #526f9a !important;
