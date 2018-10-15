@@ -2,9 +2,10 @@
 title = "Под мостом, по Чикаго"
 date = "2009-06-07T19:18:00"
 categories = ["video"]
-aliases:
-    - /p/2009/06/07/video-/
-    - /p/2009/06/07/video-
+aliases = [
+    "/p/2009/06/07/video-/",
+    "/p/2009/06/07/video-"
+]
 +++
 
 

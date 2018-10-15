@@ -2,9 +2,10 @@
 title = "Вот такие нано-технологии"
 date = "2010-01-01T12:13:00"
 categories = ["video"]
-aliases:
-    - /p/2010/01/01/video-/
-    - /p/2010/01/01/video-
+aliases = [
+    "/p/2010/01/01/video-/",
+    "/p/2010/01/01/video-"
+]
 +++
 
 

@@ -2,9 +2,10 @@
 title = "Причина задержки подкастов"
 date = "2006-05-02T17:54:00"
 categories = ["others"]
-aliases:
-    - /p/2006/05/02/others-/
-    - /p/2006/05/02/others-
+aliases = [
+    "/p/2006/05/02/others-/",
+    "/p/2006/05/02/others-"
+]
 +++
 
 

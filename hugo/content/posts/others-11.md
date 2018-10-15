@@ -2,9 +2,10 @@
 title = "Моя версия rpod.ru"
 date = "2006-07-21T11:09:00"
 categories = ["others"]
-aliases:
-    - /p/2006/07/21/others-/
-    - /p/2006/07/21/others-
+aliases = [
+    "/p/2006/07/21/others-/",
+    "/p/2006/07/21/others-"
+]
 +++
 
 

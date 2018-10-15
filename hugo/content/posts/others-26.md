@@ -2,9 +2,10 @@
 title = "Рабочие места: студия, домашний офис ..."
 date = "2010-04-26T07:27:00"
 categories = ["others"]
-aliases:
-    - /p/2010/04/26/others-/
-    - /p/2010/04/26/others-
+aliases = [
+    "/p/2010/04/26/others-/",
+    "/p/2010/04/26/others-"
+]
 +++
 
 

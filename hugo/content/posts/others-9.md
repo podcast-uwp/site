@@ -2,9 +2,10 @@
 title = "Новогодний выпуск в пятницу-13"
 date = "2006-01-14T06:41:00"
 categories = ["others"]
-aliases:
-    - /p/2006/01/14/others-/
-    - /p/2006/01/14/others-
+aliases = [
+    "/p/2006/01/14/others-/",
+    "/p/2006/01/14/others-"
+]
 +++
 
 

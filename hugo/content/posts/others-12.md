@@ -2,9 +2,10 @@
 title = "Музыка из UWP 1"
 date = "2007-02-28T19:00:00"
 categories = ["others"]
-aliases:
-    - /p/2007/02/28/others-/
-    - /p/2007/02/28/others-
+aliases = [
+    "/p/2007/02/28/others-/",
+    "/p/2007/02/28/others-"
+]
 +++
 
 

@@ -2,9 +2,10 @@
 title = "Вопросы продвинутого чайника"
 date = "2005-10-23T13:18:00"
 categories = ["others"]
-aliases:
-    - /p/2005/10/23/others-/
-    - /p/2005/10/23/others-
+aliases = [
+    "/p/2005/10/23/others-/",
+    "/p/2005/10/23/others-"
+]
 +++
 
 

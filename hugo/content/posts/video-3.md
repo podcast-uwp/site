@@ -2,9 +2,10 @@
 title = "Неудачная поездка на работу"
 date = "2009-06-14T19:17:00"
 categories = ["video"]
-aliases:
-    - /p/2009/06/14/video-/
-    - /p/2009/06/14/video-
+aliases = [
+    "/p/2009/06/14/video-/",
+    "/p/2009/06/14/video-"
+]
 +++
 
 

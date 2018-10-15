@@ -2,9 +2,10 @@
 title = "Зима, снег, едем"
 date = "2011-02-03T18:09:00"
 categories = ["video"]
-aliases:
-    - /p/2011/02/03/video-/
-    - /p/2011/02/03/video-
+aliases = [
+    "/p/2011/02/03/video-/",
+    "/p/2011/02/03/video-"
+]
 +++
 
 

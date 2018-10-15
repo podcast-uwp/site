@@ -2,9 +2,10 @@
 title = "Краткий курс молодого подкастера"
 date = "2010-02-20T20:15:00"
 categories = ["others"]
-aliases:
-    - /p/2010/02/20/others-/
-    - /p/2010/02/20/others-
+aliases = [
+    "/p/2010/02/20/others-/",
+    "/p/2010/02/20/others-"
+]
 +++
 
 

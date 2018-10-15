@@ -2,9 +2,10 @@
 title = "Мы доехали!"
 date = "2009-06-24T05:42:00"
 categories = ["video"]
-aliases:
-    - /p/2009/06/24/video-/
-    - /p/2009/06/24/video-
+aliases = [
+    "/p/2009/06/24/video-/",
+    "/p/2009/06/24/video-"
+]
 +++
 
 

@@ -2,9 +2,10 @@
 title = "И настанет просветление"
 date = "2009-06-28T11:36:00"
 categories = ["video"]
-aliases:
-    - /p/2009/06/28/video-/
-    - /p/2009/06/28/video-
+aliases = [
+    "/p/2009/06/28/video-/",
+    "/p/2009/06/28/video-"
+]
 +++
 
 

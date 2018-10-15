@@ -2,9 +2,10 @@
 title = "Сходил в гости в подкаст \"Свобода мысли\""
 date = "2012-08-19T16:26:00"
 categories = ["others"]
-aliases:
-    - /p/2012/08/19/others-/
-    - /p/2012/08/19/others-
+aliases = [
+    "/p/2012/08/19/others-/",
+    "/p/2012/08/19/others-"
+]
 +++
 
 

@@ -2,9 +2,10 @@
 title = "Поездка на Запад"
 date = "2012-03-22T19:25:00"
 categories = ["video"]
-aliases:
-    - /p/2012/03/22/video-/
-    - /p/2012/03/22/video-
+aliases = [
+    "/p/2012/03/22/video-/",
+    "/p/2012/03/22/video-"
+]
 +++
 
 

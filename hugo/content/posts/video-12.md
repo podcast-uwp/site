@@ -2,9 +2,10 @@
 title = "Садись, прокачу!"
 date = "2010-02-16T20:06:00"
 categories = ["video"]
-aliases:
-    - /p/2010/02/16/video-/
-    - /p/2010/02/16/video-
+aliases = [
+    "/p/2010/02/16/video-/",
+    "/p/2010/02/16/video-"
+]
 +++
 
 
