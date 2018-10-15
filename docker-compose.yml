@@ -61,6 +61,8 @@ services:
       - AUTH_GITHUB_CSEC
       - AUTH_GOOGLE_CID
       - AUTH_GOOGLE_CSEC
+      - AUTH_YANDEX_CID
+      - AUTH_YANDEX_CSEC
       - AUTH_FACEBOOK_CID
       - AUTH_FACEBOOK_CSEC
     volumes:
