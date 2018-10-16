@@ -1,5 +1,6 @@
 public/
 hugo/public/
 var/
-logs/
+logs
 updater.log
+etc
