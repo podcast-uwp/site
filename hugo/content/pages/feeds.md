@@ -14,7 +14,7 @@ url = "feeds"
 
 Прочие фиды:
 
-- [Подкаст нс spotify](https://open.spotify.com/show/5drpwDKadrsnF0DLm8NLRl)
+- [Подкаст на spotify](https://open.spotify.com/show/5drpwDKadrsnF0DLm8NLRl)
 - [Подписка на все комментарии](https://remark42.umputun.com/api/v1/rss/site?site=uwp)
 - [Весь Umputun в iTunes Store](http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=307038753)
 
