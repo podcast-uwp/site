@@ -3,7 +3,7 @@ copyright = "Creative Commons - Attribution, Noncommercial, No Derivative Works 
 
 baseurl = "https://podcast.umputun.com"
 
-title = "Еженедельный подкаст от Umputun"
+title = "UWP - Еженедельный Подкаст от Umputun"
 
 paginate = 15
 paginatePath = "page"
@@ -24,7 +24,7 @@ disableKinds = ["section"]
 
   author = "podcast@umputun.com"
 
-  subtitle = "Еженедельный подкаст от Umputun"
+  subtitle = "Невыдуманные рассказы из американской жизни"
 
   description = "Невыдуманные рассказы из моей жизни в Чикаго (и не только), различные рассуждения и наблюдения, немного компьютерных разговоров, совсем чуть-чуть политики и порой немного юмора."
   indexDescription = "Невыдуманные рассказы из моей жизни в Чикаго (и не только), различные рассуждения и наблюдения, немного компьютерных разговоров, совсем чуть-чуть политики и порой немного юмора."
