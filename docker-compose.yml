@@ -31,6 +31,9 @@ services:
       - LE_EMAIL=umputun@gmail.com
       - LE_FQDN=podcast.umputun.com,remark42.umputun.com
 
+    depends_on:
+      - remark42
+
 
   remark42:
     image: umputun/remark42:master
@@ -66,18 +69,3 @@ services:
       - AUTH_FACEBOOK_CSEC
     volumes:
       - ./var/remark42:/srv/var
-
-  mongo:
-    image: umputun/mongo-auth
-    hostname: mongo
-    restart: always
-    container_name: mongo
-    logging: *default_logging
-
-    environment:
-      - MONGO_PASSWD
-    volumes:
-      - ./var/mongo:/data/db
-    ports:
-      - "27017:27017"
-
