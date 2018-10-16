@@ -2547,7 +2547,8 @@ body>footer p:last-child {
 }
 
 body>nav form .search {
-    padding: .4em .6em .3em
+    padding: .4em .6em .3em;
+    margin-top: .2em
 }
 
 body>nav form .search::-webkit-input-placeholder {
