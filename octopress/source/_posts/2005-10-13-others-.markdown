@@ -1,9 +1,0 @@
----
-layout: post
-title: Расширения к выпуску №24
-date: 2005-10-13 20:17
-comments: true
-categories: others
----
-
-MacOSX глазами линуксоида<br />Интервью с Сергеем (Ирландия).
