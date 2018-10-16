@@ -2,3 +2,4 @@ public/
 hugo/public/
 var/
 logs/
+updater.log
