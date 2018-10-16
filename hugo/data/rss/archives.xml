@@ -1,0 +1,11 @@
+            <item>
+              <itunes:author><![CDATA[Umputun]]></itunes:author>
+              <itunes:summary><![CDATA[{text}]]></itunes:summary>
+              <itunes:image href="{image}" />
+              <title><![CDATA[{title}]]></title>
+              <link>{url}</link>
+              <description>Архивы UWP</description>
+              <enclosure url="http://archive.rucast.net/uwp/media/{filename}.mp3" type="audio/mpeg"/>
+              <guid isPermaLink="false">http://archive.rucast.net/uwp/media/{filename}.mp3</guid>
+              <pubDate>{date}</pubDate>
+            </item>

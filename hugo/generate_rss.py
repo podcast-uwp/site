@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 
 """
 Скрипт для генерации rss-файлов
@@ -22,7 +23,7 @@ FEEDS = [
      'image': 'http://podcast.umputun.com/images/umputun-art-big.jpg', 'count': 20, 'size': True},
     {'name': 'podcast-failback', 'title': 'Еженедельный подкаст от Umputun',
      'image': 'http://podcast.umputun.com/images/umputun-art-big.jpg', 'count': 20, 'size': True},
-    {'name': 'podcast-archives', 'title': 'Еженедельный подкаст от Umputun (Архивы)',
+    {'name': 'archives', 'title': 'Еженедельный подкаст от Umputun (Архивы)',
      'image': 'http://podcast.umputun.com/images/umputun-art-archives.jpg', 'count': 1000, 'size': False},
     {'name': 'podcast-archives-short', 'title': 'Еженедельный подкаст от Umputun (Архивы)',
      'image': 'http://podcast.umputun.com/images/umputun-art-archives.jpg', 'count': 25, 'size': False},
@@ -49,12 +50,16 @@ def parse_file(name, source):
     return {'created_at': date, 'url': url, 'config': conf, 'data': '\n'.join(data)}
 
 
-def get_mp3_size(mp3file):
+def get_mp3_size(mp3file, cache={}):
+    if mp3file in cache:
+        return cache[mp3file]
+    
     size = subprocess.check_output(
         "curl -sI http://archive.rucast.net/uwp/media/" + mp3file + " | grep Content-Length | awk '{print $2}'",
         shell=True).decode("utf-8")
     size = size.replace("\r\n", "").replace("\n", "")
     print(mp3file, size)
+    cache[mp3file] = size
     return size
 
 
@@ -114,7 +119,7 @@ def run():
                 if feed['count'] < 30 and feed['size'] is True:
                     fsize = get_mp3_size(attr('filename') + ".mp3")
 
-                url = '{}/{}'.format(mconfig['baseurl'], post['url']).replace("//p", "/p")
+                url = '{}/{}'.format(mconfig['baseurl'], post['url'].replace("//p", "/p"))
                 content = markdown(post['data'])
                 item = body.format(title=post['config']['title'],
                                    content=content,
