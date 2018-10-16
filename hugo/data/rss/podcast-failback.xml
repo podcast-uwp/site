@@ -7,6 +7,7 @@
     <itunes:author><![CDATA[Umputun]]></itunes:author>
     <itunes:summary><![CDATA[{text}]]></itunes:summary>
     <itunes:image href="{image}" />
+    <enclosure url="httpp://podcast-failback.umputun.com/media/{filename}.mp3" length="{filesize}" type="audio/mp3"/>
+    <media:content url="http://podcast-failback.umputun.com/media/{filename}.mp3" fileSize="{filesize}" type="audio/mp3"/>
     <enclosure url="http://podcast-failback.umputun.com/media/{filename}.mp3" type="audio/mp3" length="" />
 </item>
-
