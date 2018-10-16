@@ -364,7 +364,7 @@ blockquote,
 ul,
 ol {
     margin-bottom: 1.1em;
-    margin-left: 0.5em;
+    margin-left: 0.5em !important;
 }
 
 ul {
