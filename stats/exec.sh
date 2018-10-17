@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 echo "activate stats updater"
-
+cp -fv /index.html /stats/index.html
 /usr/sbin/vnstatd -n &
 
 while :
