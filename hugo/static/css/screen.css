@@ -255,6 +255,7 @@ h6 {
 .sans,
 body>header h2,
 article header div.meta,
+article header p.meta,
 article>footer,
 #content .blog-index footer,
 html .gist .gist-file .gist-meta,
@@ -1279,7 +1280,7 @@ article header p {
     margin: 0
 }
 
-article header div.meta {
+article header div.meta, article header p.meta {
     text-transform: uppercase;
     position: absolute;
     top: 0
@@ -1352,6 +1353,7 @@ article>footer {
     margin-top: 2em
 }
 
+article>footer div.meta,
 article>footer div.meta {
     margin-bottom: .8em;
     font-size: .85em;
@@ -1456,7 +1458,8 @@ article>footer .byline~.categories:before {
     padding: 0 .3em
 }
 
-div.meta+.sharing {
+div.meta+.sharing,
+p.meta+.sharing {
     padding-top: 1em;
     padding-left: 0;
     background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAABCAYAAACsXeyTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAFUlEQVQIHWNIS0sr/v//PwMMDzY+ADqMahlW4J91AAAAAElFTkSuQmCC') top left repeat-x
@@ -2730,7 +2733,7 @@ article em {
     font-size: 0.7em
 }
 
-article header div.meta {
+article header div.meta, article header p.meta {
     font-size: 0.7em
 }
 
