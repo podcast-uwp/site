@@ -70,13 +70,13 @@ services:
     volumes:
       - ./var/remark42:/srv/var
 
-    stats:
-        build: build/stats
-        hostname: stats
-        container_name: stats
-        restart: always
-        logging: *default_logging
-        network_mode: host
-        volumes:
-            - ./var/stats:/stats
-            - ./var/vnstat:/var/lib/vnstat
+  stats:
+      build: build/stats
+      hostname: stats
+      container_name: stats
+      restart: always
+      logging: *default_logging
+      network_mode: host
+      volumes:
+        - ./var/stats:/stats
+        - ./var/vnstat:/var/lib/vnstat
