@@ -254,7 +254,7 @@ h6 {
 
 .sans,
 body>header h2,
-article header p.meta,
+article header div.meta,
 article>footer,
 #content .blog-index footer,
 html .gist .gist-file .gist-meta,
@@ -1279,7 +1279,7 @@ article header p {
     margin: 0
 }
 
-article header p.meta {
+article header div.meta {
     text-transform: uppercase;
     position: absolute;
     top: 0
@@ -1352,7 +1352,7 @@ article>footer {
     margin-top: 2em
 }
 
-article>footer p.meta {
+article>footer div.meta {
     margin-bottom: .8em;
     font-size: .85em;
     clear: both;
@@ -1456,7 +1456,7 @@ article>footer .byline~.categories:before {
     padding: 0 .3em
 }
 
-p.meta+.sharing {
+div.meta+.sharing {
     padding-top: 1em;
     padding-left: 0;
     background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAABCAYAAACsXeyTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAFUlEQVQIHWNIS0sr/v//PwMMDzY+ADqMahlW4J91AAAAAElFTkSuQmCC') top left repeat-x
@@ -2730,8 +2730,27 @@ article em {
     font-size: 0.7em
 }
 
-article header p.meta {
+article header div.meta {
     font-size: 0.7em
+}
+
+.article-navigation{
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+}
+
+.article-navigation__prev, .article-navigation__next{
+	min-width: 10em;
+}
+
+.article-navigation__next{
+	text-align: right;
+}
+
+.article-check-question {
+	margin-top: 1em;
+	text-align: center;
 }
 
 /* OVERRIDE REMARK42 STYLES */
