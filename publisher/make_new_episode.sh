@@ -11,16 +11,14 @@ echo "new post number=$post"
 cd ../hugo
 
 today=$(date +%Y-%m-%d)
-hhmm=$(date +%H:%M)
+hhmmss=$(date +%H:%M:%S)
 
 outfile="./content/posts/podcast-$post.md"
 
 echo '+++' > ${outfile}
-echo 'layout: post' >> ${outfile}
 echo "title = \"UWP - Выпуск $post\"" >> ${outfile}
-echo "date: $today $hhmm" >> ${outfile}
-echo 'comments: true' >> $outfile
-echo 'categories: podcast' >> $outfile
+echo "date = \"${today}T${hhmmss}\"" >> ${outfile}
+echo 'categories = ["podcast"]' >> ${outfile}
 echo "image = \"https://podcast.umputun.com/images/uwp/uwp$post.jpg\"" >> ${outfile}
 echo "filename = \"ump_podcast${post}\"" >> ${outfile}
 echo '+++' >> ${outfile}
@@ -34,7 +32,7 @@ echo - >>${outfile}
 echo - >>${outfile}
 echo - >>${outfile}
 echo - >>${outfile}
-echo - >>${outfile}
+echo "- Вопросы и ответы" >>${outfile}
 echo "" >> ${outfile}
 echo "[аудио](https://podcast.umputun.com/media/ump_podcast${post}.mp3)" >> ${outfile}
 echo "<audio src=\"https://podcast.umputun.com/media/ump_podcast${post}.mp3\" preload=\"none\"></audio>" >> ${outfile}

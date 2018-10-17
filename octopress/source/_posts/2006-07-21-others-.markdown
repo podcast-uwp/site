@@ -1,9 +1,0 @@
----
-layout: post
-title: Моя версия rpod.ru
-date: 2006-07-21 11:09
-comments: true
-categories: others
----
-
-<a href="http://podcast.umputun.com/rpod/">http://podcast.umputun.com/rpod</a> - почти минималистическая версия rpod. Сделал для себя, из общедоступных RSS с rpod.ru, знатного сервися feedburner и десятка строк html/css.<br/><br/>Кто может предложить/улучшить/починить - добро пожаловать.

@@ -22,8 +22,8 @@ cd ..
 
 echo "upload to podcast.umputun.com"
 ${notif} -title PodPrc -message "upload started"
-scp $1 podcast.umputun.com:/srv/media/
-ssh podcast.umputun.com "chmod 644 /srv/media/${fname}"
+scp $1 podcast.umputun.com:/srv/podcast-uwp/var/media/${fname}
+ssh podcast.umputun.com "chmod 644 /srv/podcast-uwp/var/media/${fname}"
 
 echo "copy to hp-usrv archives"
 ${notif} -title PodPrc -message "copy to hp-usrv archives"
@@ -33,7 +33,7 @@ echo "upload to archive site"
 ${lftp} -u ${PODCAST_ARCHIVE_CREDS} sftp://archive.rucast.net -e "debug 3; cd uwp/media; put $1; exit"
 
 echo "remove old media files"
-ssh podcast.umputun.com "/srv/publisher/cleanup.sh"
+ssh podcast.umputun.com "/srv/podcast-uwp/publisher/cleanup.sh"
 
 echo "all done for $fname"
 ${notif} -title PodPrc -message "all done for $fname"

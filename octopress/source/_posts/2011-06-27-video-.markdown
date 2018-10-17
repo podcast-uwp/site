@@ -1,9 +1,0 @@
----
-layout: post
-title: Опять поездка, теперь на крыше машины
-date: 2011-06-27 17:57
-comments: true
-categories: video
----
-
-<iframe width="640" height="390" src="https://www.youtube.com/embed/L16VIXEoVko?hd=1" frameborder="0" allowfullscreen></iframe>

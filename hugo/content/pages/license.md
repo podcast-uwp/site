@@ -5,7 +5,7 @@ url = "/license"
 
 ![](/images/by-nc-nd.png)
 
-Подкаст распространяется под лицензией [Creative Commons - Attribution, Noncommercial, No Derivative Works 3.0 License](http://creativecommons.org/licenses/by-nc-nd/3.0/) Это значит, что вы можете слушать этот подкаст на чем угодно, как вам угодно и где вам удобно, хранить у себя, раздавать друзьям и знакомым и даже публиковать на своих сайтах/блогах. При этом (публикации) надо явно указывать ссылку на оригинальный сайт [podcast.umputun.com/](https://podcast.umputun.com)
-<br />
+Подкаст распространяется под лицензией [Creative Commons - Attribution, Noncommercial, No Derivative Works 3.0 License](http://creativecommons.org/licenses/by-nc-nd/3.0/) Это значит, что вы можете слушать этот подкаст на чем угодно, как вам угодно и где вам удобно, хранить у себя, раздавать друзьям и знакомым и даже публиковать на своих сайтах/блогах. При этом (публикации) надо явно указывать ссылку на оригинальный сайт [https://podcast.umputun.com](https://podcast.umputun.com)
+
 Никаких модификаций, миксов, нарезок и прочего дополнительного творчества, над аудио и текстами производить **не разрешается.** Но если вам вдруг очень надо - [свяжитесь](mailto:podcast@umputun.com) и мы это обсудим.
 
