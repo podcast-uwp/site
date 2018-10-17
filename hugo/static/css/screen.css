@@ -401,7 +401,7 @@ ul ol,
 ol,
 ol ul,
 ol ol {
-    margin-left: 1.3em
+    margin-left: 1em;
 }
 
 strong {
@@ -928,14 +928,6 @@ body.sidebar-footer .toggle-sidebar {
     .collapse-sidebar aside.sidebar {
         padding-left: 55px;
         padding-right: 55px
-    }
-}
-
-@media only screen and (min-width: 768px) {
-
-    ul,
-    ol {
-        margin-left: 0
     }
 }
 
@@ -2572,7 +2564,7 @@ body>nav form .search:focus {
 
 img {
     border: 0 none;
-    pagging: 0;
+    padding: 0;
     box-shadow: 0px 0px 0px #FFF;
     -moz-box-shadow: 0px 0px 0px #FFF;
     -webkit-box-shadow: 0px 0px 0px #FFF
@@ -2653,8 +2645,7 @@ article header {
     text-align: left;
     font-size: 0.9em;
     font-weight: normal;
-    padding: 0.5em;
-    #text-transform: uppercase;
+    padding: 0.5em 0.5em 0.5em 0;
     margin-top: 0em
 }
 
@@ -2671,10 +2662,6 @@ article header .meta_ {
     text-align: right;
     line-height: 1em;
     width: 100%
-}
-
-article li {
-    margin-left: 1.5em
 }
 
 #content .blog-index article h1 {
@@ -2704,7 +2691,7 @@ aside.sidebar h15 li {
     padding-top: 0em;
     margin-top: 0em;
     margin-left: 10px;
-    pagging: 1px;
+    padding: 1px;
     font-weight: normal;
     list-style-type: square;
     border: none
@@ -2716,7 +2703,7 @@ aside.sidebar img {
     -o-box-shadow: none !important;
     box-shadow: none !important;
     border-bottom: 0px none !important;
-    pagging: 1px !important;
+    padding: 1px !important;
     margin: 1px !important;
     max-width: 100%;
     height: auto !important
