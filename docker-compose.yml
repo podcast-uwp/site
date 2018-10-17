@@ -71,7 +71,7 @@ services:
       - ./var/remark42:/srv/var
 
   stats:
-      build: build/stats
+      build: stats
       hostname: stats
       container_name: stats
       restart: always
