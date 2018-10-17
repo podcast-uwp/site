@@ -1,4 +1,4 @@
-FROM umputun/baseimage:micro-latest
+FROM alpine:3.8
 
 RUN apk add --update --no-cache vnstat
 
