@@ -24,7 +24,7 @@
     </div>
 
     <footer>
-      <p class="meta">
+      <div class="meta">
         <span class="byline author vcard">
           <span class="fn">
             {{ .Site.Author.name }}
@@ -40,21 +40,23 @@
             <a class="category" href="/categories/{{ $category }}">{{ $category }}</a>
           {{ end }}
         </span>
+      </div>
 
-        <div class="sharing">
-            <a href="http://twitter.com/share" class="twitter-share-button" data-url="{{ .Permalink }}" data-via="{{ .Site.Params.twitter }}" data-counturl="{{ .Permalink }}" >Tweet</a>
-        </div>
+      <div class="sharing">
+        <a href="http://twitter.com/share" class="twitter-share-button" data-url="{{ .Permalink }}" data-via="{{ .Site.Params.twitter }}" data-counturl="{{ .Permalink }}" >Tweet</a>
+      </div>
 
+      <div class="article-navigation">
         {{ if .Next }}
-          <a class="basic-alignment left" href="{{ .Next.Permalink }}" title="Previous Post: {{ .Next.Title }}">&laquo; {{ .Next.Title }}</a>
+          <a class="article-navigation__prev" href="{{ .Next.Permalink }}" title="Previous Post: {{ .Next.Title }}">&laquo;&nbsp;{{ .Next.Title }}</a>
         {{ end }}
 
         {{ if .Prev }}
-          <a class="basic-alignment right" href="{{ .Prev.Permalink }}" title="Next Post: {{ .Prev.Title }}">{{ .Prev.Title }} &raquo;</a>
+          <a class="article-navigation__next" href="{{ .Prev.Permalink }}" title="Next Post: {{ .Prev.Title }}">{{ .Prev.Title }}&nbsp;&raquo;</a>
         {{ end }}
-      </p>
+      </div>
 
-      <center><em>Перед тем, как задать вопрос, проверьте — может быть, ответ на него <a href="/faq">уже есть</a></em></center>
+      <div class="article-check-question"><em>Перед тем, как задать вопрос, проверьте — может быть, ответ на него <a href="/faq">уже есть</a></em></div>
 
     </footer>
   </article>
