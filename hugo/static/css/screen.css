@@ -2734,28 +2734,29 @@ article header div.meta {
     font-size: 0.7em
 }
 
-.article-navigation{
-	display: flex;
-	flex-wrap: nowrap;
-	justify-content: space-between;
+.article-navigation {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
 }
 
-.article-navigation__prev, .article-navigation__next{
-	min-width: 10em;
+.article-navigation__prev,
+.article-navigation__next {
+    min-width: 10em;
 }
 
-.article-navigation__prev{
-	margin-right: 0.5em;
+.article-navigation__prev {
+    margin-right: 0.5em;
 }
 
-.article-navigation__next{
-	text-align: right;
-	margin-left: 0.5em;
+.article-navigation__next {
+    text-align: right;
+    margin-left: 0.5em;
 }
 
 .article-check-question {
-	margin-top: 1em;
-	text-align: center;
+    margin-top: 1em;
+    text-align: center;
 }
 
 /* OVERRIDE REMARK42 STYLES */
