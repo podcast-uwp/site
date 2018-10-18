@@ -1,25 +1,3 @@
-<article>
-  <header>
-    <h2 class="entry-title">
-      <a href="{{ .Permalink }}">{{ .Title }}</a>
-    </h2>
-
-    <p class="meta">
-      <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}" pubdate data-updated="true">
-        {{ .Date.Format "2006-01-02" }}
-      </time>
-      | <a href="{{ .Permalink }}#remark42"><span class="remark42__counter" data-url="{{ .Permalink }}"></span> comments</a>
-    </p>
-  </header>
-
-  <div class="entry-content">
-    {{ if .Truncated }}
-    {{ .Summary }}
-    <footer>
-      <a rel="full-article" href="{{ .Permalink }}">Далее &rarr;</a>
-    </footer>
-    {{ else }}
-    {{ .Content }}
-    {{ end }}
-  </div>
-</article>
+{{ define "main" }}
+  {{ partial "article" . }}
+{{ end }}

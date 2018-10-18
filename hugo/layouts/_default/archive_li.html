@@ -1,23 +1,21 @@
-<article>
-  <h1>
-  	<a href="{{ .Permalink }}">{{ .Title }}</a>
+<article class="article archive-article">
+  <h1 class="article__header archive-article__header">
+    <a class="article__link archive-article__link" href="{{ .Permalink }}">{{ .Title }}</a>
   </h1>
 
-  <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}" pubdate>
-    <span class="month">{{ substr .Date.Month 0 3 }}</span>
-    <span class="day">{{ .Date.Day | printf "%02d" }}</span>
-    <span class="year">{{ .Date.Year }}</span>
+  <time class="article__datetime archive-article__datetime" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}" pubdate>
+    <span class="month article__datetime-month archive-article__datetime-month">{{ substr .Date.Month 0 3 }}</span>
+    <span class="day article__datetime-day archive-article__datetime-day">{{ .Date.Day | printf "%02d" }}</span>
+    <span class="year article__datetime-year archive-article__datetime-year">{{ .Date.Year }}</span>
   </time>
 
-  <footer>
-    <span class="categories">метки:
-    {{ with .Params.categories }}
-      <span class="categories">
-      {{ range . }}
-        <a class="category" href="/categories/{{ . }}">{{ . }}</a>
-      {{ end }}
-      </span>
+  <footer class="article__footer archive-article__footer">
+  {{ with .Params.categories }}
+    <span class="categories article__categories archive-article__categories">метки:
+    {{ range . }}
+      <a class="category article__category archive-article__category" href="/categories/{{ . }}">{{ . }}</a>
     {{ end }}
     </span>
+  {{ end }}
   </footer>
 </article>
