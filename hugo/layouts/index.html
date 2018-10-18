@@ -1,27 +1,28 @@
-{{ define "main" }}
-  <div class="blog-index">
+{{ partial "head.html" . }}
+
+<div class="blog-index">
   {{ $paginator := .Paginate (where .Data.Pages "Type" "posts") }}
 
   {{ range $paginator.Pages }}
-    {{ partial "article" . }}
+    {{ .Render "li" }}
   {{ end }}
 
   {{ if or ($paginator.HasPrev) ($paginator.HasNext) }}
-    <div class="pagination content__pagination">
+    <div class="pagination">
       {{ if $paginator.HasNext }}
-        <a class="pagination__link pagination__prev" href="{{ .URL }}page/{{ $paginator.Next.PageNumber }}/">&larr;&nbsp;Раньше</a>
-      {{ else }}
-        <div class="pagination__no-link"></div>
+        <a class="prev" href="{{ .URL }}page/{{ $paginator.Next.PageNumber }}/">&larr; Раньше</a>
       {{ end }}
 
-      <a class="pagination__link pagination__archive" href="/archives/">Архивы подкаста</a>
+      <a href="/archives/">Архивы подкаста</a>
 
       {{ if $paginator.HasPrev }}
-        <a class="pagination__link pagination__next" href="{{ .URL }}page/{{ $paginator.Prev.PageNumber }}/">Позже&nbsp;&rarr;</a>
-      {{ else }}
-        <div class="pagination__no-link"></div>
+        <a class="next" href="{{ .URL }}page/{{ $paginator.Prev.PageNumber }}/">Позже &rarr;</a>
       {{ end }}
     </div>
   {{ end }}
-  </div>
-{{ end }}
+</div>
+
+{{ partial "sidebar.html" . }}
+
+{{ partial "foot.html" . }}
+
