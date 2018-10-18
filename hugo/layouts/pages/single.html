@@ -1,16 +1,14 @@
-{{ partial "head.html" . }}
-
-<div>
-  <article class="hentry" role="article">
+{{ define "main" }}
+<div class="single-page">
+  <article class="article single-page__article" role="article">
     <header>
-      <h1 class="entry-title">{{ .Title }}</h1>
+      <h1 class="single-page__title">{{ .Title }}</h1>
     </header>
 
-    {{ .Content }}
+    <div class="article__content single-article__content">
+      {{ .Content }}
+    </div>
 
   </article>
 </div>
-
-{{ partial "sidebar.html" . }}
-
-{{ partial "foot.html" . }}
+{{ end }}

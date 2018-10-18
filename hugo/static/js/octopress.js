@@ -8,6 +8,10 @@ function getNav() {
   $('ul.subscription a').each(function(link) {
     mobileNav.children('select').append('<option value="'+link.href+'">&raquo; '+link.text+'</option>');
   });
+  $('.sidebar__useful-links-list-item a').each(function(link) {
+    mobileNav.children('select').append('<option value="'+link.href+'">&raquo; '+link.text+'</option>');
+  });
+  mobileNav.find('option:first-child').attr("selected", true);
   mobileNav.children('select').bind('change', function(event) {
     if (event.target.value) { window.location.href = event.target.value; }
   });

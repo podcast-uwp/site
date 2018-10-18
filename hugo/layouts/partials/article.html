@@ -1,0 +1,25 @@
+<article class="article">
+  <header class="article__header">
+    <h2 class="article__title">
+      <a class="article__title-permalink" href="{{ .Permalink }}">{{ .Title }}</a>
+    </h2>
+
+    <p class="article__meta">
+      <time class="article__datetime" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}" pubdate data-updated="true">
+        {{ .Date.Format "2006-01-02" }}
+      </time>
+      | <a class="article__comments-link" href="{{ .Permalink }}#remark42"><span class="remark42__counter" data-url="{{ .Permalink }}"></span> comments</a>
+    </p>
+  </header>
+
+  <div class="article__content">
+  {{ if .Truncated }}
+  {{ .Summary }}
+    <footer>
+      <a rel="article__permalink" href="{{ .Permalink }}">Далее &rarr;</a>
+    </footer>
+  {{ else }}
+  {{ .Content }}
+  {{ end }}
+  </div>
+</article>
