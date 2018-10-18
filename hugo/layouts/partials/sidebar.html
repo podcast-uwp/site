@@ -1,48 +1,56 @@
 <aside class="sidebar">
   <section>
-    <h2 class='aboutpod sidebar__description' id='aboutpod' >{{ .Site.Params.longDescription }}</h2>
+    <h2 class='aboutpod' id='aboutpod' style='margin-top:0; font-size:10pt; font-weight: normal; text-transform: none; color: #5e5e5e'>{{ .Site.Params.longDescription }}</h2>
   </section>
 
-  <section class="sidebar__external-links">
-    <a class="sidebar__external-link" href="http://feeds.rucast.net/Umputun"> <img align="absmiddle" src="/images/podcast-feed.png" /> </a>
-    <a class="sidebar__external-link" href="http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=77546991"> <img align="absmiddle" src="/images/itunes-feed.png" /></a>
+  <section>
+    <center>
+      <a href="http://feeds.rucast.net/Umputun"> <img align="absmiddle" src="/images/podcast-feed.png" /> </a>
+      <a href="http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=77546991"> <img align="absmiddle" src="/images/itunes-feed.png" /></a>
+    </center>
   </section>
 
-  <section class="sidebar__useful-links">
-    <h2 class="sidebar__useful-links-title">Полезное</h2>
-    <ul class="sidebar__useful-links-list">
-      <li class="sidebar__useful-links-list-item"><a href="/info/">Информация о подкасте</a></li>
-      <li class="sidebar__useful-links-list-item"><a href="/faq/">Часто задаваемые вопросы</a></li>
-      <li class="sidebar__useful-links-list-item"> <a href="/archives-zip/">Архивы подкастов в zip</a></li>
-      <li class="sidebar__useful-links-list-item"><a href="/categories/video/">Все видео</a></li>
-      <li class="sidebar__useful-links-list-item"><a href="/categories/others/">Прочие записи</a></li>
-      <li class="sidebar__useful-links-list-item"> <a href="/feeds">Все фиды для подписки</a></li>
+  <section>
+    <h2>Полезное</h2>
+    <ul>
+      <h15>
+        <li><a href="/info/">Информация о подкасте</a></li>
+        <li><a href="/faq/">Часто задаваемые вопросы</a></li>
+        <li> <a href="/archives-zip/">Архивы подкастов в zip</a></li>
+        <li><a href="/categories/video/">Все видео</a></li>
+        <li><a href="/categories/others/">Прочие записи</a></li>
+        <li> <a href="/feeds">Все фиды для подписки</a></li>
+      </h15>
     </ul>
   </section>
 
-  <section class="sidebar__feedback">
-    <h2 class="sidebar__feedback-title">Обратная связь</h2>
-    <ul class="sidebar__feedback-list">
-      <li class="sidebar__feedback-list-item"><a href="mailto:{{ .Site.Params.email }}">Послать email</a></li>
-      <li class="sidebar__feedback-list-item"><a href="skype:{{ .Site.Params.skype }}">Связаться по Skype</a></li>
-      <li class="sidebar__feedback-list-item"><a href="xmpp:{{ .Site.Params.xmpp }}">GTalk / Jabber</a></li>
-      <li class="sidebar__feedback-list-item"><a href="http://twitter.com/{{ .Site.Params.twitter }}">Почитать твиты</a></li>
-      <li class="sidebar__feedback-list-item"><a href="https://t.me/{{ .Site.Params.telegram }}">Telegram</a></li>
-      <li class="sidebar__feedback-list-item"><a href="/formspring">Вопросы из FormSpring</a></li>
+  <section>
+    <h2>Обратная связь</h2>
+    <ul>
+      <h15>
+        <li><a href="mailto:{{ .Site.Params.email }}">Послать email</a></li>
+        <li><a href="skype:{{ .Site.Params.skype }}">Связаться по Skype</a></li>
+        <li><a href="xmpp:{{ .Site.Params.xmpp }}">GTalk / Jabber</a></li>
+        <li><a href="http://twitter.com/{{ .Site.Params.twitter }}">Почитать твиты</a></li>
+        <li><a href="https://t.me/{{ .Site.Params.telegram }}">Telegram</a></li>
+        <li><a href="/formspring">Вопросы из FormSpring</a></li>
+      </h15>
     </ul>
   </section>
 
-  <section class="sidebar__donate">
-    <form class="sidebar__donate-form" action="https://www.paypal.com/cgi-bin/webscr" method="post">
-      <input type="hidden" name="cmd" value="_s-xclick" />
-      <input type="hidden" name="hosted_button_id" value="{{ .Site.Params.paypal }}" />
-      <input type="image" src="/images/help-podcast.jpg" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" />
-      <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-    </form>
+  <section>
+    <center>
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+        <input type="hidden" name="cmd" value="_s-xclick" />
+        <input type="hidden" name="hosted_button_id" value="{{ .Site.Params.paypal }}" />
+        <input type="image" src="/images/help-podcast.jpg" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" />
+        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+      </form>
+    </center>
   </section>
 
-  <section class="sidebar__last-comments">
-    <h2 class="sidebar__last-comments-title dsq-widget-title">Комментарии</h2>
+  <section>
+    <h2 class="dsq-widget-title">Комментарии</h2>
     <div class="remark42__last-comments" data-max="25"></div>
     <script>
       var remark_config = {
@@ -60,7 +68,7 @@
     </script>
   </section>
 
-  <section class="sidebar__twitter">
+  <section>
     <a class="twitter-timeline" href="https://twitter.com/{{ .Site.Params.twitter }}" data-widget-id="{{ .Site.Params.twitterWidgetId }}"
       data-height="500" data-tweet-limit="5">@{{ .Site.Params.twitter }}</a>
     <script>
@@ -77,21 +85,16 @@
     </script>
   </section>
 
-  <section class="sidebar__license">
+  <section>
     <table>
       <tbody>
         <tr>
-          <td>
-            <a href="/license/"><img class="sidebar__license-image" src="/images/88x30.png" /></a>
-          </td>
+          <td><a href="/license/"> <img src="/images/88x30.png" width="140px" />
+            </a></td>
           <td>&nbsp;</td>
           <td>
-            <h5
-            class='helppod sidebar__license-text'
-            id='helppod'
-            >
-              Подкаст распространяется под <a href="/license/">лицензией</a> CC
-            </h5>
+            <h5 class='helppod' id='helppod' style='margin-top:0px; font-size:9pt; font-weight: normal; text-transform: none; color: #5e5e5e'>Подкаст
+              распространяется под <a href="/license/">лицензией</a> CC</h5>
           </td>
         </tr>
       </tbody>
