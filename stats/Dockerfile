@@ -1,6 +1,11 @@
 FROM alpine:3.8
 
-RUN apk add --update --no-cache vnstat
+ENV TIME_ZONE=America/Chicago
+
+RUN \
+    apk add --update --no-cache vnstat && \
+    cp /usr/share/zoneinfo/${TIME_ZONE} /etc/localtime && \
+    echo "${TIME_ZONE}" > /etc/timezone && date
 
 COPY exec.sh /exec.sh
 RUN chmod +x /exec.sh
