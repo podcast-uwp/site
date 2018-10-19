@@ -7,7 +7,6 @@ RUN \
     apk add --update openssh-client && \
     mkdir -p /home/app/.ssh && \
     echo "StrictHostKeyChecking=no" > /home/app/.ssh/config && \
-    echo "LogLevel=quiet" >> /home/app/.ssh/config && \
     chown -R app:app /home/app/.ssh/ && \
     chmod 600 /home/app/.ssh/* && \
     chmod 700 /home/app/.ssh  && \
