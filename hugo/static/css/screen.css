@@ -26,6 +26,10 @@ a:focus {
 	color: #0181eb;
 }
 
+p {
+    line-height: 1.5em;
+}
+
 /* audio-js */
 
 @media screen and (max-width: 550px) {
@@ -65,7 +69,7 @@ a:focus {
 	background: #fff, linear-gradient(#6783ae, #526f9a, #3f5575);
 	border-top: 1px solid #7e96ba;
 	border-bottom: 1px solid #263347;
-	padding: 0.6em 3rem;
+	padding: 0.4em 3rem;
 	overflow: auto;
 	color: #f0f0f0;
 	font-size: 0.84em;
@@ -239,7 +243,7 @@ a:focus {
 	text-shadow: #748eb5 0 1px;
 	float: left;
 	text-decoration: none;
-	font-size: 1.1em;
+	font-size: 1.15em;
 	padding: 0.1em 0;
 	line-height: 1.5em;
 }
@@ -354,6 +358,11 @@ a:focus {
 	padding: 0;
 	list-style-type: square;
 	font-size: 1.1em;
+}
+
+.sidebar__useful-link,
+.sidebar__feedback-link {
+    text-decoration: none;
 }
 
 .sidebar__donate {
