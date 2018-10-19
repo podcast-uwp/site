@@ -12,9 +12,7 @@
       {{ with .Params.image }}<meta name="twitter:image" content="{{ . }}">{{ end }}
 
       <p class="article__header-datetime">
-        <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}" pubdate data-updated="true">
-            {{ .Date.Format "2006-01-02" }}
-        </time>
+        <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}" pubdate data-updated="true">{{ .Date.Format "2006-01-02" }}</time>
       </p>
     </header>
 
@@ -25,14 +23,9 @@
     <footer class="article__footer">
       <div class="article__footer-meta">
         <span class="byline author vcard article__footer-meta-author article__footer-meta-item ">
-          <span class="fn">
-            {{ .Site.Author.name }}
-          </span>
+          <span class="fn">{{ .Site.Author.name }}</span>
         </span>
-
-        <time class="article__footer-meta-datetime article__footer-meta-item" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}" pubdate data-updated="true">
-            {{ .Date.Format "2006-01-02" }}
-        </time>
+        <time class="article__footer-meta-datetime article__footer-meta-item" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}" pubdate data-updated="true">{{ .Date.Format "2006-01-02" }}</time>
 
         <span class="categories article__categories article__footer-meta-categories article__footer-meta-item">
           {{ range $category := .Params.categories }}

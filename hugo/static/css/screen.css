@@ -529,6 +529,8 @@ p {
 
 .article__footer-meta-item:not(:first-child)::before {
 	content: "•";
+    margin-left: 0.4em;
+    margin-right: 0.4em;
 }
 
 .article__sharing {
