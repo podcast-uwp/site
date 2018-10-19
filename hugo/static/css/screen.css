@@ -453,8 +453,12 @@ p, li {
 	position: relative;
 	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAABCAYAAACsXeyTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAFUlEQVQIHWNIS0sr/v//PwMMDzY+ADqMahlW4J91AAAAAElFTkSuQmCC")
 		bottom left repeat-x;
-	padding-bottom: 1em;
+	padding-bottom: .2em;
 	box-sizing: border-box;
+}
+
+.article + .article {
+	margin-top: 1.5em;
 }
 
 @media screen and (max-width: 550px) {
@@ -499,7 +503,9 @@ p, li {
 
 .article__title {
 	margin-top: 1.4em;
+	font-size: 1.4em;
 	position: relative;
+	margin-bottom: 0.2em;
 }
 
 .article__title-single {
