@@ -12,4 +12,5 @@ RUN \
     chmod 700 /home/app/.ssh  && \
     chmod +x /srv/updater.sh /srv/entrypoint.sh
 
+USER app
 CMD ["/srv/entrypoint.sh"]
