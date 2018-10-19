@@ -90,3 +90,4 @@ services:
       volumes:
         - /home/umputun/.ssh/id_rsa.pub:/home/app/.ssh/id_rsa.pub
         - /home/umputun/.ssh/id_rsa:/home/app/.ssh/id_rsa
+
