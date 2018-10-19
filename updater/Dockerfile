@@ -10,6 +10,6 @@ RUN \
     echo "LogLevel=quiet" >> /home/app/.ssh/config && \
     chmod 600 /home/app/.ssh/* && \
     chmod 700 /home/app/.ssh  && \
-    chmod +x /srv/updater.sh
+    chmod +x /srv/updater.sh /srv/entrypoint.sh
 
 CMD ["/srv/entrypoint.sh"]
