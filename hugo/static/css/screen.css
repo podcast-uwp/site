@@ -206,19 +206,10 @@ a:focus {
 .main-header__rss-link::after {
 	content: "";
 	position: absolute;
-	background-color: #fff;
-	-webkit-mask-image: url("/images/rss.png?1539385355");
-	-moz-mask-image: url("/images/rss.png?1539385355");
-	-ms-mask-image: url("/images/rss.png?1539385355");
-	-o-mask-image: url("/images/rss.png?1539385355");
-	mask-image: url("/images/rss.png?1539385355");
-	-webkit-mask-repeat: no-repeat;
-	-moz-mask-repeat: no-repeat;
-	-ms-mask-repeat: no-repeat;
-	-o-mask-repeat: no-repeat;
-	mask-repeat: no-repeat;
+	background: url("/images/rss-white.png?time=1539938196") no-repeat;
 	width: 22px;
 	height: 22px;
+	opacity: 0.9;
 }
 
 /* main-navigation */
