@@ -1,58 +1,34 @@
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <title>{{ if ne .URL "/" }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
-  <meta name="author" content="{{ .Site.Author.name }}">
+<meta charset="utf-8">
+<title>{{ if ne .URL "/" }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
+<meta name="author" content="{{ .Site.Author.name }}">
 
-  {{ if .Page.Description }}
-    <meta name="description" content="{{ .Page.Description | plainify | truncate 150 }}">
-  {{ else }}
-    <meta name="description" content="{{ .Content | plainify | truncate 150 }}">
-  {{ end }}
-  {{ if .Page.Keywords }}<meta name="keywords" content="{{ .Page.Keywords }}">{{ end }}
+{{ if .Page.Description }}
+  <meta name="description" content="{{ .Page.Description | plainify | truncate 150 }}">
+{{ else }}
+  <meta name="description" content="{{ .Content | plainify | truncate 150 }}">
+{{ end }}
+{{ if .Page.Keywords }}<meta name="keywords" content="{{ .Page.Keywords }}">{{ end }}
 
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="canonical" href="{{ .Site.Params.Url }}{{ .Page.RelPermalink }}">
-  <link href="/favicon.ico" rel="shortcut icon">
-  <link href="{{ "css/screen.css" | relURL }}" media="screen, projection" rel="stylesheet" type="text/css">
-  <script src="{{ "js/modernizr-2.0.js" | relURL }}"></script>
-  <script src="{{ "js/ender.js" | relURL }}"></script>
-    <script src="{{ "js/octopress.js" | relURL}}" type="text/javascript"></script>
+<link rel="canonical" href="{{ .Site.Params.Url }}{{ .Page.RelPermalink }}">
+<link href="/favicon.ico" rel="shortcut icon">
+<link href="{{ "css/screen.css?time=1539936306" | relURL }}" media="screen, projection" rel="stylesheet" type="text/css">
+<script src="{{ "js/modernizr-2.0.js" | relURL }}"></script>
+<script src="{{ "js/ender.js" | relURL }}"></script>
+  <script src="{{ "js/octopress.js?time=1539936306" | relURL}}" type="text/javascript"></script>
 
-  <link href='https://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
-  <!-- audio player -->
-  <script src="/assets/audiojs/audio.js"></script>
-  <script>
-    audiojs.events.ready(function() {
-      var as = audiojs.createAll();
-    });
-  </script>
+<!-- audio player -->
+<script src="/assets/audiojs/audio.js"></script>
+<script>
+  audiojs.events.ready(function() {
+    var as = audiojs.createAll();
+  });
+</script>
 
-  <meta content='умпутун, umputun, подкаст умпутуна, еженедельный подкаст, подкаст из США, подкаст на русском, Интернет Радио, русский подкаст, russian podcast' name='Keywords'/>
-  <link href="{{ .Site.Params.subscribeRss }}" rel="alternate" title="{{ .Site.Title}}" type="application/atom+xml">
-</head>
-
-<body>
-  <nav role="navigation">
-    <ul class="subscription" data-subscription="rss">
-      <li><a href="http://feeds.rucast.net/Umputun" rel="subscribe-rss" title="подисаться на RSS фид подкаста">RSS</a></li>
-    </ul>
-    <form action="https://google.com/search" method="get">
-      <fieldset role="search">
-        <input type="hidden" name="as_sitesearch" value="{{ .Site.BaseURL }}" />
-        <input class="search" type="text" name="q" results="0" placeholder="Поиск"/>
-      </fieldset>
-    </form>
-    <ul class="main-navigation">
-      <li><a href="{{ .Site.BaseURL }}"><h1>Еженедельный подкаст от Umputun</h1></a></li>
-    </ul>
-  </nav>
-  <div id="main">
-    <div id="content">
+<meta content='умпутун, umputun, подкаст умпутуна, еженедельный подкаст, подкаст из США, подкаст на русском, Интернет Радио, русский подкаст, russian podcast' name='Keywords'/>
+<link href="{{ .Site.Params.subscribeRss }}" rel="alternate" title="{{ .Site.Title}}" type="application/atom+xml">

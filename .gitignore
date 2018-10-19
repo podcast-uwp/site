@@ -4,3 +4,4 @@ var/
 logs
 updater.log
 etc
+.editorconfig
