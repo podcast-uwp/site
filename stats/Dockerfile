@@ -3,7 +3,7 @@ FROM alpine:3.8
 ENV TIME_ZONE=America/Chicago
 
 RUN \
-    apk add --update --no-cache vnstat && \
+    apk add --update --no-cache vnstat tzdata && \
     cp /usr/share/zoneinfo/${TIME_ZONE} /etc/localtime && \
     echo "${TIME_ZONE}" > /etc/timezone && date
 
