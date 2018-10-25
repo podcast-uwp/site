@@ -10,7 +10,6 @@ num_before=`utils/get-next-uwp.py 2>/dev/null`
 
 cd ..
 git pull
-git add hugo
 git commit -am "auto episode after $num_before" && git push
 #ssh podcast.umputun.com "cd /srv/podcast-uwp && git pull && docker-compose -f docker-compose-publisher.yml run --rm hugo"
 
