@@ -59,6 +59,9 @@ services:
       - CACHE_MAX_SIZE=50000000
       - CACHE_MAX_VALUE=200000
       - CACHE_MAX_ITEMS=1000
+      - NOTIFY_TYPE=telegram
+      - NOTIFY_TELEGRAM_CHAN=uwp_comments
+      - NOTIFY_TELEGRAM_TOKEN
       - AUTH_GITHUB_CID
       - AUTH_GITHUB_CSEC
       - AUTH_GOOGLE_CID
