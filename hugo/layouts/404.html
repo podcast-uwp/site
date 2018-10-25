@@ -1,10 +1,5 @@
-{{ partial "head.html" . }}
-
-<center>
-<br/>
-<img style="float:none; width:800px; height:auto;" src="/images/404-dog.jpg" />
-</center>
-
-{{ partial "sidebar.html" . }}
-
-{{ partial "foot.html" . }}
+{{ define "main" }}
+<div class="article not-found">
+  <img class="not-found__image"style="float:none; width:800px; height:auto;" src="/images/404-dog.jpg" />
+</div>
+{{ end }}

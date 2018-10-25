@@ -11,3 +11,4 @@ services:
       volumes:
             - ./hugo:/srv/hugo
             - ./hugo/public:/srv/hugo/public
+      user: "1000:1000"

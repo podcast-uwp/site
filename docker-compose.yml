@@ -62,6 +62,7 @@ services:
       - NOTIFY_TYPE=telegram
       - NOTIFY_TELEGRAM_CHAN=uwp_comments
       - NOTIFY_TELEGRAM_TOKEN
+      - MAX_COMMENT_SIZE=2000
       - AUTH_GITHUB_CID
       - AUTH_GITHUB_CSEC
       - AUTH_GOOGLE_CID
@@ -83,3 +84,14 @@ services:
       volumes:
         - ./var/stats:/stats
         - ./var/vnstat:/var/lib/vnstat
+
+  updater:
+      build: updater
+      hostname: updater
+      container_name: updater
+      restart: always
+      logging: *default_logging
+      volumes:
+        - /home/umputun/.ssh/id_rsa.pub:/home/app/.ssh/id_rsa.pub
+        - /home/umputun/.ssh/id_rsa:/home/app/.ssh/id_rsa
+
