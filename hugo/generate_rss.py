@@ -8,6 +8,7 @@ pip install pytoml mistune bs4
 
 import glob
 import subprocess
+import sys
 
 import mistune
 import pytoml as toml
@@ -53,9 +54,9 @@ def parse_file(name, source):
 def get_mp3_size(mp3file, cache={}):
     if mp3file in cache:
         return cache[mp3file]
-    
+
     size = subprocess.check_output(
-        "curl -sI http://archive.rucast.net/uwp/media/" + mp3file + " | grep Content-Length | awk '{print $2}'",
+        "curl -sI \"" + mp3file + "\" | grep Content-Length | awk '{print $2}'",
         shell=True).decode("utf-8")
     size = size.replace("\r\n", "").replace("\n", "")
     print(mp3file, size)
@@ -115,16 +116,26 @@ def run():
 
                 date = post['created_at'].strftime('%a, %d %b %Y %H:%M:%S EST')
 
-                fsize = ""
-                if feed['count'] < 30 and feed['size'] is True:
-                    fsize = get_mp3_size(attr('filename') + ".mp3")
 
                 url = '{}/{}'.format(mconfig['baseurl'], post['url'].replace("//p", "/p"))
                 content = markdown(post['data'])
+                DOM = BeautifulSoup(content, features="html.parser")
+
+                audiotag = DOM.find("audio")
+                if audiotag != None and audiotag.has_attr("src"):
+                    mp3_filename = audiotag["src"]
+                else:
+                    print("Post \"{}\" has no audio tag".format(post['config']['title']), file=sys.stderr)
+                    mp3_filename = ""
+
+                fsize = ""
+                if feed['count'] < 30 and feed['size'] is True and mp3_filename != "":
+                    fsize = get_mp3_size(mp3_filename)
+
                 item = body.format(title=post['config']['title'],
                                    content=content,
-                                   text=''.join(BeautifulSoup(content, features="html.parser").findAll(text=True)),
-                                   filename=attr('filename'),
+                                   text=''.join(DOM.findAll(text=True)),
+                                   filename=mp3_filename,
                                    filesize=fsize,
                                    url=url,
                                    date=date,
