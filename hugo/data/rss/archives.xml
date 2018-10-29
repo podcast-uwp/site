@@ -5,7 +5,7 @@
               <title><![CDATA[{title}]]></title>
               <link>{url}</link>
               <description>Архивы UWP</description>
-              <enclosure url="http://archive.rucast.net/uwp/media/{filename}.mp3" type="audio/mpeg"/>
-              <guid isPermaLink="false">http://archive.rucast.net/uwp/media/{filename}.mp3</guid>
+              <enclosure url="{filename}" type="audio/mpeg"/>
+              <guid isPermaLink="false">{filename}</guid>
               <pubDate>{date}</pubDate>
             </item>

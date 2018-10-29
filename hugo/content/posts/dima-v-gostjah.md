@@ -2,6 +2,7 @@
 title = "Дима в гостях у меня, или наоборот"
 date = "2012-09-05T14:04:00"
 categories = ["podcast"]
+filename = "http://uwp.rucast.net/uwp-ypp.mp3"
 +++
 
 ![](https://podcast.umputun.com/images/uwp/dima-umputun.jpg)

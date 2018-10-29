@@ -2,6 +2,7 @@
 title = "UWP - Выпуск 92"
 date = "2006-09-28T16:09:00"
 categories = ["podcast"]
+filename = "ump_podcast92"
 +++
 
 - Дилема: закуска или интернет

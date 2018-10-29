@@ -2,6 +2,7 @@
 title = "UWP - Выпуск 81"
 date = "2006-07-12T17:10:00"
 categories = ["podcast"]
+filename = "ump_podcast81"
 +++
 
 - Неожиданная "покупка"

@@ -2,6 +2,7 @@
 title = "Я в гостях у Димы"
 date = "2012-10-15T12:35:00"
 categories = ["others"]
+filename = "yp682"
 +++
 
 ![](https://podcast.umputun.com/images/uwp/yppandump.jpg)

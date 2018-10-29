@@ -2,6 +2,7 @@
 title = "UWP - Выпуск 235"
 date = "2009-11-26T13:19:00"
 categories = ["podcast"]
+filename = "ump_podcast235"
 +++
 
 ![](https://podcast.umputun.com/images/uwp/uwp235.jpg)

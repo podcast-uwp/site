@@ -2,6 +2,7 @@
 title = "Выпуск 47"
 date = "2006-01-11T06:15:00"
 categories = ["podcast"]
+filename = "ump_podcast47"
 +++
 
 

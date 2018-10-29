@@ -2,6 +2,7 @@
 title = "UWP – Выпуск 227"
 date = "2009-08-12T21:19:00"
 categories = ["podcast"]
+filename = "ump_podcast227"
 +++
 
 - Два уровня секретности для поступления в школу

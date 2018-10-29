@@ -2,6 +2,7 @@
 title = "UWP - Выпуск 80"
 date = "2006-07-05T17:10:00"
 categories = ["podcast"]
+filename = "ump_podcast80"
 +++
 
 - Юбилей, однако
