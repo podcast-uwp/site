@@ -9,6 +9,7 @@ pip install pytoml mistune bs4
 import glob
 import subprocess
 import sys
+import re
 
 import mistune
 import pytoml as toml
@@ -21,15 +22,23 @@ SAVE_TO = '/srv/hugo/public'
 DATA_RSS = './data/rss'
 FEEDS = [
     {'name': 'podcast', 'title': 'Еженедельный подкаст от Umputun',
-     'image': 'http://podcast.umputun.com/images/umputun-art-big.jpg', 'count': 20, 'size': True},
+     'image': 'http://podcast.umputun.com/images/umputun-art-big.jpg', 'count': 20, 'size': True,
+     'mp3_template': "https://podcast.umputun.com/media/{}.mp3"},
     {'name': 'podcast-failback', 'title': 'Еженедельный подкаст от Umputun',
-     'image': 'http://podcast.umputun.com/images/umputun-art-big.jpg', 'count': 20, 'size': True},
+     'image': 'http://podcast.umputun.com/images/umputun-art-big.jpg', 'count': 20, 'size': True,
+     'mp3_template': "http://podcast-failback.umputun.com/media/{}.mp3"},
     {'name': 'archives', 'title': 'Еженедельный подкаст от Umputun (Архивы)',
-     'image': 'http://podcast.umputun.com/images/umputun-art-archives.jpg', 'count': 1000, 'size': False},
+     'image': 'http://podcast.umputun.com/images/umputun-art-archives.jpg', 'count': 1000, 'size': False,
+     'mp3_template': "http://archive.rucast.net/uwp/media/{}.mp3"},
     {'name': 'podcast-archives-short', 'title': 'Еженедельный подкаст от Umputun (Архивы)',
-     'image': 'http://podcast.umputun.com/images/umputun-art-archives.jpg', 'count': 25, 'size': False},
+     'image': 'http://podcast.umputun.com/images/umputun-art-archives.jpg', 'count': 25, 'size': False,
+     'mp3_template': "http://archive.rucast.net/uwp/media/{}.mp3"},
 ]
 
+is_link_reg = re.compile(r'(ftp|http)s?:\/\/')
+
+def is_link(input):
+    return re.match(is_link_reg, input) != None
 
 def parse_file(name, source):
     print(name)
@@ -121,12 +130,9 @@ def run():
                 content = markdown(post['data'])
                 DOM = BeautifulSoup(content, features="html.parser")
 
-                audiotag = DOM.find("audio")
-                if audiotag != None and audiotag.has_attr("src"):
-                    mp3_filename = audiotag["src"]
-                else:
-                    print("Post \"{}\" has no audio tag".format(post['config']['title']), file=sys.stderr)
-                    mp3_filename = ""
+                mp3_filename = attr("filename")
+                if not is_link(mp3_filename):
+                    mp3_filename = feed["mp3_template"].format(mp3_filename)
 
                 fsize = ""
                 if feed['count'] < 30 and feed['size'] is True and mp3_filename != "":
