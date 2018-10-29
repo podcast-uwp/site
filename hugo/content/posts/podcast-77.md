@@ -2,6 +2,7 @@
 title = "UWP - Выпуск 77"
 date = "2006-06-18T17:30:00"
 categories = ["podcast"]
+filename = "ump_podcast77"
 +++
 
 

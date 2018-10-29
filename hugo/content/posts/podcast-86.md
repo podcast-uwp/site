@@ -2,6 +2,7 @@
 title = "UWP - Выпуск 86"
 date = "2006-08-15T19:21:00"
 categories = ["podcast"]
+filename = "ump_podcast86"
 +++
 
 - эксперименты и их результаты

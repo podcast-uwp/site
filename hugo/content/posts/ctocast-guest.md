@@ -2,7 +2,7 @@
 title = "В гостях у CTOcast"
 date = "2015-04-21T14:57:00"
 categories = ["podcast"]
-filename = "CTOcast9_Umputun"
+filename = "http://traffic.libsyn.com/ctocast/CTOcast9_Umputun.mp3"
 +++
 
 

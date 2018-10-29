@@ -3,6 +3,7 @@ title = "UWP - Выпуск 320"
 date = "2013-07-26T17:33:00"
 categories = ["podcast"]
 image = "http://podcast.umputun.com/images/uwp/uwp320.jpg"
+filename = "ump_podcast320"
 +++
 
 ![](https://podcast.umputun.com/images/uwp/uwp320.jpg)

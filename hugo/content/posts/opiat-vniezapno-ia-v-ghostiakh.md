@@ -2,6 +2,7 @@
 title = "Опять внезапно я в гостях"
 date = "2012-12-02T15:16:00"
 categories = ["others", "podcast"]
+filename = "http://www.airsimmer.org/simoman/svoboda_12_02_2012.mp3"
 +++
 
 
