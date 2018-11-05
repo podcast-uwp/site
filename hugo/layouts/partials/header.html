@@ -1,14 +1,16 @@
-<nav class="main-header" role="navigation">
-  <ul class="subscription main-header__rss" class="subscription" data-subscription="rss">
-    <li><a class="main-header__rss-link" href="http://feeds.rucast.net/Umputun" rel="subscribe-rss" title="подисаться на RSS фид подкаста">RSS</a></li>
-  </ul>
-  <form class="main-header__search" action="https://google.com/search" method="get">
-    <fieldset class="main-header__search-fieldset" role="search">
-      <input type="hidden" name="as_sitesearch" value="{{ .Site.BaseURL }}" />
-      <input class="main-header__search-input" type="text" name="q" results="0" placeholder="Поиск"/>
-    </fieldset>
-  </form>
-  <ul class="main-navigation">
+<header class="main-header">
+	<nav class="main-header-nav" role="navigation">
+		<ul class="subscription main-header__rss" class="subscription" data-subscription="rss">
+			<li><a class="main-header__rss-link" href="http://feeds.rucast.net/Umputun" rel="subscribe-rss" title="подисаться на RSS фид подкаста">RSS</a></li>
+		</ul>
+		<form class="main-header__search" action="https://google.com/search" method="get">
+			<fieldset class="main-header__search-fieldset" role="search">
+				<input type="hidden" name="as_sitesearch" value="{{ .Site.BaseURL }}" />
+				<input class="main-header__search-input" type="text" name="q" results="0" placeholder="Поиск"/>
+			</fieldset>
+		</form>
+		<ul class="main-navigation">
 		<li class="main-navigation__list"><a class="main-navigation__link" href="{{ .Site.BaseURL }}"><h1 class="main-navigation__link-header">Еженедельный подкаст от&nbsp;Umputun</h1></a></li>
-  </ul>
-</nav>
+		</ul>
+	</nav>
+</header>

@@ -5,6 +5,7 @@ body {
 }
 
 body {
+	background: #fff url("/images/noise.png?1539385355") top left;
 	font-size: 1em;
 	color: #303030;
 	font-family: "PT Sans Caption", "Istok Web", Arial, Verdana, Helvetica,
@@ -45,13 +46,20 @@ p, li {
 /* main */
 
 .main {
-	background: #fff url("/images/noise.png?1539385355") top left;
+	max-width: 1400px;
+	margin: 0 auto;
 	border-bottom: 1px solid #f2f2f2;
 }
 
 /* main-heaer */
 
 .main-header {
+	background-color: #526f9a;
+	border-top: 1px solid #7e96ba;
+	border-bottom: 1px solid #263347;
+}
+
+.main-header-nav {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
@@ -59,10 +67,10 @@ p, li {
 	justify-content: space-between;
 
 	position: relative;
-	background-color: #526f9a;
-	border-top: 1px solid #7e96ba;
-	border-bottom: 1px solid #263347;
+	max-width: 1400px;
+	margin: 0 auto;
 	padding: 0.4em 3rem;
+	box-sizing: border-box;
 	overflow: auto;
 	color: #f0f0f0;
 	font-size: 0.84em;
@@ -90,7 +98,7 @@ p, li {
 }
 
 @media screen and (max-width: 550px) {
-	.main-header {
+	.main-header-nav {
 		padding: 0.5rem 1rem;
 	}
 
@@ -675,7 +683,9 @@ p, li {
 	color: #888;
 	text-shadow: #fff 0 1px;
 	padding: 1em 3rem;
-	margin-bottom: 3em;
+	margin: 0 auto 3em;
+	max-width: 1400px;
+	box-sizing: border-box;
 }
 
 /* 404 */
