@@ -60,13 +60,6 @@ p, li {
 
 	position: relative;
 	background-color: #526f9a;
-	background: #fff,
-		url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzY3ODNhZSIvPjxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjNTI2ZjlhIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjM2Y1NTc1Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g");
-	background: #fff,
-		-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #6783ae), color-stop(50%, #526f9a), color-stop(100%, #3f5575));
-	background: #fff, -moz-linear-gradient(#6783ae, #526f9a, #3f5575);
-	background: #fff, -webkit-linear-gradient(#6783ae, #526f9a, #3f5575);
-	background: #fff, linear-gradient(#6783ae, #526f9a, #3f5575);
 	border-top: 1px solid #7e96ba;
 	border-bottom: 1px solid #263347;
 	padding: 0.4em 3rem;
