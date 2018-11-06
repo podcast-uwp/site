@@ -95,3 +95,13 @@ services:
         - /home/umputun/.ssh/id_rsa.pub:/home/app/.ssh/id_rsa.pub
         - /home/umputun/.ssh/id_rsa:/home/app/.ssh/id_rsa
 
+  monit:
+      build: monit
+      hostname: monit
+      container_name: monit
+      restart: always
+      logging: *default_logging
+      ports:
+          - "9009:9009"
+      volumes:
+          - /var/run/docker.sock:/var/run/docker.sock
