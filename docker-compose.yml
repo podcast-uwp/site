@@ -105,3 +105,13 @@ services:
           - "9009:9009"
       volumes:
           - /var/run/docker.sock:/var/run/docker.sock
+
+  mail-server:
+      image: stevenolen/mailgun-smtp-server
+      container_name: mail-server
+      restart: always
+      logging: *default_logging
+      environment:
+        - MG_KEY
+        - MG_DOMAIN=mg.umputun.com
+
