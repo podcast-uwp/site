@@ -9,7 +9,7 @@ RUN \
 
 ADD ./scripts /srv/scripts
 ADD ./monitrc /etc/monitrc
-ADD scripts/* /etc/monit/conf.d/
+ADD conf/ /etc/monit/conf.d/
 RUN mkdir -p /var/lib/monit/ && chmod +x /srv/scripts/* && chmod 600 /etc/monitrc
 
 CMD ["/usr/bin/monit", "-Ic", "/etc/monitrc"]
