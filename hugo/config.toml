@@ -44,6 +44,6 @@ disableKinds = ["section"]
   telegram = "umputun"
 
   paypal = "QGY837B2CWFN4"
-
+  subscribeRss = "https://podcast.umputun.com/podcast.rss"
 [blackfriday]
   extensions = ["hardLineBreak"]
