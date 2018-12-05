@@ -17,6 +17,5 @@ filename = "ump_podcast418"
 - Виртуальная реальность пока не дается легко.
 - Вопросы и ответы
 
-
 [аудио](https://podcast.umputun.com/media/ump_podcast418.mp3)
 <audio src="https://podcast.umputun.com/media/ump_podcast418.mp3" preload="none"></audio>
