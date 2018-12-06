@@ -104,7 +104,7 @@ services:
 
       environment:
         - FEED=http://feeds.rucast.net/Umputun
-        - TWI_ONSUMER_KEY
+        - TWI_CONSUMER_KEY
         - TWI_CONSUMER_SECRET
         - TWI_ACCESS_TOKEN
         - TWI_ACCESS_SECRET
