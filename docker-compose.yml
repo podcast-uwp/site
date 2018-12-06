@@ -103,6 +103,7 @@ services:
       logging: *default_logging
 
       environment:
+        - REFRESH=2m
         - FEED=http://feeds.rucast.net/Umputun
         - TWI_CONSUMER_KEY
         - TWI_CONSUMER_SECRET
