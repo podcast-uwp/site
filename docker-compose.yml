@@ -33,6 +33,7 @@ services:
 
     depends_on:
       - remark42
+      - stats
 
 
   remark42:
