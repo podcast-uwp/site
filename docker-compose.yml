@@ -95,6 +95,20 @@ services:
         - /home/umputun/.ssh/id_rsa.pub:/home/app/.ssh/id_rsa.pub
         - /home/umputun/.ssh/id_rsa:/home/app/.ssh/id_rsa
 
+  rss2twitter:
+      image: umputun/rss2twitter:master
+      container_name: "rss2twitter"
+      hostname: "rss2twitter"
+      restart: always
+      logging: *default_logging
+
+      environment:
+        - FEED=http://feeds.rucast.net/Umputun
+        - TWI_ONSUMER_KEY
+        - TWI_CONSUMER_SECRET
+        - TWI_ACCESS_TOKEN
+        - TWI_ACCESS_SECRET
+
   monit:
       build: monit
       hostname: monit
