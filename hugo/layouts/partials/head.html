@@ -1,5 +1,11 @@
 <meta charset="utf-8">
-<title>{{ if ne .URL "/" }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
+
+{{ if eq .URL "/" }}
+  <title>{{ .Site.Title }}</title>
+{{ else }}
+  <title>{{ .Title }}</title>
+{{ end }}
+
 <meta name="author" content="{{ .Site.Author.name }}">
 
 {{ if .Page.Description }}
