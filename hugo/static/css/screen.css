@@ -707,5 +707,10 @@ li {
 #remark42 .comment_view_preview .comment__title-link {
 	color: #526f9a !important;
 	text-decoration: none;
+}
+
+#remark42 .comment_view_preview .comment__title,
+#remark42 .comment_view_preview.comment_theme_dark .comment__title,
+#remark42 .comment_view_preview.comment_theme_light .comment__title {
 	padding-bottom: 3px;
 }
