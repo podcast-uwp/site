@@ -30,7 +30,7 @@ ${notif} -title PodPrc -message "copy to hp-usrv archives"
 scp -P 2222 $1 umputun@192.168.1.24:/data/archive.rucast.net/uwp/media/
 
 echo "upload to archive site"
-${lftp} -u ${PODCAST_ARCHIVE_CREDS} sftp://archive.rucast.net -e "debug 3; cd uwp/media; put $1; exit"
+scp $1 umputun@master.radio-t.com:/data/archive/uwp/media/${fname}
 
 echo "remove old media files"
 ssh podcast.umputun.com "/srv/podcast-uwp/publisher/cleanup.sh"
