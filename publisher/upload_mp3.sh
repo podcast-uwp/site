@@ -31,6 +31,7 @@ scp -P 2222 $1 umputun@192.168.1.24:/data/archive.rucast.net/uwp/media/
 
 echo "upload to archive site"
 scp $1 umputun@master.radio-t.com:/data/archive/uwp/media/${fname}
+ssh umputun@master.radio-t.com "chmod 644 /data/archive/uwp/media/${fname}"
 
 echo "remove old media files"
 ssh podcast.umputun.com "/srv/podcast-uwp/publisher/cleanup.sh"
