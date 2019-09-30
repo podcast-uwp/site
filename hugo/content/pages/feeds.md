@@ -8,7 +8,7 @@ url = "feeds"
 - [Основной RSS фид подкаста](http://feeds.rucast.net/Umputun)
 - [Резервный RSS фид подкаста](https://podcast.umputun.com/podcast.rss)
 - [Фид подкаста без SSL](http://feeds.rucast.net/uwp-failback)
-- [Фид из iTunes Store](http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=77546991) (обновляется с некоторой задержкой)
+- [Фид из iTunes Store](https://podcasts.apple.com/podcast/umputun/id77546991) (обновляется с некоторой задержкой)
 - [Подписка на архивные выпуски](https://podcast.umputun.com/archives.rss)
 - [Aрхивные выпуски в iTunes Store](https://itunes.apple.com/us/podcast/arhivy-uwp/id638964914?mt=2)
 
