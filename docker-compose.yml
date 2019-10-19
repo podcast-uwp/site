@@ -35,7 +35,7 @@ services:
       - stats
 
   remark42:
-    image: umputun/remark42:latest
+    image: umputun/remark42:master
     container_name: "remark42"
     hostname: "remark42"
     restart: always
