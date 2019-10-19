@@ -1,7 +1,6 @@
-version: '2'
+version: "2"
 
 services:
-
   nginx:
     image: umputun/nginx-le:latest
     container_name: nginx
@@ -35,7 +34,6 @@ services:
       - remark42
       - stats
 
-
   remark42:
     image: umputun/remark42:latest
     container_name: "remark42"
@@ -66,6 +64,8 @@ services:
       - MAX_COMMENT_SIZE=2000
       - ADMIN_PASSWD=$REMARK_ADMIN_PASSWD
       - READONLY_AGE=120
+      - AUTH_TWITTER_CID
+      - AUTH_TWITTER_CSEC
       - AUTH_GITHUB_CID
       - AUTH_GITHUB_CSEC
       - AUTH_GOOGLE_CID
@@ -74,62 +74,64 @@ services:
       - AUTH_YANDEX_CSEC
       - AUTH_FACEBOOK_CID
       - AUTH_FACEBOOK_CSEC
+      - AUTH_EMAIL_USER=postmaster@mg.umputun.com
+      - AUTH_EMAIL_FROM=confirmation@umputun.com
+      - AUTH_EMAIL_PASSWD
     volumes:
       - ./var/remark42:/srv/var
 
   stats:
-      build: stats
-      hostname: stats
-      container_name: stats
-      restart: always
-      logging: *default_logging
-      network_mode: host
-      volumes:
-        - ./var/stats:/stats
-        - ./var/vnstat:/var/lib/vnstat
+    build: stats
+    hostname: stats
+    container_name: stats
+    restart: always
+    logging: *default_logging
+    network_mode: host
+    volumes:
+      - ./var/stats:/stats
+      - ./var/vnstat:/var/lib/vnstat
 
   updater:
-      build: updater
-      hostname: updater
-      container_name: updater
-      restart: always
-      logging: *default_logging
-      volumes:
-        - /home/umputun/.ssh/id_rsa.pub:/home/app/.ssh/id_rsa.pub
-        - /home/umputun/.ssh/id_rsa:/home/app/.ssh/id_rsa
+    build: updater
+    hostname: updater
+    container_name: updater
+    restart: always
+    logging: *default_logging
+    volumes:
+      - /home/umputun/.ssh/id_rsa.pub:/home/app/.ssh/id_rsa.pub
+      - /home/umputun/.ssh/id_rsa:/home/app/.ssh/id_rsa
 
   rss2twitter:
-      image: umputun/rss2twitter:master
-      container_name: "rss2twitter"
-      hostname: "rss2twitter"
-      restart: always
-      logging: *default_logging
+    image: umputun/rss2twitter:master
+    container_name: "rss2twitter"
+    hostname: "rss2twitter"
+    restart: always
+    logging: *default_logging
 
-      environment:
-        - REFRESH=2m
-        - FEED=http://feeds.rucast.net/Umputun
-        - TWI_CONSUMER_KEY
-        - TWI_CONSUMER_SECRET
-        - TWI_ACCESS_TOKEN
-        - TWI_ACCESS_SECRET
+    environment:
+      - REFRESH=2m
+      - FEED=http://feeds.rucast.net/Umputun
+      - TWI_CONSUMER_KEY
+      - TWI_CONSUMER_SECRET
+      - TWI_ACCESS_TOKEN
+      - TWI_ACCESS_SECRET
 
   monit:
-      build: monit
-      hostname: monit
-      container_name: monit
-      restart: always
-      logging: *default_logging
-      ports:
-          - "9009:9009"
-      volumes:
-          - /var/run/docker.sock:/var/run/docker.sock
+    build: monit
+    hostname: monit
+    container_name: monit
+    restart: always
+    logging: *default_logging
+    ports:
+      - "9009:9009"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
 
   mail-server:
-      image: stevenolen/mailgun-smtp-server
-      container_name: mail-server
-      restart: always
-      logging: *default_logging
-      environment:
-        - MG_KEY
-        - MG_DOMAIN=mg.umputun.com
-
+    image: stevenolen/mailgun-smtp-server
+    container_name: mail-server
+    restart: always
+    logging: *default_logging
+    environment:
+      - MG_KEY
+      - MG_DOMAIN=mg.umputun.com
