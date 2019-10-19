@@ -64,6 +64,9 @@ services:
       - MAX_COMMENT_SIZE=2000
       - ADMIN_PASSWD=$REMARK_ADMIN_PASSWD
       - READONLY_AGE=120
+      - AUTH_EMAIL_ENABLE=true
+      - AUTH_EMAIL_HOST=mail-server
+      - AUTH_EMAIL_PORT=25
       - AUTH_TWITTER_CID
       - AUTH_TWITTER_CSEC
       - AUTH_GITHUB_CID
@@ -74,7 +77,7 @@ services:
       - AUTH_YANDEX_CSEC
       - AUTH_FACEBOOK_CID
       - AUTH_FACEBOOK_CSEC
-      - AUTH_EMAIL_USER=postmaster@mg.umputun.com
+      - AUTH_EMAIL_USER=remark42@mg.umputun.com
       - AUTH_EMAIL_FROM=confirmation@umputun.com
       - AUTH_EMAIL_PASSWD
     volumes:
