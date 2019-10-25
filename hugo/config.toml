@@ -13,6 +13,7 @@ publishdir = "public"
 ignoreFiles = [ "\\.xml$"]
 
 disableKinds = ["section"]
+enableRobotsTXT = "true"
 
 [author]
   name = "umputun"
