@@ -21,4 +21,3 @@ url = "feeds"
 - [Весь Umputun в iTunes Store](https://podcasts.apple.com/podcast/весь-umputun/id307038753)
 - [Подкаст на YouTube](https://www.youtube.com/channel/UCKLP9z6_KJi3YSr3FlrR79Q)
 - [Подкаст в Telegram](https://t.me/uwp_podcast)
-- [Все комментарии в Telegram](https://t.me/uwp_comments)
