@@ -137,7 +137,7 @@ services:
 #      - TWI_ACCESS_SECRET
     volumes:
       - ./var:/srv/var
-      - feed_master.yml:/srv/etc/fm.yml
+      - ./feed_master.yml:/srv/etc/fm.yml
 
   monit:
     build: monit
