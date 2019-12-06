@@ -104,20 +104,20 @@ services:
       - /home/umputun/.ssh/id_rsa.pub:/home/app/.ssh/id_rsa.pub
       - /home/umputun/.ssh/id_rsa:/home/app/.ssh/id_rsa
 
-  rss2twitter:
-    image: umputun/rss2twitter:master
-    container_name: "rss2twitter"
-    hostname: "rss2twitter"
-    restart: always
-    logging: *default_logging
-
-    environment:
-      - REFRESH=2m
-      - FEED=http://feeds.rucast.net/Umputun
-      - TWI_CONSUMER_KEY
-      - TWI_CONSUMER_SECRET
-      - TWI_ACCESS_TOKEN
-      - TWI_ACCESS_SECRET
+#  rss2twitter:
+#    image: umputun/rss2twitter:master
+#    container_name: "rss2twitter"
+#    hostname: "rss2twitter"
+#    restart: always
+#    logging: *default_logging
+#
+#    environment:
+#      - REFRESH=2m
+#      - FEED=http://feeds.rucast.net/Umputun
+#      - TWI_CONSUMER_KEY
+#      - TWI_CONSUMER_SECRET
+#      - TWI_ACCESS_TOKEN
+#      - TWI_ACCESS_SECRET
 
   feed-master:
     image: umputun/feed-master:master
@@ -129,7 +129,8 @@ services:
     environment:
       - DEBUG=false
       - FM_DB=/srv/var/feed-master.bdb
-      - FM_CONF=/srv/etc/fm.yml
+      - FM_FEED=http://feeds.rucast.net/Umputun
+      - TELEGRAM_CHAN=uwp_podcast
       - TELEGRAM_TOKEN
 #      - TWI_CONSUMER_KEY
 #      - TWI_CONSUMER_SECRET
@@ -137,7 +138,6 @@ services:
 #      - TWI_ACCESS_SECRET
     volumes:
       - ./var:/srv/var
-      - ./feed-master.yml:/srv/etc/fm.yml
 
   monit:
     build: monit
