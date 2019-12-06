@@ -132,10 +132,10 @@ services:
       - FM_FEED=http://feeds.rucast.net/Umputun
       - TELEGRAM_CHAN=uwp_podcast
       - TELEGRAM_TOKEN
-#      - TWI_CONSUMER_KEY
-#      - TWI_CONSUMER_SECRET
-#      - TWI_ACCESS_TOKEN
-#      - TWI_ACCESS_SECRET
+      - TWI_CONSUMER_KEY
+      - TWI_CONSUMER_SECRET
+      - TWI_ACCESS_TOKEN
+      - TWI_ACCESS_SECRET
     volumes:
       - ./var:/srv/var
 
