@@ -1,0 +1,17 @@
+feeds:
+
+  all-umputun:
+    title: UWP
+    description: Еженедельный подкаст от Umputun
+    link: https://podcast.umputun.com
+    language: "ru-ru"
+    telegram_channel: uwp_podcast
+    sources:
+      - {name: "Еженедельный подкаст от Umputun (UWP)", url: "http://feeds.rucast.net/Umputun"}
+
+system:
+  update: 5m
+  max_per_feed: 5
+  max_total: 50
+  max_keep: 5000
+  base_url: http://feedmaster.umputun.com
