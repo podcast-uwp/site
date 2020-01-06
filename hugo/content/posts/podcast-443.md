@@ -15,7 +15,7 @@ filename = "ump_podcast443"
 - Хороший выстрел и реакция телевизора. 
 - Иногда трудно не давать советы.
 - Проверка смены номера новой карточки.
-- Жена больше не донашивает.
+- Жена больше не донашивает старых телефонов.
 
 [аудио](https://podcast.umputun.com/media/ump_podcast443.mp3)
 <audio src="https://podcast.umputun.com/media/ump_podcast443.mp3" preload="none"></audio>
