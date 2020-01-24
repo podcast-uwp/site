@@ -43,6 +43,7 @@ enableRobotsTXT = "true"
   skype = "umputun"
   xmpp = "umputun@gmail.com"
   telegram = "umputun"
+  telegram_chat = "uwp_chat"
 
   paypal = "QGY837B2CWFN4"
   subscribeRss = "https://podcast.umputun.com/podcast.rss"
