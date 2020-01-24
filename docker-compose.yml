@@ -58,15 +58,20 @@ services:
       - CACHE_MAX_SIZE=50000000
       - CACHE_MAX_VALUE=200000
       - CACHE_MAX_ITEMS=1000
-      - NOTIFY_TYPE=telegram
+      - NOTIFY_TYPE=telegram,email
       - NOTIFY_TELEGRAM_CHAN=uwp_comments
       - NOTIFY_TELEGRAM_TOKEN
+      - NOTIFY_EMAIL_FROM=remark42@umputun.com
+      - NOTIFY_EMAIL_VERIFICATION_SUBJ=verification
       - MAX_COMMENT_SIZE=2000
       - ADMIN_PASSWD=$REMARK_ADMIN_PASSWD
       - READONLY_AGE=120
       - AUTH_EMAIL_ENABLE=true
-      - AUTH_EMAIL_HOST=mail-server
-      - AUTH_EMAIL_PORT=25
+      - SMTP_HOST=smtp.mailgun.org
+      - SMTP_PORT=465
+      - SMTP_TLS=true
+      - SMTP_USERNAME
+      - SMTP_PASSWORD
       - AUTH_TWITTER_CID
       - AUTH_TWITTER_CSEC
       - AUTH_GITHUB_CID
@@ -104,20 +109,20 @@ services:
       - /home/umputun/.ssh/id_rsa.pub:/home/app/.ssh/id_rsa.pub
       - /home/umputun/.ssh/id_rsa:/home/app/.ssh/id_rsa
 
-#  rss2twitter:
-#    image: umputun/rss2twitter:master
-#    container_name: "rss2twitter"
-#    hostname: "rss2twitter"
-#    restart: always
-#    logging: *default_logging
-#
-#    environment:
-#      - REFRESH=2m
-#      - FEED=http://feeds.rucast.net/Umputun
-#      - TWI_CONSUMER_KEY
-#      - TWI_CONSUMER_SECRET
-#      - TWI_ACCESS_TOKEN
-#      - TWI_ACCESS_SECRET
+  #  rss2twitter:
+  #    image: umputun/rss2twitter:master
+  #    container_name: "rss2twitter"
+  #    hostname: "rss2twitter"
+  #    restart: always
+  #    logging: *default_logging
+  #
+  #    environment:
+  #      - REFRESH=2m
+  #      - FEED=http://feeds.rucast.net/Umputun
+  #      - TWI_CONSUMER_KEY
+  #      - TWI_CONSUMER_SECRET
+  #      - TWI_ACCESS_TOKEN
+  #      - TWI_ACCESS_SECRET
 
   feed-master:
     image: umputun/feed-master:master
