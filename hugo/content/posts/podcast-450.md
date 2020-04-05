@@ -15,7 +15,7 @@ filename = "ump_podcast450"
 - Мнения меняются удивительно быстро.
 - Вопросы и ответы
 
-*В связи с необычостью этого выпуска, со звуком может быть все не так хорошо, как вы привыкли*
+*В связи с необычностью этого выпуска, со звуком может быть все не так хорошо, как вы привыкли*
 
 [аудио](https://podcast.umputun.com/media/ump_podcast450.mp3)
 <audio src="https://podcast.umputun.com/media/ump_podcast450.mp3" preload="none"></audio>
