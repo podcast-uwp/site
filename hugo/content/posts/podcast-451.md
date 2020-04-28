@@ -13,7 +13,7 @@ filename = "ump_podcast451"
 - Оказалось, что можно и без визита.
 - Налоги опять сам и опять в последний день.
 - Поменялась вся структура расходов.
-- Вопросы и ответы
+- Вопросы и ответы.
 
 [аудио](https://podcast.umputun.com/media/ump_podcast451.mp3)
 <audio src="https://podcast.umputun.com/media/ump_podcast451.mp3" preload="none"></audio>
