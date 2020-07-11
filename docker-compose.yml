@@ -18,6 +18,7 @@ services:
       - ./nginx.conf:/etc/nginx/nginx.conf
       - ./services.conf:/etc/nginx/service.conf
       - ./hugo/public:/var/www
+      - /srv/p.umputun.com/public:/var/p.umputun.com
       - ./var/stats:/var/stats
       - ./var/media/:/var/media
     ports:
@@ -28,7 +29,7 @@ services:
       - TZ=America/Chicago
       - LETSENCRYPT=true
       - LE_EMAIL=umputun@gmail.com
-      - LE_FQDN=podcast.umputun.com,remark42.umputun.com
+      - LE_FQDN=podcast.umputun.com,remark42.umputun.com,pp.umputun.com
 
     depends_on:
       - remark42
