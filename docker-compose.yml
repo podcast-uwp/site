@@ -46,7 +46,7 @@ services:
       - USER=umputun
       - SECRET=$REMARK_SECRET
       - REMARK_URL=https://remark42.umputun.com
-      - SITE=uwp
+      - SITE=uwp,p.umputun.com
       - ADMIN_SHARED_ID=github_ef0f706a79cc24b17bbbb374cd234a691d034128
       - ADMIN_SHARED_EMAIL=remark42@umputun.com
       - STORE_BOLT_PATH=/srv/var/db
