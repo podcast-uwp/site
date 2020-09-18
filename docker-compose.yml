@@ -84,6 +84,7 @@ services:
       - AUTH_FACEBOOK_CID
       - AUTH_FACEBOOK_CSEC
       - AUTH_EMAIL_FROM=confirmation@umputun.com
+      - POSITIVE_SCORE=true
 
     volumes:
       - ./var/remark42:/srv/var
