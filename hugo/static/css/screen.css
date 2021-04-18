@@ -692,25 +692,25 @@ li {
 
 /* OVERRIDE REMARK42 STYLES */
 
-#remark42 .comment_view_preview .comment__username {
-	color: #526f9a !important;
+.remark42__last-comments .comment_view_preview.comment_theme_light .comment__info {
+	color: #526f9a;
 }
 
-#remark42 .comment {
-	margin-bottom: 1px !important;
-	padding-bottom: 1px !important;
-	line-height: 1.1em !important;
+.remark42__last-comments .comment {
+	margin-bottom: 1px;
+	padding-bottom: 1px;
+	line-height: 1.1em;
 	margin-top: 1em;
 }
 
-#remark42 .comment_view_preview .comment__username,
-#remark42 .comment_view_preview .comment__title-link {
-	color: #526f9a !important;
+.remark42__last-comments .comment_view_preview .comment__username,
+.remark42__last-comments .comment_view_preview .comment__title-link {
+	color: #526f9a;
 	text-decoration: none;
 }
 
-#remark42 .comment_view_preview .comment__title,
-#remark42 .comment_view_preview.comment_theme_dark .comment__title,
-#remark42 .comment_view_preview.comment_theme_light .comment__title {
+.remark42__last-comments .comment_view_preview .comment__title,
+.remark42__last-comments .comment_view_preview.comment_theme_dark .comment__title,
+.remark42__last-comments .comment_view_preview.comment_theme_light .comment__title {
 	padding-bottom: 3px;
 }
