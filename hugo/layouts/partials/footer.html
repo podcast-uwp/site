@@ -21,9 +21,9 @@
     site_id: '{{ .Site.Params.remark42SiteId }}',
     locale: 'ru',
     {{ if eq .URL "/" }}
-    components: ['counter'],
+    components: ['counter', 'last-comments'],
     {{ else if eq (substr .URL 0 3) "/p/" }}
-    components: ['embed'],
+    components: ['embed', 'last-comments'],
     {{ end }}
   };
 </script>
