@@ -17,6 +17,7 @@
 {{ if or (eq .URL "/") (eq (substr .URL 0 3) "/p/") }}
 <script>
   var remark_config = {
+    host: '{{ .Site.Params.remark42Url }}',
     site_id: '{{ .Site.Params.remark42SiteId }}',
     locale: 'ru',
     {{ if eq .URL "/" }}
