@@ -23,5 +23,5 @@ filename = "ump_podcast205"
 
 * Kelly Mueller, More Than A Dream
 
-[Аудио](http://podcast.umputun.com/mp3/ump_podcast205.mp3)
-<audio src="http://podcast.umputun.com/mp3/ump_podcast205.mp3" preload="none">
+[Аудио](https://podcast.umputun.com/media/ump_podcast205.mp3)
+<audio src="https://podcast.umputun.com/media/ump_podcast205.mp3" preload="none">
