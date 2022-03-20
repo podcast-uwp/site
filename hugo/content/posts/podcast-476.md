@@ -16,7 +16,7 @@ filename = "ump_podcast476"
 - Одна в отпуск, вторая с цепи сорвалась.
 - Маниакальная фаза чувака в узких штанах.
 - Пришлось указать на дверь.
-- Вопросы и ответы
+- Вопросы и ответы.
 
 [аудио](https://podcast.umputun.com/media/ump_podcast476.mp3)
 <audio src="https://podcast.umputun.com/media/ump_podcast476.mp3" preload="none"></audio>
