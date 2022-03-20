@@ -3,7 +3,7 @@ title = "UWP - Выпуск 476"
 date = "2022-03-20T17:34:45"
 categories = ["podcast"]
 image = "https://podcast.umputun.com/images/uwp/uwp476.jpg"
-filename = "ump_podcast"
+filename = "ump_podcast476"
 +++
 
 ![](https://podcast.umputun.com/images/uwp/uwp476.jpg)
