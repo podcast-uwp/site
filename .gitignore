@@ -6,3 +6,4 @@ updater.log
 etc
 .editorconfig
 .vscode
+.env

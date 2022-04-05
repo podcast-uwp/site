@@ -36,7 +36,7 @@ services:
       - stats
 
   remark42:
-    image: umputun/remark42:master
+    image: umputun/remark42:latest
     container_name: "remark42"
     hostname: "remark42"
     restart: always
@@ -66,7 +66,7 @@ services:
       - NOTIFY_EMAIL_VERIFICATION_SUBJ=verification
       - MAX_COMMENT_SIZE=2000
       - ADMIN_PASSWD=$REMARK_ADMIN_PASSWD
-      - READONLY_AGE=120
+      - READONLY_AGE=700
       - AUTH_EMAIL_ENABLE=true
       - SMTP_HOST=smtp.mailgun.org
       - SMTP_PORT=465
@@ -110,21 +110,6 @@ services:
       - /home/umputun/.ssh/id_rsa.pub:/home/app/.ssh/id_rsa.pub
       - /home/umputun/.ssh/id_rsa:/home/app/.ssh/id_rsa
 
-  #  rss2twitter:
-  #    image: umputun/rss2twitter:master
-  #    container_name: "rss2twitter"
-  #    hostname: "rss2twitter"
-  #    restart: always
-  #    logging: *default_logging
-  #
-  #    environment:
-  #      - REFRESH=2m
-  #      - FEED=http://feeds.rucast.net/Umputun
-  #      - TWI_CONSUMER_KEY
-  #      - TWI_CONSUMER_SECRET
-  #      - TWI_ACCESS_TOKEN
-  #      - TWI_ACCESS_SECRET
-
   feed-master:
     image: umputun/feed-master:master
     container_name: "feed-master"
@@ -136,14 +121,29 @@ services:
       - DEBUG=false
       - FM_DB=/srv/var/feed-master.bdb
       - FM_FEED=http://feeds.rucast.net/Umputun
+      - TELEGRAM_TOKEN=${TELEGRAM_TOKEN}
+      - TELEGRAM_SERVER=http://telegram-bot-api:8081
       - TELEGRAM_CHAN=uwp_podcast
-      - TELEGRAM_TOKEN
       - TWI_CONSUMER_KEY
       - TWI_CONSUMER_SECRET
       - TWI_ACCESS_TOKEN
       - TWI_ACCESS_SECRET
     volumes:
       - ./var:/srv/var
+
+  telegram-bot-api:
+    image: ghcr.io/bots-house/docker-telegram-bot-api:latest
+    container_name: telegram-bot-api
+    hostname: telegram-bot-api
+    command: "--dir=/var/lib/telegram-bot-api"
+    restart: unless-stopped
+    logging: *default_logging
+    environment:
+        # get these values from https://core.telegram.org/api/obtaining_api_id
+        - TELEGRAM_API_ID=${TELEGRAM_API_ID}
+        - TELEGRAM_API_HASH=${TELEGRAM_API_HASH}
+    volumes:
+        - ./var/bot-api:/var/lib/telegram-bot-api
 
   monit:
     build: monit
