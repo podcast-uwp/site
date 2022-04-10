@@ -2,7 +2,7 @@
 title = "UWP - Выпуск 477"
 date = "2022-04-10T17:57:15"
 categories = ["podcast"]
-image = "https://podcast.umputun.com/images/uwp/uwp777.jpg"
+image = "https://podcast.umputun.com/images/uwp/uwp477.jpg"
 filename = "ump_podcast477"
 +++
 
@@ -15,7 +15,7 @@ filename = "ump_podcast477"
 - Поездка по работе, но без разврата и выпивки.
 - У меня оказался очень дешевый вкус в часах.
 - Ремонт по расширенной гарантии завершен.
-- Вопросы и ответы.
+- Вопросы и ответы
 
 [аудио](https://podcast.umputun.com/media/ump_podcast477.mp3)
 <audio src="https://podcast.umputun.com/media/ump_podcast477.mp3" preload="none"></audio>
