@@ -1,9 +1,10 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
-import sys, os, string, time, smtplib, shutil, stat, urllib, glob
+import os
 
 if __name__ == "__main__":
-    line = os.popen("curl https://podcast.umputun.com/ | grep ump_podcast | head -n1").readline()
+    line = os.popen(
+        "curl -s https://podcast.umputun.com/ | grep ump_podcast | head -n1").readline()
     link = line.split("\"")[1]
-    print link
+    print(link)
