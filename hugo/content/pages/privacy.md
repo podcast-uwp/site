@@ -11,7 +11,7 @@ The terms used in this Privacy Policy have the same meanings as in our Terms and
 
 For a better experience while using our Service, we may require you to provide us with certain personally identifiable information, including but not limited to your name and email address. We can also obtain some basic information from third-party services used to perform login to our Service. The information that we collect will be used to contact or identify you.
 
-### How users may request deletion of that data
+#### How users may request deletion of that data
 
 The user can request deletion of the data by clicking "Request my data removal" on the profile page and follow the link sent in the confirmation email.
 
