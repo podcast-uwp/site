@@ -44,6 +44,7 @@ services:
 
     environment:
       - MHOST
+      - APP_UID=1000
       - USER=umputun
       - SECRET=$REMARK_SECRET
       - REMARK_URL=https://remark42.umputun.com
