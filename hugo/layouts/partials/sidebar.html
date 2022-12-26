@@ -46,23 +46,6 @@
     <div class="remark42__last-comments" data-max="25"></div>
   </section>
 
-  <section class="sidebar__twitter">
-    <a class="twitter-timeline" href="https://twitter.com/{{ .Site.Params.twitter }}" data-widget-id="{{ .Site.Params.twitterWidgetId }}"
-      data-height="500" data-tweet-limit="5">@{{ .Site.Params.twitter }}</a>
-    <script>
-      ! function (d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0],
-          p = /^http:/.test(d.location) ? 'http' : 'https';
-        if (!d.getElementById(id)) {
-          js = d.createElement(s);
-          js.id = id;
-          js.src = "https://platform.twitter.com/widgets.js";
-          fjs.parentNode.insertBefore(js, fjs);
-        }
-      }(document, "script", "twitter-wjs");
-    </script>
-  </section>
-
   <section class="sidebar__license">
     <table>
       <tbody>
