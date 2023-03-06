@@ -355,10 +355,10 @@ def printGenres():
 
 
 def printImageTypes():
-    print "Available image types for --add-image:"
+    println("Available image types for --add-image:")
     for type in range(eyeD3.frames.ImageFrame.MIN_TYPE,
                       eyeD3.frames.ImageFrame.MAX_TYPE + 1):
-        print "\t%s" % (eyeD3.frames.ImageFrame.picTypeToString(type))
+        print("\t%s" % (eyeD3.frames.ImageFrame.picTypeToString(type)))
 
 ################################################################################
 
@@ -400,8 +400,7 @@ class TagDriverBase(eyeD3.utils.FileHandler):
                 self.tag = eyeD3.Tag()
                 if not self.tag.link(f, self.opts.tagVersion):
                     self.tag = None
-        except (eyeD3.tag.InvalidAudioFormatException,
-                eyeD3.tag.TagException, IOError), ex:
+        except (eyeD3.tag.InvalidAudioFormatException, eyeD3.tag.TagException, IOError), ex:
             printError(ex)
             return self.R_CONT
 

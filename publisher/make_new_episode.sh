@@ -37,4 +37,4 @@ echo "" >> ${outfile}
 echo "[аудио](https://podcast.umputun.com/media/ump_podcast${post}.mp3)" >> ${outfile}
 echo "<audio src=\"https://podcast.umputun.com/media/ump_podcast${post}.mp3\" preload=\"none\"></audio>" >> ${outfile}
 
-st3 ${outfile} &
+subl ${outfile} &
