@@ -42,7 +42,7 @@ type Deploy struct {
 	Host            string `long:"host" env:"HOST" default:"podcast.umputun.com" description:"host"`
 	Location        string `long:"location" env:"LOCATION" default:"/srv/media" description:"location"`
 	DaysKeep        int    `long:"days-keep" env:"DAYS_KEEP" default:"700" description:"days to keep"`
-	ArchiveHost     string `long:"archive-host" env:"ARCHIVE_HOST" default:"master.radio-t.com" description:"archive host"`
+	ArchiveHost     string `long:"archive-host" env:"ARCHIVE_HOST" default:"archive.rucast.net" description:"archive host"`
 	ArchiveLocation string `long:"archive-location" env:"ARCHIVE_LOCATION" default:"/data/archive/uwp/media/" description:"archive location"`
 }
 
