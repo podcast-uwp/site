@@ -9,7 +9,6 @@ import (
 	"path/filepath"
 	"regexp"
 	"strconv"
-	"strings"
 	"time"
 
 	"github.com/bogem/id3v2"
@@ -49,6 +48,7 @@ type Deploy struct {
 
 // PrepEpisode is a preparation command of new hugo post for the next episode
 type PrepEpisode struct {
+	ReEpisode     string `long:"re-episode" env:"RE_EPISODE" default:"ump_podcast(\\d+)\\.mp3" description:"episode num regex"`
 	PostsLocation string `long:"location" env:"POSTS_LOCATION" default:"./hugo/content/posts" description:"posts location"`
 }
 
@@ -72,7 +72,7 @@ func main() {
 	setupLog(opts.Dbg)
 
 	if p.Active != nil && p.Command.Find("prep") == p.Active {
-		if err := createEpisode(opts.PrepEpisode.PostsLocation); err != nil {
+		if err := createEpisode(opts.PrepEpisode); err != nil {
 			log.Fatalf("[PANIC] %v", err)
 		}
 		log.Printf("[INFO] completed episode preparation")
@@ -125,22 +125,22 @@ func setMp3Tags(file string, tags Mp3Tags) error {
 
 	// id3v2 will try to rename file. This won't work if file mounted directly to container,
 	// so we make a temp copy, set tags and copy back
-	lfile := filepath.Join(os.TempDir(), filepath.Base(file))
-	if err := fileutils.CopyFile(file, lfile); err != nil {
-		return fmt.Errorf("error copying file: %v", err)
+	tmpFile := filepath.Join(os.TempDir(), filepath.Base(file))
+	if err := fileutils.CopyFile(file, tmpFile); err != nil {
+		return fmt.Errorf("error copying file %s to %s: %v", file, tmpFile, err)
 	}
 
-	episodeFile, err := id3v2.Open(lfile, id3v2.Options{})
+	episodeFile, err := id3v2.Open(tmpFile, id3v2.Options{})
 	if err != nil {
-		return fmt.Errorf("error opening file: %v", err)
+		return fmt.Errorf("error opening file %s: %v", tmpFile, err)
 	}
 
 	defer func() {
 		if err := episodeFile.Close(); err != nil {
-			log.Printf("[WARN] error closing file: %v", err)
+			log.Printf("[WARN] error closing file tags: %v", err)
 		}
-		if err := os.Remove(lfile); err != nil {
-			log.Printf("[WARN] error removing temp file: %v", err)
+		if err := os.Remove(tmpFile); err != nil {
+			log.Printf("[WARN] error removing temp file %s: %v", tmpFile, err)
 		}
 	}()
 
@@ -183,8 +183,8 @@ func setMp3Tags(file string, tags Mp3Tags) error {
 	}
 
 	// copy tagged file back
-	if err := fileutils.CopyFile(lfile, file); err != nil {
-		return fmt.Errorf("error copying file: %v", err)
+	if err := fileutils.CopyFile(tmpFile, file); err != nil {
+		return fmt.Errorf("error copying file %s back to %s: %v", tmpFile, file, err)
 	}
 
 	return nil
@@ -202,32 +202,32 @@ func uploadWithAnsible(file string, req Deploy) error {
 	cmd := exec.Command("ansible-playbook", req.Playbook, "-i", inventory, "--extra-vars", extraVars)
 	cmd.Stdout, cmd.Stderr = os.Stdout, os.Stderr
 	if err := cmd.Run(); err != nil {
-		return fmt.Errorf("error running ansible-playbook command: %v", err)
+		return fmt.Errorf("error running ansible-playbook command: %w", err)
 	}
 
 	return nil
 }
 
-func createEpisode(location string) error {
+func createEpisode(req PrepEpisode) error {
 	wr := func(fh *os.File, s string, f ...interface{}) {
 		fmt.Fprintf(fh, s, f...)
 		fh.WriteString("\n")
 	}
 
-	log.Printf("[INFO] create episode in %s", location)
+	log.Printf("[INFO] create episode in %s", req.PostsLocation)
 
-	num, err := getNextEpisodeNum()
+	num, err := getNextEpisodeNum(req.ReEpisode)
 	if err != nil {
-		return fmt.Errorf("error getting next episode number: %v", err)
+		return fmt.Errorf("error getting next episode number: %w", err)
 	}
 	log.Printf("[INFO] new episode number: %d", num)
 
-	outfile := filepath.Join(location, fmt.Sprintf("podcast-%d.md", num))
+	outfile := filepath.Join(req.PostsLocation, fmt.Sprintf("podcast-%d.md", num))
 	log.Printf("[INFO] create episode file %s", outfile)
 
 	f, err := os.Create(outfile)
 	if err != nil {
-		return fmt.Errorf("error creating file: %v", err)
+		return fmt.Errorf("error creating file: %w", err)
 	}
 	defer f.Close()
 
@@ -264,36 +264,38 @@ func getEpisodeNumber(filePath, reEpisodeNumber string) (int, error) {
 	return strconv.Atoi(match[1])
 }
 
-func getNextEpisodeNum() (int, error) {
+func getNextEpisodeNum(reEpisodeNumber string) (num int, err error) {
 	client := http.Client{Timeout: time.Second * 30}
 	resp, err := client.Get("https://podcast.umputun.com/")
 	if err != nil {
-		return 0, fmt.Errorf("error getting uwp page: %v", err)
+		return 0, fmt.Errorf("error getting uwp page: %w", err)
 	}
 	defer resp.Body.Close()
 	if resp.StatusCode != http.StatusOK {
 		log.Fatalf("unexpected status code %v", resp.StatusCode)
 	}
 
-	var num int
 	var found bool
+	re := regexp.MustCompile(reEpisodeNumber)
 
 	// Scan through the response body line by line
 	scanner := bufio.NewScanner(resp.Body)
 	for scanner.Scan() {
 		line := scanner.Text()
-		if strings.Contains(line, "ump_podcast") {
-			numStr := line[strings.Index(line, "ump_podcast")+11 : strings.Index(line, "ump_podcast")+14]
-			if _, err := fmt.Sscanf(numStr, "%d", &num); err != nil {
-				return 0, fmt.Errorf("error parsing uwp page: %v", err)
-			}
-			found = true
-			break
+		match := re.FindStringSubmatch(line)
+		if len(match) == 0 {
+			continue
 		}
+		num, err = strconv.Atoi(match[1])
+		if err != nil {
+			return 0, fmt.Errorf("invalid episode number %s: %w", match[1], err)
+		}
+		found = true
+		break
 	}
 
 	if err := scanner.Err(); err != nil {
-		return 0, fmt.Errorf("error reading response body: %v", err)
+		return 0, fmt.Errorf("error reading response body: %w", err)
 	}
 
 	if !found {

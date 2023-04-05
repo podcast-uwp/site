@@ -6,6 +6,8 @@
 # usage: make publish /foo/bar/podcast/ump_podcast123.mp3
 publish: tag upload git-push
 
+# prepare prepares hugo content for the new podcast
+# usage: make prepare
 prepare:
 		@docker rm -f uwp_publisher_tmp
 		docker run -d --rm --name=uwp_publisher_tmp uwp-publisher /srv/publisher sleepy --duration=1h
