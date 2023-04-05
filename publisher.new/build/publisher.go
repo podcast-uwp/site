@@ -124,16 +124,23 @@ func setMp3Tags(file string, tags Mp3Tags) error {
 		return err
 	}
 
+	origFinfo, err := os.Stat(file)
+	if err != nil {
+		return fmt.Errorf("error getting file info %s: %w", file, err)
+	}
+	log.Printf("[DEBUG] file info for %s - time: %s, size: %d",
+		file, origFinfo.ModTime().Format(time.RFC3339), origFinfo.Size())
+
 	// id3v2 will try to rename file. This won't work if file mounted directly to container,
 	// so we make a temp copy, set tags and copy back
 	tmpFile := filepath.Join(os.TempDir(), filepath.Base(file))
 	if err := fileutils.CopyFile(file, tmpFile); err != nil {
-		return fmt.Errorf("error copying file %s to %s: %v", file, tmpFile, err)
+		return fmt.Errorf("error copying file %s to %s: %w", file, tmpFile, err)
 	}
 
 	episodeFile, err := id3v2.Open(tmpFile, id3v2.Options{})
 	if err != nil {
-		return fmt.Errorf("error opening file %s: %v", tmpFile, err)
+		return fmt.Errorf("error opening file %s: %w", tmpFile, err)
 	}
 
 	defer func() {
@@ -143,13 +150,16 @@ func setMp3Tags(file string, tags Mp3Tags) error {
 		if err := os.Remove(tmpFile); err != nil {
 			log.Printf("[WARN] error removing temp file %s: %v", tmpFile, err)
 		}
+		if err := os.Chtimes(file, origFinfo.ModTime(), origFinfo.ModTime()); err != nil {
+			log.Printf("[WARN] error setting file time %s %s: %v", file, origFinfo.ModTime().Format(time.RFC3339), err)
+		}
 	}()
 
 	episodeFile.SetDefaultEncoding(id3v2.EncodingUTF8)
 	episodeFile.SetTitle(fmt.Sprintf("%s %d", tags.Title, num))
 	episodeFile.SetArtist(tags.Artist)
 	episodeFile.SetAlbum(tags.Album)
-	episodeFile.SetYear(time.Now().Format("2006"))
+	episodeFile.SetYear(origFinfo.ModTime().Format("2006"))
 	episodeFile.SetGenre("Podcast")
 
 	if tags.Image != "" {
