@@ -35,5 +35,15 @@ upload:
 			/srv/publisher deploy --file=/srv/$$fname --days-keep=750
 
 git-push:
-		# push changes to github
-		git pull && git commit -am "new podcast $$fname" && git push
+		# push changes to github if anything changed
+		git pull
+		@status=$$(git status --porcelain); \
+		if test -n "$$status"; then \
+			echo "Changes found:"; \
+			echo "$$status"; \
+			git add .; \
+			git commit -m "auto-update $(shell date)"; \
+			git push; \
+		else \
+			echo "No changes found"; \
+		fi
