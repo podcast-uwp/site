@@ -10,7 +10,7 @@ publish: tag upload git-push
 # usage: make prepare
 prepare:
 		@docker rm -f uwp_publisher_tmp
-		docker run -d --rm --name=uwp_publisher_tmp uwp-publisher /srv/publisher sleepy --duration=1h
+		docker run -d --rm --name=uwp_publisher_tmp uwp-publisher /srv/publisher sleepy --duration=30s
 		docker cp uwp_publisher_tmp:/srv/publisher.osx /tmp/uwp-publisher
 		/tmp/uwp-publisher prep --location=/Users/umputun/dev.umputun/podcast-uwp/hugo/content/posts
 		@docker rm -f uwp_publisher_tmp

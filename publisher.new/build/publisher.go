@@ -52,6 +52,7 @@ type PrepEpisode struct {
 	PostsLocation string `long:"location" env:"POSTS_LOCATION" default:"./hugo/content/posts" description:"posts location"`
 }
 
+// Sleepy is a command to sleep for a while, needed to start a container and copy files from
 type Sleepy struct {
 	Duration time.Duration `long:"duration" env:"DURATION" default:"10s" description:"sleep duration"`
 }
