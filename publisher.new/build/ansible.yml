@@ -1,0 +1,50 @@
+- hosts: all
+  vars:
+    remote_directory: "{{ remote_directory }}"
+    local_file_path: "{{ local_file_path }}"
+    num_days: "{{ num_days }}"
+    archive_server: "{{ archive_host }}"
+    archive_directory: "{{ archive_location }}"
+
+  tasks:
+    - name: Create remote directory if it does not exist
+      file:
+        path: "{{ remote_directory }}"
+        state: directory
+
+    - name: Copy file to remote server
+      copy:
+        src: "{{ local_file_path }}"
+        dest: "{{ remote_directory }}"
+
+    - name: Get list of old files on remote server
+      find:
+        paths: "{{ remote_directory }}"
+        age: "{{ num_days }}d"
+        file_type: file
+        patterns: "*.mp3"
+        recurse: no
+      register: result
+
+    - name: Output list of old files
+      debug:
+        var: result.files | map(attribute='path') | list
+
+    - name: Delete old files
+      file:
+        path: "{{ item.path }}"
+        state: absent
+      with_items: "{{ result.files }}"
+
+    - name: Create archive directory if it does not exist
+      file:
+        path: "{{ archive_directory }}"
+        state: directory
+      delegate_to: "{{ archive_host }}"
+
+    - name: Copy file to archive server
+      copy:
+        src: "{{ local_file_path }}"
+        dest: "{{ archive_directory }}"
+        mode: '0644'
+      delegate_to: "{{ archive_host }}"

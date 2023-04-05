@@ -12,7 +12,3 @@ publish:
 
 build:
 		docker build -t uwp-publisher .
-
-local-prep:
-		python3 -m venv venv
-		. venv/bin/activate && pip install -r requirements.txt
