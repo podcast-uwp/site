@@ -65,7 +65,7 @@ type Git struct {
 //go:embed cover.jpg
 var imgData []byte
 
-var revision = "v2.1.0"
+var revision = "v2.1.1"
 
 func main() {
 	var opts options
@@ -257,7 +257,7 @@ func deployCmd(req Deploy) error {
 		HostKeyCallback: ssh.InsecureIgnoreHostKey()} // nolint
 
 	// create remote directory
-	if err = sshCmd(sshConfig, req.Host, fmt.Sprintf("mkdir -p %s", req.Location)); err != nil {
+	if err = sshRun(sshConfig, req.Host, fmt.Sprintf("mkdir -p %s", req.Location)); err != nil {
 		return fmt.Errorf("error creating remote directory: %v", err)
 	}
 
@@ -268,12 +268,12 @@ func deployCmd(req Deploy) error {
 
 	// get list of old files on remote server and delete them
 	oldFilesCmd := fmt.Sprintf("find %s -type f -name '*.mp3' -mtime +%d -exec rm -f {} \\;", req.Location, req.DaysKeep)
-	if err = sshCmd(sshConfig, req.Host, oldFilesCmd); err != nil {
+	if err = sshRun(sshConfig, req.Host, oldFilesCmd); err != nil {
 		return fmt.Errorf("error deleting old files on remote server: %v", err)
 	}
 
 	// create archive directory on archive server
-	if err = sshCmd(sshConfig, req.ArchiveHost, fmt.Sprintf("mkdir -p %s", req.ArchiveLocation)); err != nil {
+	if err = sshRun(sshConfig, req.ArchiveHost, fmt.Sprintf("mkdir -p %s", req.ArchiveLocation)); err != nil {
 		return fmt.Errorf("error creating archive directory on archive server: %v", err)
 	}
 
@@ -285,6 +285,7 @@ func deployCmd(req Deploy) error {
 	return nil
 }
 
+// gitCmd pulls changes from git repo, checks for changes and commits them if any. It also pushes changes to remote.
 func gitCmd(req Git) error {
 	cmd := exec.Command("git", "pull")
 	cmd.Dir, cmd.Stdout, cmd.Stderr = req.Location, os.Stdout, os.Stderr
@@ -328,7 +329,7 @@ func gitCmd(req Git) error {
 	return nil
 }
 
-func sshCmd(sshConfig *ssh.ClientConfig, host, command string) error {
+func sshRun(sshConfig *ssh.ClientConfig, host, command string) error {
 	log.Printf("[DEBUG] run command %q on %s", command, host)
 	client, err := ssh.Dial("tcp", host+":22", sshConfig)
 	if err != nil {
