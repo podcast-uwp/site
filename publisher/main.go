@@ -25,6 +25,7 @@ type options struct {
 	Mp3Tags     Mp3Tags     `command:"mp3" description:"set mp3 tags"`
 	Deploy      Deploy      `command:"deploy" description:"deploy to remote server"`
 	PrepEpisode PrepEpisode `command:"prep" description:"prepare new episode"`
+	Git         Git         `command:"git" description:"commit and push new episode"`
 	Dbg         bool        `long:"dbg" env:"DEBUG" description:"debug mode"`
 }
 
@@ -34,7 +35,7 @@ type Mp3Tags struct {
 	Title     string `long:"title" env:"TITLE" default:"UWP Выпуск" description:"title"`
 	Artist    string `long:"artist" env:"ARTIST" default:"Umputun" description:"artist"`
 	Album     string `long:"album" env:"ALBUM" default:"Eженедельный подкаст от Umputun" description:"album"`
-	Image     string `long:"image" env:"IMAGE" default:"/srv/cover.jpg" description:"image"`
+	Image     string `long:"image" env:"IMAGE" default:"" description:"image"`
 	ReEpisode string `long:"re-episode" env:"RE_EPISODE" default:"ump_podcast(\\d+)\\.mp3" description:"episode num regex"`
 }
 
@@ -54,6 +55,11 @@ type Deploy struct {
 type PrepEpisode struct {
 	ReEpisode     string `long:"re-episode" env:"RE_EPISODE" default:"ump_podcast(\\d+)\\.mp3" description:"episode num regex"`
 	PostsLocation string `long:"location" env:"POSTS_LOCATION" default:"/Users/umputun/dev.umputun/podcast-uwp/hugo/content/posts" description:"posts location"`
+}
+
+// Git command commits and pushes changes to the repo
+type Git struct {
+	Location string `long:"location" default:"/Users/umputun/dev.umputun/podcast-uwp" description:"repo location"`
 }
 
 //go:embed cover.jpg
@@ -96,6 +102,14 @@ func main() {
 			log.Fatalf("[PANIC] %v", err)
 		}
 		log.Printf("[INFO] completed deploy in %v", time.Since(st))
+		return
+	}
+
+	if p.Active != nil && p.Command.Find("git") == p.Active {
+		if err := gitCmd(opts.Git); err != nil {
+			log.Fatalf("[PANIC] %v", err)
+		}
+		log.Printf("[INFO] completed git in %v", time.Since(st))
 		return
 	}
 
@@ -268,6 +282,49 @@ func deployCmd(req Deploy) error {
 		return fmt.Errorf("error copying file to archive server: %v", err)
 	}
 
+	return nil
+}
+
+func gitCmd(req Git) error {
+	cmd := exec.Command("git", "pull")
+	cmd.Dir, cmd.Stdout, cmd.Stderr = req.Location, os.Stdout, os.Stderr
+	if err := cmd.Run(); err != nil {
+		return fmt.Errorf("error pulling changes: %v", err)
+	}
+
+	cmd = exec.Command("git", "status", "--porcelain")
+	cmd.Dir = req.Location
+	output, err := cmd.Output()
+	if err != nil {
+		return fmt.Errorf("error getting git status: %v", err)
+	}
+
+	if len(output) == 0 {
+		log.Printf("[INFO] no changes found")
+		return nil
+	}
+
+	log.Printf("[INFO] changes found")
+	fmt.Println(string(output))
+
+	cmd = exec.Command("git", "add", ".")
+	cmd.Dir, cmd.Stdout, cmd.Stderr = req.Location, os.Stdout, os.Stderr
+	if err = cmd.Run(); err != nil {
+		return fmt.Errorf("error adding changes: %v", err)
+	}
+
+	cmd = exec.Command("git", "commit", "-m",
+		fmt.Sprintf("auto-update %s", time.Now().Format("2006-01-02 15:04:05")))
+	cmd.Dir, cmd.Stdout, cmd.Stderr = req.Location, os.Stdout, os.Stderr
+	if err = cmd.Run(); err != nil {
+		return fmt.Errorf("error committing changes: %v", err)
+	}
+
+	cmd = exec.Command("git", "push")
+	cmd.Dir, cmd.Stdout, cmd.Stderr = req.Location, os.Stdout, os.Stderr
+	if err = cmd.Run(); err != nil {
+		return fmt.Errorf("error pushing changes: %v", err)
+	}
 	return nil
 }
 
