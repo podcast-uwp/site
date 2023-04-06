@@ -258,12 +258,12 @@ func deployCmd(req Deploy) error {
 		return fmt.Errorf("error deleting old files on remote server: %v", err)
 	}
 
-	// Create archive directory on archive server
+	// create archive directory on archive server
 	if err = sshCmd(sshConfig, req.ArchiveHost, fmt.Sprintf("mkdir -p %s", req.ArchiveLocation)); err != nil {
 		return fmt.Errorf("error creating archive directory on archive server: %v", err)
 	}
 
-	// Copy file to archive server
+	// copy file to archive server
 	if err = sftpUpload(sshConfig, req.File, req.ArchiveHost, req.ArchiveLocation); err != nil {
 		return fmt.Errorf("error copying file to archive server: %v", err)
 	}
@@ -303,7 +303,7 @@ func sftpUpload(sshConfig *ssh.ClientConfig, localFile, host, remoteDir string) 
 	}
 	defer client.Close()
 
-	// Create an SFTP session over the existing SSH connection
+	// create an SFTP session over the existing SSH connection
 	sftpClient, err := sftp.NewClient(client)
 	if err != nil {
 		return fmt.Errorf("failed to create SFTP client: %v", err)
@@ -316,7 +316,7 @@ func sftpUpload(sshConfig *ssh.ClientConfig, localFile, host, remoteDir string) 
 	}
 	defer file.Close()
 
-	// Create the remote file
+	// create the remote file
 	remoteFile := filepath.Join(remoteDir, filepath.Base(localFile))
 	dstFile, err := sftpClient.Create(remoteFile)
 	if err != nil {
@@ -324,7 +324,7 @@ func sftpUpload(sshConfig *ssh.ClientConfig, localFile, host, remoteDir string) 
 	}
 	defer dstFile.Close()
 
-	// Copy the contents of the local file to the remote file
+	// copy the contents of the local file to the remote file
 	if _, err = io.Copy(dstFile, file); err != nil {
 		return fmt.Errorf("failed to copy file: %v", err)
 	}
