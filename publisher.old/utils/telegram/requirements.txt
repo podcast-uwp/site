@@ -1,2 +1,0 @@
-telethon
-eyed3
