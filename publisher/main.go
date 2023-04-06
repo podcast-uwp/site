@@ -53,7 +53,7 @@ type Deploy struct {
 // PrepEpisode is a preparation command of new hugo post for the next episode
 type PrepEpisode struct {
 	ReEpisode     string `long:"re-episode" env:"RE_EPISODE" default:"ump_podcast(\\d+)\\.mp3" description:"episode num regex"`
-	PostsLocation string `long:"location" env:"POSTS_LOCATION" default:"/Users/umputun/dev.umputun/podcast-uwp/publisher/hugo/content/posts" description:"posts location"`
+	PostsLocation string `long:"location" env:"POSTS_LOCATION" default:"/Users/umputun/dev.umputun/podcast-uwp/hugo/content/posts" description:"posts location"`
 }
 
 //go:embed cover.jpg
