@@ -5,7 +5,6 @@ import (
 	"bufio"
 	_ "embed"
 	"fmt"
-	"io"
 	"net/http"
 	"os"
 	"os/exec"
@@ -17,7 +16,6 @@ import (
 	"github.com/bogem/id3v2"
 	log "github.com/go-pkgz/lgr"
 	"github.com/jessevdk/go-flags"
-	"github.com/pkg/sftp"
 	"golang.org/x/crypto/ssh"
 )
 
@@ -262,7 +260,7 @@ func deployCmd(req Deploy) error {
 	}
 
 	// copy file to remote server
-	if err = sftpUpload(sshConfig, req.File, req.Host, req.Location); err != nil {
+	if err = scpUpload(sshConfig, req.File, req.Host, req.Location, req.PrivateKeyPath); err != nil {
 		return fmt.Errorf("error copying file to remote server: %v", err)
 	}
 
@@ -278,7 +276,7 @@ func deployCmd(req Deploy) error {
 	}
 
 	// copy file to archive server
-	if err = sftpUpload(sshConfig, req.File, req.ArchiveHost, req.ArchiveLocation); err != nil {
+	if err = scpUpload(sshConfig, req.File, req.ArchiveHost, req.ArchiveLocation, req.PrivateKeyPath); err != nil {
 		return fmt.Errorf("error copying file to archive server: %v", err)
 	}
 
@@ -351,42 +349,16 @@ func sshRun(sshConfig *ssh.ClientConfig, host, command string) error {
 	return nil
 }
 
-func sftpUpload(sshConfig *ssh.ClientConfig, localFile, host, remoteDir string) error {
+func scpUpload(sshConfig *ssh.ClientConfig, localFile, host, remoteDir, key string) error {
 	log.Printf("[INFO] upload %s to %s:%s", localFile, host, remoteDir)
 	defer func(st time.Time) { log.Printf("[DEBUG] upload done in %s", time.Since(st)) }(time.Now())
 
-	client, err := ssh.Dial("tcp", host+":22", sshConfig)
-	if err != nil {
-		return fmt.Errorf("failed to dial: %v", err)
+	remotePath := fmt.Sprintf("%s@%s:%s", sshConfig.User, host, remoteDir)
+	cmd := exec.Command("scp", "-i", key, "-o", "StrictHostKeyChecking=no", localFile, remotePath)
+	cmd.Stdout, cmd.Stderr = os.Stdout, os.Stderr
+	if err := cmd.Run(); err != nil {
+		return fmt.Errorf("failed to run SCP command: %v", err)
 	}
-	defer client.Close()
-
-	// create an SFTP session over the existing SSH connection
-	sftpClient, err := sftp.NewClient(client)
-	if err != nil {
-		return fmt.Errorf("failed to create SFTP client: %v", err)
-	}
-	defer sftpClient.Close()
-
-	file, err := os.Open(localFile) // nolint
-	if err != nil {
-		return fmt.Errorf("failed to open local file: %v", err)
-	}
-	defer file.Close()
-
-	// create the remote file
-	remoteFile := filepath.Join(remoteDir, filepath.Base(localFile))
-	dstFile, err := sftpClient.Create(remoteFile)
-	if err != nil {
-		return fmt.Errorf("failed to create remote file: %v", err)
-	}
-	defer dstFile.Close()
-
-	// copy the contents of the local file to the remote file
-	if _, err = io.Copy(dstFile, file); err != nil {
-		return fmt.Errorf("failed to copy file: %v", err)
-	}
-
 	return nil
 }
 
