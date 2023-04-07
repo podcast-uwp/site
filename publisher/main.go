@@ -11,6 +11,7 @@ import (
 	"path/filepath"
 	"regexp"
 	"strconv"
+	"text/template"
 	"time"
 
 	"github.com/bogem/id3v2"
@@ -60,8 +61,13 @@ type Git struct {
 	Location string `long:"location" default:"/Users/umputun/dev.umputun/podcast-uwp" description:"repo location"`
 }
 
-//go:embed cover.jpg
-var imgData []byte
+var (
+	//go:embed cover.jpg
+	imgData []byte
+
+	//go:embed uwp-podcast.tmpl
+	tmplData string
+)
 
 var revision = "v2.1.1"
 
@@ -122,7 +128,7 @@ func setMp3TagsCmd(req Mp3Tags) error {
 	num, err := getEpisodeNumber(req.File, req.ReEpisode) // get episode number from file name
 	if err != nil {
 		// failed if file not found or regex failed
-		return err
+		return fmt.Errorf("error getting episode number from %s: %w", req.File, err)
 	}
 
 	origFinfo, err := os.Stat(req.File)
@@ -191,7 +197,7 @@ func setMp3TagsCmd(req Mp3Tags) error {
 func createEpisodeCmd(req PrepEpisode) error {
 	log.Printf("[INFO] create episode in %s", req.PostsLocation)
 
-	num, err := getNextEpisodeNum(req.ReEpisode)
+	num, err := getNextEpisodeNum("https://podcast.umputun.com/", req.ReEpisode)
 	if err != nil {
 		return fmt.Errorf("error getting next episode number: %w", err)
 	}
@@ -199,33 +205,33 @@ func createEpisodeCmd(req PrepEpisode) error {
 
 	outfile := filepath.Join(req.PostsLocation, fmt.Sprintf("podcast-%d.md", num))
 	log.Printf("[INFO] create episode file %s", outfile)
+	if err = os.MkdirAll(req.PostsLocation, 0755); err != nil {
+		return fmt.Errorf("error creating posts dir %s: %w", req.PostsLocation, err)
+	}
 
 	f, err := os.Create(outfile)
 	if err != nil {
-		return fmt.Errorf("error creating file: %w", err)
+		return fmt.Errorf("error creating file %s: %w", outfile, err)
 	}
 	defer f.Close() // nolint
 
-	w := func(s string, ft ...interface{}) {
-		fmt.Fprintf(f, s, ft...)
-		_, _ = f.WriteString("\n")
+	data := struct {
+		Number int
+		Date   string
+	}{
+		Number: num,
+		Date:   time.Now().Format("2006-01-02T15:04:05"),
 	}
 
-	w("+++")
-	w(`title = "UWP - Выпуск %d"`, num)
-	w(`date = %q`, time.Now().Format("2006-01-02T15:04:05"))
-	w(`categories = ["podcast"]`)
-	w(`image = "https://podcast.umputun.com/images/uwp/uwp%d.jpg"`, num)
-	w(`filename = "ump_podcast%d"`, num)
-	w("+++")
-	w("")
-	w(`![](https://podcast.umputun.com/images/uwp/uwp%d.jpg)`, num)
-	w("")
-	w("- \n- \n- \n- \n- \n- \n- ")
-	w("- Вопросы и ответы")
-	w("")
-	w("[аудио](https://podcast.umputun.com/media/ump_podcast%d.mp3)", num)
-	w(`<audio src="https://podcast.umputun.com/media/ump_podcast%d.mp3" preload="none"></audio>`, num)
+	tmpl, err := template.New("episode").Parse(tmplData)
+	if err != nil {
+		return fmt.Errorf("error parsing template: %w", err)
+	}
+
+	err = tmpl.Execute(f, data)
+	if err != nil {
+		return fmt.Errorf("error executing template: %w", err)
+	}
 
 	if err := f.Sync(); err != nil {
 		return fmt.Errorf("error syncing file: %w", err)
@@ -376,44 +382,39 @@ func getEpisodeNumber(filePath, reEpisodeNumber string) (int, error) {
 }
 
 // getNextEpisodeNum returns next episode number by parsing uwp page
-func getNextEpisodeNum(reEpisodeNumber string) (num int, err error) {
+func getNextEpisodeNum(url, reEpisodeNumber string) (int, error) {
 	client := http.Client{Timeout: time.Second * 30}
-	resp, err := client.Get("https://podcast.umputun.com/") //
+	resp, err := client.Get(url)
 	if err != nil {
 		return 0, fmt.Errorf("error getting uwp page: %w", err)
 	}
 	defer resp.Body.Close()
+
 	if resp.StatusCode != http.StatusOK {
 		return 0, fmt.Errorf("invalid status code %d", resp.StatusCode)
 	}
 
-	var found bool
 	re := regexp.MustCompile(reEpisodeNumber)
-
 	scanner := bufio.NewScanner(resp.Body)
+
 	for scanner.Scan() {
 		line := scanner.Text()
 		match := re.FindStringSubmatch(line)
-		if len(match) == 0 {
-			continue
+		if len(match) > 0 {
+			num, err := strconv.Atoi(match[1])
+			if err != nil {
+				return 0, fmt.Errorf("invalid episode number %s: %w", match[1], err)
+			}
+			log.Printf("[DEBUG] found episode %d in %s ", num, line)
+			return num + 1, nil
 		}
-		if num, err = strconv.Atoi(match[1]); err != nil {
-			return 0, fmt.Errorf("invalid episode number %s: %w", match[1], err)
-		}
-		log.Printf("[DEBUG] found episode %d in %s ", num, line)
-		found = true
-		break
 	}
 
 	if err := scanner.Err(); err != nil {
 		return 0, fmt.Errorf("error reading response body: %w", err)
 	}
 
-	if !found {
-		return 0, fmt.Errorf("ump_podcast not found")
-	}
-
-	return num + 1, nil
+	return 0, fmt.Errorf("ump_podcast not found")
 }
 
 func setupLog(dbg bool) {
