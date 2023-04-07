@@ -54,6 +54,7 @@ type Deploy struct {
 type PrepEpisode struct {
 	ReEpisode     string `long:"re-episode" env:"RE_EPISODE" default:"ump_podcast(\\d+)\\.mp3" description:"episode num regex"`
 	PostsLocation string `long:"location" env:"POSTS_LOCATION" default:"/Users/umputun/dev.umputun/podcast-uwp/hugo/content/posts" description:"posts location"`
+	Editor        string `long:"editor" default:"subl" description:"editor"`
 }
 
 // Git command commits and pushes changes to the repo
@@ -69,7 +70,9 @@ var (
 	tmplData string
 )
 
-var revision = "v2.1.1"
+var nowFn = time.Now // for testing, to override time.Now
+
+var revision = "v2.1.2"
 
 func main() {
 	var opts options
@@ -86,7 +89,7 @@ func main() {
 	st := time.Now()
 
 	if p.Active != nil && p.Command.Find("prep") == p.Active {
-		if err := createEpisodeCmd(opts.PrepEpisode); err != nil {
+		if err := createEpisodeCmd(opts.PrepEpisode, getEpisodeNumber); err != nil {
 			log.Fatalf("[PANIC] %v", err)
 		}
 		log.Printf("[INFO] completed episode preparation in %v", time.Since(st))
@@ -194,10 +197,10 @@ func setMp3TagsCmd(req Mp3Tags) error {
 }
 
 // createEpisodeCmd makes a new hugo post for the next episode
-func createEpisodeCmd(req PrepEpisode) error {
+func createEpisodeCmd(req PrepEpisode, epNumFn func(url, reEpisodeNumber string) (int, error)) error {
 	log.Printf("[INFO] create episode in %s", req.PostsLocation)
 
-	num, err := getNextEpisodeNum("https://podcast.umputun.com/", req.ReEpisode)
+	num, err := epNumFn("https://podcast.umputun.com/", req.ReEpisode)
 	if err != nil {
 		return fmt.Errorf("error getting next episode number: %w", err)
 	}
@@ -205,11 +208,11 @@ func createEpisodeCmd(req PrepEpisode) error {
 
 	outfile := filepath.Join(req.PostsLocation, fmt.Sprintf("podcast-%d.md", num))
 	log.Printf("[INFO] create episode file %s", outfile)
-	if err = os.MkdirAll(req.PostsLocation, 0755); err != nil {
+	if err = os.MkdirAll(req.PostsLocation, 0o750); err != nil {
 		return fmt.Errorf("error creating posts dir %s: %w", req.PostsLocation, err)
 	}
 
-	f, err := os.Create(outfile)
+	f, err := os.Create(outfile) //nolint:gosec
 	if err != nil {
 		return fmt.Errorf("error creating file %s: %w", outfile, err)
 	}
@@ -220,7 +223,7 @@ func createEpisodeCmd(req PrepEpisode) error {
 		Date   string
 	}{
 		Number: num,
-		Date:   time.Now().Format("2006-01-02T15:04:05"),
+		Date:   nowFn().Format("2006-01-02T15:04:05"),
 	}
 
 	tmpl, err := template.New("episode").Parse(tmplData)
@@ -233,12 +236,16 @@ func createEpisodeCmd(req PrepEpisode) error {
 		return fmt.Errorf("error executing template: %w", err)
 	}
 
-	if err := f.Sync(); err != nil {
-		return fmt.Errorf("error syncing file: %w", err)
+	if err = f.Sync(); err != nil {
+		return fmt.Errorf("error syncing file %s: %w", f.Name(), err)
 	}
 
-	// Open the post file in Sublime Text editor
-	exec.Command("subl", outfile).Start()
+	// Open the post file in text editor if specified
+	if req.Editor != "" {
+		if err = exec.Command(req.Editor, outfile).Start(); err != nil { //nolint:gosec
+			return fmt.Errorf("error opening file in editor %q: %w", req.Editor, err)
+		}
+	}
 	return nil
 }
 
@@ -318,8 +325,7 @@ func gitCmd(req Git) error {
 		return fmt.Errorf("error adding changes: %v", err)
 	}
 
-	cmd = exec.Command("git", "commit", "-m",
-		fmt.Sprintf("auto-update %s", time.Now().Format("2006-01-02 15:04:05")))
+	cmd = exec.Command("git", "commit", "-m", fmt.Sprintf("auto-update %s", time.Now().Format("2006-01-02 15:04:05"))) //nolint:gosec
 	cmd.Dir, cmd.Stdout, cmd.Stderr = req.Location, os.Stdout, os.Stderr
 	if err = cmd.Run(); err != nil {
 		return fmt.Errorf("error committing changes: %v", err)
@@ -360,7 +366,7 @@ func scpUpload(sshConfig *ssh.ClientConfig, localFile, host, remoteDir, key stri
 	defer func(st time.Time) { log.Printf("[DEBUG] upload done in %s", time.Since(st)) }(time.Now())
 
 	remotePath := fmt.Sprintf("%s@%s:%s", sshConfig.User, host, remoteDir)
-	cmd := exec.Command("scp", "-i", key, "-o", "StrictHostKeyChecking=no", localFile, remotePath)
+	cmd := exec.Command("scp", "-i", key, "-o", "StrictHostKeyChecking=no", localFile, remotePath) //nolint:gosec
 	cmd.Stdout, cmd.Stderr = os.Stdout, os.Stderr
 	if err := cmd.Run(); err != nil {
 		return fmt.Errorf("failed to run SCP command: %v", err)
@@ -388,7 +394,7 @@ func getNextEpisodeNum(url, reEpisodeNumber string) (int, error) {
 	if err != nil {
 		return 0, fmt.Errorf("error getting uwp page: %w", err)
 	}
-	defer resp.Body.Close()
+	defer resp.Body.Close() //nolint:gosec
 
 	if resp.StatusCode != http.StatusOK {
 		return 0, fmt.Errorf("invalid status code %d", resp.StatusCode)
