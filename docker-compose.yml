@@ -74,8 +74,8 @@ services:
       - SMTP_TLS=true
       - SMTP_USERNAME
       - SMTP_PASSWORD
-      - AUTH_TWITTER_CID
-      - AUTH_TWITTER_CSEC
+#      - AUTH_TWITTER_CID
+#      - AUTH_TWITTER_CSEC
       - AUTH_GITHUB_CID
       - AUTH_GITHUB_CSEC
       - AUTH_GOOGLE_CID
