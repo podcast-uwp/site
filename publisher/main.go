@@ -43,7 +43,7 @@ type Deploy struct {
 	File            string `short:"f" long:"file" required:"true" description:"mp3 file"`
 	Host            string `long:"host" default:"podcast.umputun.com" description:"primary remote host"`
 	User            string `long:"user" default:"umputun" description:"remote user"`
-	Location        string `long:"location"  default:"/srv/media" description:"location"`
+	Location        string `long:"location"  default:"/srv/podcast-uwp/var/media" description:"location"`
 	DaysKeep        int    `long:"days-keep"  default:"700" description:"days to keep"`
 	ArchiveHost     string `long:"archive-host"  default:"archive.rucast.net" description:"archive host"`
 	ArchiveLocation string `long:"archive-location"  default:"/data/archive/uwp/media/" description:"archive location"`
