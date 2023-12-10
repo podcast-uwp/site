@@ -96,6 +96,7 @@ services:
     restart: always
     container_name: tg-spam
     logging: *default_logging
+    user: "1000:1000"
     environment:
       - TZ=America/Chicago
       - TELEGRAM_TOKEN=${TGSPAM_TELEGRAM_TOKEN}
