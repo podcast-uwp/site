@@ -90,6 +90,32 @@ services:
     volumes:
       - ./var/remark42:/srv/var
 
+  tg-spam:
+    image: umputun/tg-spam:master
+    hostname: tg-spam
+    restart: always
+    container_name: tg-spam
+    logging: *default_logging
+    environment:
+      - TZ=America/Chicago
+      - TELEGRAM_TOKEN=${TGSPAM_TELEGRAM_TOKEN}
+      - TELEGRAM_GROUP=uwp_chat
+      - ADMIN_URL=https://tg-spam-uwp.umputun.com
+      - ADMIN_SECRET=${TGSPAM_ADMIN_SECRET}
+      - ADMIN_GROUP=200312168
+      - TESTING_ID=200312168
+      - LOGGER_ENABLED=true
+      - LOGGER_FILE=/srv/log/tg-spam.log
+      - LOGGER_MAX_SIZE=5M
+      - FILES_DYNAMIC_SPAM=/srv/var/dynamic-spam.txt
+      - FILES_DYNAMIC_HAM=/srv/var/dynamic-ham.txt
+      - NO_SPAM_REPLY=true
+      - DEBUG=true
+    volumes:
+      - ./var/tg-spam/logs:/srv/log
+      - ./var/tg-spam/dynamic:/srv/var
+    command: --super=umputun
+
   stats:
     build: stats
     hostname: stats
