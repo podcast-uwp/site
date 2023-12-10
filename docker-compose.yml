@@ -111,7 +111,7 @@ services:
       - FILES_DYNAMIC_SPAM=/srv/var/dynamic-spam.txt
       - FILES_DYNAMIC_HAM=/srv/var/dynamic-ham.txt
       #- NO_SPAM_REPLY=true
-      - DRY=true
+      #- DRY=true
       - DEBUG=true
     volumes:
       - ./var/tg-spam/logs:/srv/log
