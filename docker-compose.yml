@@ -91,7 +91,7 @@ services:
       - ./var/remark42:/srv/var
 
   tg-spam:
-    image: umputun/tg-spam:master
+    image: umputun/tg-spam:latest
     hostname: tg-spam
     restart: always
     container_name: tg-spam
@@ -110,8 +110,8 @@ services:
       - LOGGER_MAX_SIZE=5M
       - FILES_DYNAMIC_SPAM=/srv/var/dynamic-spam.txt
       - FILES_DYNAMIC_HAM=/srv/var/dynamic-ham.txt
-      #- NO_SPAM_REPLY=true
-      #- DRY=true
+      - FILES_APPROVED_USERS=/srv/var/approved-users.dat
+      - NO_SPAM_REPLY=true
       - DEBUG=true
     volumes:
       - ./var/tg-spam/logs:/srv/log
