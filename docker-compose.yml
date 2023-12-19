@@ -101,22 +101,36 @@ services:
       - TZ=America/Chicago
       - TELEGRAM_TOKEN=${TGSPAM_TELEGRAM_TOKEN}
       - TELEGRAM_GROUP=uwp_chat
-      - ADMIN_URL=https://tg-spam-uwp.umputun.com
-      - ADMIN_SECRET=${TGSPAM_ADMIN_SECRET}
       - ADMIN_GROUP=200312168
       - TESTING_ID=200312168
       - LOGGER_ENABLED=true
       - LOGGER_FILE=/srv/log/tg-spam.log
       - LOGGER_MAX_SIZE=5M
+      - FILES_SAMPLES_SPAM=/srv/samples/spam-samples.txt
+      - FILES_SAMPLES_HAM=/srv/samples/ham-samples.txt
+      - FILES_EXCLUDE_TOKENS=/srv/samples/exclude-tokens.txt
+      - FILES_STOP_WORDS=/srv/samples/stop-words.txt
       - FILES_DYNAMIC_SPAM=/srv/var/dynamic-spam.txt
       - FILES_DYNAMIC_HAM=/srv/var/dynamic-ham.txt
       - FILES_APPROVED_USERS=/srv/var/approved-users.dat
       - NO_SPAM_REPLY=true
       - DEBUG=true
     volumes:
+      - /srv/tg-spam-samples:/srv/samples
       - ./var/tg-spam/logs:/srv/log
       - ./var/tg-spam/dynamic:/srv/var
     command: --super=umputun
+
+  tg-spam-updater:
+    image: ghcr.io/umputun/tg-spam-updater:latest
+    hostname: tg-spam-updater
+    container_name: tg-spam-updater
+    restart: always
+    logging: *default_logging
+    user: "1000:1000"
+    volumes:
+      - /srv/tg-spam-samples:/samples
+    command: ["https://github.com/radio-t/tg-spam-samples.git", "/samples"]
 
   stats:
     build: stats
