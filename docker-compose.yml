@@ -130,8 +130,8 @@ services:
     environment:
       - APP_UID=1000
     volumes:
-      - /srv/tg-spam-samples:/samples
-    command: ["https://github.com/radio-t/tg-spam-samples.git", "/samples"]
+      - /srv/tg-spam-samples:/srv/samples
+    command: ["https://github.com/radio-t/tg-spam-samples.git", "/srv/samples"]
 
   stats:
     build: stats
