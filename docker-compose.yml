@@ -127,7 +127,6 @@ services:
     container_name: tg-spam-updater
     restart: always
     logging: *default_logging
-    user: "1000:1000"
     environment:
       - APP_UID=1000
     volumes:
