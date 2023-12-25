@@ -106,13 +106,8 @@ services:
       - LOGGER_ENABLED=true
       - LOGGER_FILE=/srv/log/tg-spam.log
       - LOGGER_MAX_SIZE=5M
-      - FILES_SAMPLES_SPAM=/srv/samples/spam-samples.txt
-      - FILES_SAMPLES_HAM=/srv/samples/ham-samples.txt
-      - FILES_EXCLUDE_TOKENS=/srv/samples/exclude-tokens.txt
-      - FILES_STOP_WORDS=/srv/samples/stop-words.txt
-      - FILES_DYNAMIC_SPAM=/srv/var/dynamic-spam.txt
-      - FILES_DYNAMIC_HAM=/srv/var/dynamic-ham.txt
-      - FILES_APPROVED_USERS=/srv/var/approved-users.dat
+      - FILES_SAMPLES=/srv/samples
+      - FILES_DYNAMIC=/srv/var
       - NO_SPAM_REPLY=true
       - DEBUG=true
     volumes:
