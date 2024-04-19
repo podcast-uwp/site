@@ -109,6 +109,8 @@ services:
       - FILES_SAMPLES=/srv/samples
       - FILES_DYNAMIC=/srv/var
       - NO_SPAM_REPLY=true
+      - MIN_MSG_LEN=15
+      - MIN_PROBABILITY=75
       - DEBUG=true
     volumes:
       - /srv/tg-spam-samples:/srv/samples
