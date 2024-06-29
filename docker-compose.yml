@@ -111,6 +111,7 @@ services:
       - NO_SPAM_REPLY=true
       - MIN_MSG_LEN=15
       - MIN_PROBABILITY=75
+      - MULTI_LANG=5
       - DEBUG=true
     volumes:
       - /srv/tg-spam-samples:/srv/samples
