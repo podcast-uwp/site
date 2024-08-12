@@ -33,7 +33,7 @@ type Mp3Tags struct {
 	File      string `short:"f" long:"file" env:"FILE" required:"true" description:"mp3 file"`
 	Title     string `long:"title" env:"TITLE" default:"UWP Выпуск" description:"title"`
 	Artist    string `long:"artist" env:"ARTIST" default:"Umputun" description:"artist"`
-	Album     string `long:"album" env:"ALBUM" default:"Eженедельный подкаст от Umputun" description:"album"`
+	Album     string `long:"album" env:"ALBUM" default:"Eженеде†льный подкаст от Umputun" description:"album"`
 	Image     string `long:"image" env:"IMAGE" default:"" description:"image"`
 	ReEpisode string `long:"re-episode" env:"RE_EPISODE" default:"ump_podcast(\\d+)\\.mp3" description:"episode num regex"`
 }
