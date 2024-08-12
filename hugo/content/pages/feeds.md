@@ -15,7 +15,7 @@ url = "feeds"
 Прочие фиды:
 
 - [Подкаст на spotify](https://open.spotify.com/show/5drpwDKadrsnF0DLm8NLRl)
-- [Подкаст на Google Play Music](https://play.google.com/music/m/Ihycb45bfggbjyd46o5ei35u4hy?t=UWP_-_E___Umputun)
+- [Подкаст на YouTube](https://www.youtube.com/playlist?list=PL1uNLqnKkOsC2CVw294zpXa5GuCzHXWBa)
 - [Подписка на все комментарии](https://remark42.umputun.com/api/v1/rss/site?site=uwp)
 - [Канал комментариев на Telegram](https://t.me/uwp_comments)
 - [Весь Umputun в iTunes Store](https://podcasts.apple.com/podcast/весь-umputun/id307038753)
