@@ -82,6 +82,8 @@ services:
       - AUTH_GOOGLE_CSEC
       - AUTH_YANDEX_CID
       - AUTH_YANDEX_CSEC
+      - TELEGRAM_TOKEN
+      - AUTH_TELEGRAM=true
       # - AUTH_FACEBOOK_CID
       # - AUTH_FACEBOOK_CSEC
       - AUTH_EMAIL_FROM=confirmation@umputun.com
