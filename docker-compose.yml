@@ -29,7 +29,7 @@ services:
       - TZ=America/Chicago
       - LETSENCRYPT=true
       - LE_EMAIL=umputun@gmail.com
-      - LE_FQDN=podcast.umputun.com,remark42.umputun.com,tg-spam-uwp.umputun.com
+      - LE_FQDN=podcast.umputun.com,remark42.umputun.com,tg-spam-uwp.umputun.com,uwp.umputun.com
 
     depends_on:
       - remark42
