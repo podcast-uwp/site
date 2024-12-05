@@ -1,7 +1,7 @@
 
 +++
 title = "UWP - Выпуск 491"
-date = "2024-09-29T23:11:55"
+date = "2024-12-05T14:11:55"
 categories = ["podcast"]
 image = "https://podcast.umputun.com/images/uwp/uwp491.jpg"
 filename = "ump_podcast491"
