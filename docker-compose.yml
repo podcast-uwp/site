@@ -114,6 +114,10 @@ services:
       - MIN_MSG_LEN=15
       - MIN_PROBABILITY=75
       - MULTI_LANG=5
+      - META_IMAGE_ONLY=true
+      - META_VIDEO_ONLY=true
+      - META_FORWARD=true
+      - META_LINKS_ONLY=true
       - DEBUG=true
     volumes:
       - /srv/tg-spam-samples:/srv/samples
