@@ -122,6 +122,8 @@ services:
       - OPENAI_RETRY_COUNT=3
       - OPENAI_HISTORY_SIZE=10
       - BACKUP_VER_ENABLED=true
+      - SERVER_ENABLED=true
+      - SERVER_AUTH=${TGPSPAM_SERVER_AUTH}
       - DEBUG=true
     volumes:
       - /srv/tg-spam-samples:/srv/samples
