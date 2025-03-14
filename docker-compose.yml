@@ -142,7 +142,7 @@ services:
     command: ["https://github.com/radio-t/tg-spam-samples.git", "/srv/samples"]
 
   stats:
-    build: statsq
+    build: stats
     hostname: stats
     container_name: stats
     restart: always
