@@ -118,6 +118,7 @@ services:
       - META_LINKS_ONLY=true
       - META_VIDEO_ONLY=true
       - META_FORWARD=true
+      - META_KEYBOARD=true
       - OPENAI_TOKEN=${OPENAI_TOKEN}
       - OPENAI_RETRY_COUNT=3
       - OPENAI_HISTORY_SIZE=10
