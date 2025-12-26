@@ -105,6 +105,7 @@ services:
       - TELEGRAM_GROUP=uwp_chat
       - ADMIN_GROUP=200312168
       - TESTING_ID=200312168
+      - SUPPRESS_JOIN_MESSAGE=true
       - LOGGER_ENABLED=true
       - LOGGER_FILE=/srv/log/tg-spam.log
       - LOGGER_MAX_SIZE=5M
@@ -119,9 +120,18 @@ services:
       - META_VIDEO_ONLY=true
       - META_FORWARD=true
       - META_KEYBOARD=true
+      - META_LINKS_ONLY=true
+      - META_AUDIO_ONLY=true
+      - META_GIVEAWAY=true
+      - META_MENTIONS_LIMIT=4
+      - DELETE_JOIN_MESSAGES=true
+      - DELETE_LEAVE_MESSAGES=true
+      - DUPLICATES_THRESHOLD=3
+      - AGGRESSIVE_CLEANUP=true
       - OPENAI_TOKEN=${OPENAI_TOKEN}
       - OPENAI_RETRY_COUNT=3
       - OPENAI_HISTORY_SIZE=10
+      - OPENAI_CUSTOM_PROMPT=Any message about service offering paid services, paid subscriptions, paid content, donations, crypto wallets, paid promotion of content, paid promotion of accounts is considered as spam. Also messages offering adult content, adult services, escort services, or any other paid services are considered as spam. Messages offering free services, free content, free subscriptions, or any other free offerings are considered as spam.
       - BACKUP_VER_ENABLED=true
       - SERVER_ENABLED=true
       - SERVER_AUTH=${TGPSPAM_SERVER_AUTH}
